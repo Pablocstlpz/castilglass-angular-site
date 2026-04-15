@@ -1,18 +1,25 @@
-# --- DEPENDENCIAS (Lo más pesado) ---
+# --- DEPENDENCIAS ---
 /node_modules/
+/libpeerconnection.log
+/typings
 
 # --- COMPILACIÓN Y CACHÉ ---
 /dist/
 /.angular/
+/.angular/cache
 /.next/
 /out/
 /build/
+/tmp
+/out-tsc
+/bazel-out
+.sass-cache/
+/connect.lock
 
-# --- CONFIGURACIÓN DE VERCEL ---
+# --- CONFIGURACIÓN DE DEPLOY (Vercel, etc.) ---
 .vercel
 
-# --- SEGURIDAD Y ENTORNO (Crítico para tu negocio) ---
-# Aquí es donde irán las claves de OpenAI, Anthropic, etc.
+# --- SEGURIDAD Y ENTORNO (Crítico) ---
 .env
 .env.local
 .env.development.local
@@ -23,22 +30,38 @@
 # --- ARCHIVOS DEL SISTEMA Y EDITORES ---
 .DS_Store
 Thumbs.db
-.vscode/
 .idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
 
+# --- VISUAL STUDIO CODE ---
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/mcp.json
+.history/*
+
 # --- LOGS DE ERRORES ---
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+testem.log
 logs
 *.log
 
-# --- TESTEO ---
+# --- TESTEO Y SCREENSHOTS ---
 /coverage/
 /cypress/screenshots/
 /cypress/videos/
+__screenshots__/
