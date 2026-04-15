@@ -22,33 +22,45 @@
         <nav class="flex flex-col gap-3">
           <a
             class="text-sm font-medium hover:text-secondary transition-colors border-l-2 border-transparent pl-4 hover:border-secondary"
-            href="#responsable"
+            [routerLink]="['/politica-privacidad']"
+            fragment="responsable"
             >Responsable</a
           >
           <a
             class="text-sm font-medium hover:text-secondary transition-colors border-l-2 border-transparent pl-4 hover:border-secondary"
-            href="#datos"
+            [routerLink]="['/politica-privacidad']"
+            fragment="datos"
             >Datos recopilados</a
           >
           <a
             class="text-sm font-medium hover:text-secondary transition-colors border-l-2 border-transparent pl-4 hover:border-secondary"
-            href="#finalidad"
+            [routerLink]="['/politica-privacidad']"
+            fragment="finalidad"
             >Finalidad</a
           >
           <a
             class="text-sm font-medium hover:text-secondary transition-colors border-l-2 border-transparent pl-4 hover:border-secondary"
-            href="#base"
+            [routerLink]="['/politica-privacidad']"
+            fragment="base"
             >Base jurídica</a
           >
           <a
             class="text-sm font-medium hover:text-secondary transition-colors border-l-2 border-transparent pl-4 hover:border-secondary"
-            href="#conservacion"
+            [routerLink]="['/politica-privacidad']"
+            fragment="conservacion"
             >Conservación</a
           >
           <a
             class="text-sm font-medium hover:text-secondary transition-colors border-l-2 border-transparent pl-4 hover:border-secondary"
-            href="#derechos"
+            [routerLink]="['/politica-privacidad']"
+            fragment="derechos"
             >Sus Derechos</a
+          >
+          <a
+            class="text-sm font-medium hover:text-secondary transition-colors border-l-2 border-transparent pl-4 hover:border-secondary"
+            [routerLink]="['/politica-privacidad']"
+            fragment="seguridad"
+            >Seguridad</a
           >
         </nav>
       </div>
@@ -65,7 +77,7 @@
           personal.
         </p>
       </section>
-      <section class="bg-surface-container-low p-8 rounded-xl" id="responsable">
+      <section class="bg-surface-container-low p-8 rounded-xl scroll-mt-32" id="responsable">
         <h2 class="text-2xl font-bold tracking-tight mb-8">1. Responsable del Tratamiento</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
@@ -98,7 +110,7 @@
           </div>
         </div>
       </section>
-      <section id="datos">
+      <section class="scroll-mt-32" id="datos">
         <h2 class="text-2xl font-bold tracking-tight mb-6">2. Datos que recopilamos</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div class="bg-surface-container-lowest p-6 rounded-lg border border-outline-variant/15">
@@ -125,7 +137,7 @@
           </div>
         </div>
       </section>
-      <section class="space-y-6" id="finalidad">
+      <section class="space-y-6 scroll-mt-32" id="finalidad">
         <h2 class="text-2xl font-bold tracking-tight">3. Finalidad del tratamiento</h2>
         <ul class="space-y-4">
           <li class="flex gap-4">
@@ -151,7 +163,7 @@
           </li>
         </ul>
       </section>
-      <section class="relative group" id="base">
+      <section class="relative group scroll-mt-32" id="base">
         <div
           class="absolute -inset-4 bg-secondary/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"
         ></div>
@@ -167,7 +179,7 @@
         </div>
       </section>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-        <section id="conservacion">
+        <section class="scroll-mt-32" id="conservacion">
           <h2 class="text-xl font-bold tracking-tight mb-4">5. Plazo de conservación</h2>
           <p class="text-sm text-on-surface-variant leading-relaxed">
             Mantendremos sus datos durante el tiempo estrictamente necesario para cumplir con la
@@ -175,7 +187,7 @@
             que se pudieran derivar de dicha finalidad.
           </p>
         </section>
-        <section id="destinatarios">
+        <section class="scroll-mt-32" id="destinatarios">
           <h2 class="text-xl font-bold tracking-tight mb-4">6. Destinatarios</h2>
           <p class="text-sm text-on-surface-variant leading-relaxed">
             No se cederán datos a terceros, salvo obligación legal o en el marco de la ejecución de
@@ -185,7 +197,7 @@
         </section>
       </div>
       <section
-        class="bg-[#f2f4f4] dark:bg-slate-800 p-8 rounded-xl border-l-4 border-secondary"
+        class="bg-[#f2f4f4] dark:bg-slate-800 p-8 rounded-xl border-l-4 border-secondary scroll-mt-32"
         id="derechos"
       >
         <h2 class="text-2xl font-bold tracking-tight mb-8">7. Sus Derechos (ARCO-POL)</h2>
@@ -222,7 +234,7 @@
           </div>
         </div>
       </section>
-      <section class="pt-8 border-t border-outline-variant/20" id="seguridad">
+      <section class="pt-8 border-t border-outline-variant/20 scroll-mt-32" id="seguridad">
         <div class="flex items-start gap-6">
           <div
             class="w-12 h-12 bg-secondary/10 flex items-center justify-center rounded-lg shrink-0"
