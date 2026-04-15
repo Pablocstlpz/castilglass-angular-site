@@ -12,4 +12,18 @@ export const routes: Routes = [
         (m) => m.PoliticaPrivacidad,
       ),
   },
+  {
+    path: 'solicitar-presupuesto',
+    loadComponent: () =>
+      import('./components/solicitar-presupuesto/solicitar-presupuesto').then(
+        (m) => m.SolicitarPresupuesto,
+      ),
+  },
+  {
+    path: 'nuestros-servicios',
+    loadComponent: () =>
+      import('./components/apartado-servicios/apartado-servicios').then(
+        (m) => m.ApartadoServicios,
+      ),
+  }
 ];
