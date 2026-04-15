@@ -3,6 +3,10 @@
 @config '../tailwind.config.mjs';
 @import 'tailwindcss';
 
+html {
+  scroll-behavior: smooth;
+}
+
 .material-symbols-outlined {
   font-variation-settings:
     'FILL' 0,
