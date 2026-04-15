@@ -1,7 +1,8 @@
 <main class="pt-16 md:pt-20">
   <!-- Hero Section -->
   <section
-    class="relative min-h-[700px] md:h-[870px] flex items-center overflow-hidden py-20 md:py-0"
+    id="inicio"
+    class="relative min-h-[700px] md:h-[870px] flex items-center overflow-hidden py-20 md:py-0 scroll-mt-24 md:scroll-mt-28"
   >
     <div class="absolute inset-0 z-0">
       <img
@@ -28,14 +29,15 @@
         </p>
         <div class="flex flex-col sm:flex-row gap-4 mb-12 md:mb-16">
           <button
+            type="button"
             class="metallic-gradient text-on-secondary px-8 py-4 rounded-lg font-bold text-base md:text-lg hover:opacity-90 transition-all active:scale-95 shadow-lg shadow-secondary/20 text-center"
-            style=""
+            [routerLink]="['/solicitar-presupuesto']"
           >
             Solicitar presupuesto
           </button>
           <button
             class="bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-lg font-bold text-base md:text-lg hover:bg-white/20 transition-all active:scale-95 text-center"
-            style=""
+            [routerLink]="['/nuestros-servicios']"
           >
             Ver servicios
           </button>
@@ -87,7 +89,7 @@
     </div>
   </section>
   <!-- Benefits Section -->
-  <section class="py-16 md:py-24 bg-surface">
+  <section id="beneficios" class="py-16 md:py-24 bg-surface scroll-mt-24 md:scroll-mt-28">
     <div class="max-w-7xl mx-auto px-4 md:px-8">
       <div class="mb-12 md:mb-16">
         <span
@@ -179,7 +181,10 @@
     </div>
   </section>
   <!-- Main Services Grid -->
-  <section class="py-16 md:py-24 bg-surface-container-low">
+  <section
+    id="servicios"
+    class="py-16 md:py-24 bg-surface-container-low scroll-mt-24 md:scroll-mt-28"
+  >
     <div class="max-w-7xl mx-auto px-4 md:px-8">
       <div
         class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 gap-6"
@@ -356,7 +361,7 @@
     </div>
   </section>
   <!-- Differentiation Block -->
-  <section class="py-16 md:py-24 overflow-hidden">
+  <section id="diferenciacion" class="py-16 md:py-24 overflow-hidden scroll-mt-24 md:scroll-mt-28">
     <div class="max-w-7xl mx-auto px-4 md:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
         <div class="relative">
@@ -449,7 +454,7 @@
     </div>
   </section>
   <!-- Projects Gallery -->
-  <section class="py-16 md:py-24 bg-surface">
+  <section id="proyectos" class="py-16 md:py-24 bg-surface scroll-mt-24 md:scroll-mt-28">
     <div class="max-w-7xl mx-auto px-4 md:px-8">
       <div class="text-center mb-12 md:mb-16">
         <span
@@ -526,7 +531,10 @@
     </div>
   </section>
   <!-- About Us -->
-  <section class="py-16 md:py-24 bg-surface-container-high relative overflow-hidden">
+  <section
+    id="nosotros"
+    class="py-16 md:py-24 bg-surface-container-high relative overflow-hidden scroll-mt-24 md:scroll-mt-28"
+  >
     <div class="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
         <div>
@@ -582,7 +590,7 @@
     </div>
   </section>
   <!-- Final CTA -->
-  <section class="py-16 md:py-24 metallic-gradient relative">
+  <section class="py-16 md:py-24 metallic-gradient relative scroll-mt-24 md:scroll-mt-28">
     <div class="max-w-7xl mx-auto px-4 md:px-8 text-center relative z-10">
       <h2
         class="text-white font-headline text-3xl md:text-6xl font-extrabold tracking-tighter mb-6 md:mb-8"
@@ -600,13 +608,13 @@
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <button
           class="bg-white text-secondary px-8 md:px-10 py-4 rounded-lg font-bold text-base md:text-lg hover:bg-slate-100 transition-all active:scale-95 shadow-xl"
-          style=""
+          [routerLink]="['/solicitar-presupuesto']"
         >
           Solicitar presupuesto
         </button>
         <a
           class="border border-white/30 text-white px-8 md:px-10 py-4 rounded-lg font-bold text-base md:text-lg hover:bg-white/10 transition-all active:scale-95 flex items-center justify-center gap-3"
-          href="tel:+34900000000"
+          href="tel:+34600952607"
           style=""
         >
           <span class="material-symbols-outlined" style="">call</span>
@@ -616,7 +624,7 @@
     </div>
   </section>
   <!-- Contact Section -->
-  <section class="py-16 md:py-24 bg-surface" id="contacto">
+  <section id="contacto" class="py-16 md:py-24 bg-surface scroll-mt-24 md:scroll-mt-28">
     <div class="max-w-7xl mx-auto px-4 md:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20">
         <div>
@@ -711,7 +719,7 @@
                   <div>
                     <p class="font-bold text-sm md:text-base" style="">Nuestra Central</p>
                     <p class="text-on-surface-variant text-sm" style="">
-                      Polígono Industrial Sect 4, Parcela 12<br />14013 Córdoba, España
+                      Polígono Industrial Las Quemadas<br />Calle Diego Galván, Nave 18<br />Parcela 280, 14014 Córdoba, España
                     </p>
                   </div>
                 </li>
@@ -719,7 +727,7 @@
                   <span class="material-symbols-outlined text-secondary" style="">mail</span>
                   <div>
                     <p class="font-bold text-sm md:text-base" style="">Email</p>
-                    <p class="text-on-surface-variant text-sm" style="">info@castilglass.com</p>
+                    <p class="text-on-surface-variant text-sm" style="">castilglass@hotmail.com</p>
                   </div>
                 </li>
                 <li class="flex gap-4" style="">
@@ -733,16 +741,23 @@
                 </li>
               </ul>
             </div>
-            <div
-              class="h-48 md:h-64 rounded-2xl overflow-hidden grayscale contrast-125 border border-slate-200"
-            >
-              <img
-                alt="Mapa de ubicación"
-                class="w-full h-full object-cover"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD90GKOEA4DnEFOqVhQgF4OWW8Io0174g-OqrIXM74ugVypSuGI7duoKhD2uiMOK-6L30OnfWWqWV70eUNG43x84jwYgZjQ9wYTcaFvSeg7RbtPzKicXDDFwKgrAmYxcFYBTvXjZaD-Qiod7j0mSl-xCX7EprL-1L_d6EqW3IFeUq-979V4f-1t1nbTCTQ5s_ybeXJTp5tZcvtcoiZ0Fy3d4hQadIaivD6IRsdtiwdlAnOCRqpzfUn-_aY1pth30jadWqTLdvf4jRk"
-                style=""
-              />
-            </div>
+            <div class="h-48 md:h-64 rounded-2xl overflow-hidden border border-slate-200 relative group shadow-sm">
+    
+    <iframe 
+        class="w-full h-full object-cover" 
+        src="https://maps.google.com/maps?q=Calle%20Diego%20Galv%C3%A1n,%20280,%20C%C3%B3rdoba&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+        frameborder="0" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+
+    <a href="https://maps.google.com/maps?q=Calle+Diego+Galv%C3%A1n,+280,+C%C3%B3rdoba" target="_blank" rel="noopener noreferrer" class="absolute bottom-4 right-4 bg-white text-secondary px-4 py-2 rounded-lg font-bold text-sm shadow-lg opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-2 hover:bg-slate-50">
+        <span class="material-symbols-outlined text-sm">open_in_new</span>
+        Abrir en Maps
+    </a>
+</div>
           </div>
         </div>
       </div>
