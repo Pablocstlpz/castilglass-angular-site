@@ -1,0 +1,24 @@
+.nav-link {
+	background: transparent;
+	border: 0;
+	padding: 0;
+	cursor: pointer;
+	font: inherit;
+	color: #64748b;
+	font-weight: 500;
+}
+
+.nav-link:hover {
+	color: #216394;
+}
+
+.nav-link-active {
+	color: #216394;
+	font-weight: 700;
+	border-bottom: 2px solid #216394;
+	padding-bottom: 0.25rem;
+}
+
+.nav-link-mobile {
+	text-align: left;
+}
