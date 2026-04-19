@@ -13,6 +13,20 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'politica-cookies',
+    loadComponent: () =>
+      import('./components/footerLinks/politica-cookies/politica-cookies').then(
+        (m) => m.PoliticaCookies,
+      ),
+  },
+  {
+    path: 'aviso-legal',
+    loadComponent: () =>
+      import('./components/footerLinks/aviso-legal/aviso-legal').then(
+        (m) => m.AvisoLegal,
+      ),
+  },
+  {
     path: 'solicitar-presupuesto',
     loadComponent: () =>
       import('./components/solicitar-presupuesto/solicitar-presupuesto').then(
