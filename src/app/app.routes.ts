@@ -20,7 +20,7 @@ export const routes: Routes = [
       ),
   },
   {
-    path: 'nuestros-servicios',
+    path: 'servicios/nuestros-servicios',
     loadComponent: () =>
       import('./components/apartado-servicios/apartado-servicios').then(
         (m) => m.ApartadoServicios,
