@@ -1,3 +1,9 @@
+-Revisar rutas y demas
+-Hacer galeria de productos y asignarlas
+-Configurar el ID del correo de FORMSPREE
+-Revisar textos
+-Cambiar algunas imagenes
+
 # CastilglassAngularSite
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.0.
