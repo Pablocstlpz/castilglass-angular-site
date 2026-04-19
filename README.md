@@ -3,6 +3,7 @@
 -Configurar el ID del correo de FORMSPREE
 -Revisar textos
 -Cambiar algunas imagenes
+-Repaso general a todo
 
 # CastilglassAngularSite
 
