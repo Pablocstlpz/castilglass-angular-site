@@ -8,12 +8,13 @@ import {
 } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
+import { RouterLink } from '@angular/router';
 
 type HeaderSection = 'inicio' | 'servicios' | 'proyectos' | 'nosotros' | 'contacto';
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './header.html',
   styleUrl: './header.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

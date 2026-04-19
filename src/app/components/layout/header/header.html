@@ -2,11 +2,12 @@
   class="fixed top-0 w-full z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md shadow-lg shadow-slate-900/5"
 >
   <div class="flex justify-between items-center px-4 md:px-8 py-4 max-w-full mx-auto">
-    <div class="flex items-center gap-2">
+    <div class="flex items-center gap-2 cursor-pointer"
+    routerLink="/">
       <img
         src="images/Logo-Castilglass.png"
         alt="Logo de la empresa"
-        class="h-17 w-auto"
+        class="h-20 w-auto"
       >
     </div>
     <!-- Desktop Nav -->
@@ -26,14 +27,6 @@
         (click)="scrollToSection('servicios')"
       >
         Servicios
-      </button>
-      <button
-        type="button"
-        class="font-label text-sm transition-colors nav-link"
-        [class.nav-link-active]="activeSection() === 'proyectos'"
-        (click)="scrollToSection('proyectos')"
-      >
-        Proyectos
       </button>
       <button
         type="button"
@@ -77,7 +70,6 @@
   >
     <button type="button" class="text-lg nav-link nav-link-mobile" [class.nav-link-active]="activeSection() === 'inicio'" (click)="scrollToSection('inicio')">Inicio</button>
     <button type="button" class="text-lg nav-link nav-link-mobile" [class.nav-link-active]="activeSection() === 'servicios'" (click)="scrollToSection('servicios')">Servicios</button>
-    <button type="button" class="text-lg nav-link nav-link-mobile" [class.nav-link-active]="activeSection() === 'proyectos'" (click)="scrollToSection('proyectos')">Proyectos</button>
     <button type="button" class="text-lg nav-link nav-link-mobile" [class.nav-link-active]="activeSection() === 'nosotros'" (click)="scrollToSection('nosotros')">Sobre nosotros</button>
     <button type="button" class="text-lg nav-link nav-link-mobile" [class.nav-link-active]="activeSection() === 'contacto'" (click)="scrollToSection('contacto')">Contacto</button>
     <div class="pt-4 border-t border-slate-100">
