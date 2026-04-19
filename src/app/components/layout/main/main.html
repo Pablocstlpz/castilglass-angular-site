@@ -203,8 +203,7 @@
           </h2>
         </div>
         <p class="text-on-surface-variant max-w-md text-sm md:text-base" style="">
-          Fabricamos cada elemento en nuestro taller de Córdoba, permitiéndonos un control total
-          sobre la calidad y los plazos.
+          Fabricamos cada elemento en nuestro taller de Córdoba.
         </p>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
@@ -453,83 +452,6 @@
       </div>
     </div>
   </section>
-  <!-- Projects Gallery -->
-  <section id="proyectos" class="py-16 md:py-24 bg-surface scroll-mt-24 md:scroll-mt-28">
-    <div class="max-w-7xl mx-auto px-4 md:px-8">
-      <div class="text-center mb-12 md:mb-16">
-        <span
-          class="text-secondary font-bold font-label tracking-widest uppercase text-[10px] md:text-xs"
-          style=""
-          >Portafolio</span
-        >
-        <h2
-          class="text-3xl md:text-5xl font-headline font-extrabold tracking-tighter mt-3 md:mt-4"
-          style=""
-        >
-          Proyectos que nos definen
-        </h2>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-        <!-- Project 1 -->
-        <div class="group relative overflow-hidden rounded-2xl h-[350px] md:h-[450px]">
-          <img
-            alt="Villa de lujo con cerramientos minimalistas"
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQqp_JyJeGplO-_r1ddMmtYBcG_L8CV8i85oOUr438tae_xfBXQBIMidesugY4pYa0_gVD5UyOxtHMoY2brmfQ86b3Wf9i2il1FdwsG6ncr3mXYJRcpN4aTDn-F2JjJPT-xnCv8h0SImGm56I_LoZ3U5823vPVfIjiKIaHp50pjmY42akNW9N1n5OlYSeHhKsbvfUa4AnQHVd9m3bhCRPglE3mJX2dhstVAKOwla1sznBi0kBVSsZBfBNza9t9K-aWljukCTNgWLk"
-            style=""
-          />
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex flex-col justify-end p-6 md:p-8"
-          >
-            <span
-              class="text-secondary-fixed text-[10px] md:text-xs font-label uppercase tracking-widest mb-2"
-              style=""
-              >Residencial Premium</span
-            >
-            <h3 class="text-white text-xl md:text-2xl font-bold font-headline mb-2" style="">
-              Villa Las Lomas
-            </h3>
-            <p class="text-slate-300 text-xs md:text-sm max-w-sm" style="">
-              Cerramientos Minimal con RPT y Control Solar para máxima luminosidad.
-            </p>
-          </div>
-        </div>
-        <!-- Project 2 -->
-        <div class="group relative overflow-hidden rounded-2xl h-[350px] md:h-[450px]">
-          <img
-            alt="Edificio de oficinas con muro cortina"
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuoANcA1Tl_EGT-OBduJqGUbcsLwiwDJeuJXF50WfCrD2w5o53x3YB3pVW3Qs1z3PaVaIeJMsPtFEnGAG6M2kqypAcyV0TEldGxillOo4UVRheNQKS2H17LssfroqHTeKbOdspYCVNtuyLKQxfmSCC8V_FVmDc1GFwCpFBLvFkgjuYHWo-ADDfdWVEUUKCIB3RE2bq8vRUUslQ4o7JklgRqZTJ_Q_qhJGlsDP5R7OqybNnm9sF7TPpbT-Myt8W2yXnFqvvZbad3Dk"
-            style=""
-          />
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex flex-col justify-end p-6 md:p-8"
-          >
-            <span
-              class="text-secondary-fixed text-[10px] md:text-xs font-label uppercase tracking-widest mb-2"
-              style=""
-              >Corporativo</span
-            >
-            <h3 class="text-white text-xl md:text-2xl font-bold font-headline mb-2" style="">
-              Sede Centro Negocios
-            </h3>
-            <p class="text-slate-300 text-xs md:text-sm max-w-sm" style="">
-              Muro Cortina de alta atenuación acústica y Panel Composite.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="mt-8 md:mt-12 flex justify-center">
-        <button
-          class="text-secondary font-bold flex items-center gap-2 hover:gap-4 transition-all group"
-          style=""
-        >
-          Ver todos los proyectos
-          <span class="material-symbols-outlined transition-all" style="">arrow_forward</span>
-        </button>
-      </div>
-    </div>
-  </section>
   <!-- About Us -->
   <section
     id="nosotros"
@@ -634,7 +556,9 @@
           >
             Cuéntanos tu proyecto
           </h2>
-          <form class="space-y-4 md:space-y-6">
+          <form class="space-y-4 md:space-y-6" (submit)="onSubmitContacto($event)">
+            <input class="hidden" type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+            <input type="hidden" name="form_name" value="Contacto (Home)" />
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
               <div>
                 <label
@@ -645,7 +569,9 @@
                 <input
                   class="w-full bg-surface-container-low border-transparent focus:border-secondary focus:ring-0 rounded-lg p-3 md:p-4 transition-all"
                   placeholder="Ej. Juan Pérez"
+                  name="nombre"
                   type="text"
+                  required
                 />
               </div>
               <div>
@@ -656,8 +582,10 @@
                 >
                 <input
                   class="w-full bg-surface-container-low border-transparent focus:border-secondary focus:ring-0 rounded-lg p-3 md:p-4 transition-all"
-                  placeholder="+34 000 000 000"
+                  placeholder="000 000 000"
+                  name="telefono"
                   type="tel"
+                  required
                 />
               </div>
             </div>
@@ -670,7 +598,9 @@
               <input
                 class="w-full bg-surface-container-low border-transparent focus:border-secondary focus:ring-0 rounded-lg p-3 md:p-4 transition-all"
                 placeholder="tu@email.com"
+                name="email"
                 type="email"
+                required
               />
             </div>
             <div>
@@ -681,6 +611,7 @@
               >
               <select
                 class="w-full bg-surface-container-low border-transparent focus:border-secondary focus:ring-0 rounded-lg p-3 md:p-4 transition-all"
+                name="tipo_proyecto"
               >
                 <option>Vivienda unifamiliar</option>
                 <option>Local comercial</option>
@@ -697,16 +628,33 @@
               <textarea
                 class="w-full bg-surface-container-low border-transparent focus:border-secondary focus:ring-0 rounded-lg p-3 md:p-4 transition-all"
                 placeholder="Describe brevemente lo que necesitas..."
+                name="mensaje"
                 rows="4"
+                required
               ></textarea>
             </div>
             <button
               class="w-full metallic-gradient text-on-secondary py-4 rounded-lg font-bold text-lg hover:opacity-90 transition-all shadow-lg"
               type="submit"
+              [disabled]="contactStatus() === 'sending'"
               style=""
             >
-              Enviar mensaje
+              {{ contactStatus() === 'sending' ? 'Enviando…' : 'Enviar mensaje' }}
             </button>
+
+            @if (contactStatus() === 'success') {
+              <p class="text-sm font-semibold text-secondary">Mensaje enviado correctamente.</p>
+            }
+            @if (contactStatus() === 'error') {
+              <p class="text-sm font-semibold text-red-600">
+                No se pudo enviar. Inténtelo de nuevo en unos minutos.
+              </p>
+            }
+            @if (contactStatus() === 'not_configured') {
+              <p class="text-sm font-semibold text-red-600">
+                Formulario no configurado. Falta configurar Formspree.
+              </p>
+            }
           </form>
         </div>
         <div class="flex flex-col gap-12">
