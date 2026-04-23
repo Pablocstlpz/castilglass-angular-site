@@ -4,7 +4,14 @@
     "nombre": "Carpintería Metálica",
     "descripcion": "Estructuras de hierro, acero inoxidable y forja artística personalizada",
     "icono": "handyman",
-    "imagenes": []
+    "imagenes": [
+      {
+        "id": "1776947281258",
+        "url": "https://res.cloudinary.com/dypzwjovm/image/upload/v1776947280/Castilglass/carpinteria-metalica.jpg",
+        "public_id": "Castilglass/carpinteria-metalica",
+        "subidaEn": "2026-04-23T12:28:01.258Z"
+      }
+    ]
   },
   "aluminio-pvc": {
     "slug": "aluminio-pvc",
