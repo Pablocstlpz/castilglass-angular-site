@@ -7,4 +7,7 @@ import { RouterLink } from '@angular/router';
   templateUrl: './apartado-servicios.html',
   styleUrl: './apartado-servicios.css',
 })
-export class ApartadoServicios {}
+export class ApartadoServicios {
+
+  
+}
