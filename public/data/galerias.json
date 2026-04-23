@@ -1,28 +1,21 @@
 {
   "carpinteria-metalica": {
     "slug": "carpinteria-metalica",
-    "nombre": "CarpinterÃ­a MetÃ¡lica",
-    "descripcion": "Estructuras de hierro, acero inoxidable y forja artÃ­stica personalizada",
+    "nombre": "Carpintería Metálica",
+    "descripcion": "Estructuras de hierro, acero inoxidable y forja artística personalizada",
     "icono": "handyman",
-    "imagenes": [
-      {
-        "id": "1776947175638",
-        "url": "https://res.cloudinary.com/dypzwjovm/image/upload/v1776944156/Castilglass/carpinteria-metalica.jpg",
-        "public_id": "Castilglass/carpinteria-metalica",
-        "subidaEn": "2026-04-23T12:26:15.638Z"
-      }
-    ]
+    "imagenes": []
   },
   "aluminio-pvc": {
     "slug": "aluminio-pvc",
     "nombre": "Aluminio y PVC",
-    "descripcion": "Sistemas de ventanas y puertas de alta eficiencia energÃ©tica",
+    "descripcion": "Sistemas de ventanas y puertas de alta eficiencia energética",
     "icono": "energy_savings_leaf",
     "imagenes": []
   },
   "cristaleria": {
     "slug": "cristaleria",
-    "nombre": "CristalerÃ­a",
+    "nombre": "Cristalería",
     "descripcion": "Vidrios laminados, templados y de control solar",
     "icono": "border_all",
     "imagenes": []
@@ -37,7 +30,7 @@
   "ventanas-curvas": {
     "slug": "ventanas-curvas",
     "nombre": "Ventanas Curvas",
-    "descripcion": "Especialistas en curvado de perfiles arquitectÃ³nicos",
+    "descripcion": "Especialistas en curvado de perfiles arquitectónicos",
     "icono": "rounded_corner",
     "imagenes": []
   },
