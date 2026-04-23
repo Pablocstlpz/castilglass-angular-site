@@ -18,7 +18,14 @@
     "nombre": "Aluminio y PVC",
     "descripcion": "Sistemas de ventanas y puertas de alta eficiencia energética",
     "icono": "energy_savings_leaf",
-    "imagenes": []
+    "imagenes": [
+      {
+        "id": "1776947532066",
+        "url": "https://res.cloudinary.com/dypzwjovm/image/upload/v1776947531/Castilglass/aluminio-pvc.jpg",
+        "public_id": "Castilglass/aluminio-pvc",
+        "subidaEn": "2026-04-23T12:32:12.066Z"
+      }
+    ]
   },
   "cristaleria": {
     "slug": "cristaleria",
