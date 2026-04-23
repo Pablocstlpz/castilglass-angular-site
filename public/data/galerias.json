@@ -1,34 +1,51 @@
-ewogICJjYXJwaW50ZXJpYS1tZXRhbGljYSI6IHsKICAgICJzbHVnIjogImNh
-cnBpbnRlcmlhLW1ldGFsaWNhIiwKICAgICJub21icmUiOiAiQ2FycGludGVy
-w61hIE1ldMOhbGljYSIsCiAgICAiZGVzY3JpcGNpb24iOiAiRXN0cnVjdHVy
-YXMgZGUgaGllcnJvLCBhY2VybyBpbm94aWRhYmxlIHkgZm9yamEgYXJ0w61z
-dGljYSBwZXJzb25hbGl6YWRhIiwKICAgICJpY29ubyI6ICJoYW5keW1hbiIs
-CiAgICAiaW1hZ2VuZXMiOiBbXQogIH0sCiAgImFsdW1pbmlvLXB2YyI6IHsK
-ICAgICJzbHVnIjogImFsdW1pbmlvLXB2YyIsCiAgICAibm9tYnJlIjogIkFs
-dW1pbmlvIHkgUFZDIiwKICAgICJkZXNjcmlwY2lvbiI6ICJTaXN0ZW1hcyBk
-ZSB2ZW50YW5hcyB5IHB1ZXJ0YXMgZGUgYWx0YSBlZmljaWVuY2lhIGVuZXJn
-w6l0aWNhIiwKICAgICJpY29ubyI6ICJlbmVyZ3lfc2F2aW5nc19sZWFmIiwK
-ICAgICJpbWFnZW5lcyI6IFtdCiAgfSwKICAiY3Jpc3RhbGVyaWEiOiB7CiAg
-ICAic2x1ZyI6ICJjcmlzdGFsZXJpYSIsCiAgICAibm9tYnJlIjogIkNyaXN0
-YWxlcsOtYSIsCiAgICAiZGVzY3JpcGNpb24iOiAiVmlkcmlvcyBsYW1pbmFk
-b3MsIHRlbXBsYWRvcyB5IGRlIGNvbnRyb2wgc29sYXIiLAogICAgImljb25v
-IjogImJvcmRlcl9hbGwiLAogICAgImltYWdlbmVzIjogW10KICB9LAogICJw
-YW5lbGVzLWNvbXBvc2l0ZSI6IHsKICAgICJzbHVnIjogInBhbmVsZXMtY29t
-cG9zaXRlIiwKICAgICJub21icmUiOiAiUGFuZWxlcyBDb21wb3NpdGUiLAog
-ICAgImRlc2NyaXBjaW9uIjogIlJldmVzdGltaWVudG9zIGRlIGZhY2hhZGFz
-IG1vZGVybmFzIGNvbiBhbHRhIGR1cmFiaWxpZGFkIiwKICAgICJpY29ubyI6
-ICJsYXllcnMiLAogICAgImltYWdlbmVzIjogW10KICB9LAogICJ2ZW50YW5h
-cy1jdXJ2YXMiOiB7CiAgICAic2x1ZyI6ICJ2ZW50YW5hcy1jdXJ2YXMiLAog
-ICAgIm5vbWJyZSI6ICJWZW50YW5hcyBDdXJ2YXMiLAogICAgImRlc2NyaXBj
-aW9uIjogIkVzcGVjaWFsaXN0YXMgZW4gY3VydmFkbyBkZSBwZXJmaWxlcyBh
-cnF1aXRlY3TDs25pY29zIiwKICAgICJpY29ubyI6ICJyb3VuZGVkX2Nvcm5l
-ciIsCiAgICAiaW1hZ2VuZXMiOiBbXQogIH0sCiAgIm11cm9zLWNvcnRpbmEi
-OiB7CiAgICAic2x1ZyI6ICJtdXJvcy1jb3J0aW5hIiwKICAgICJub21icmUi
-OiAiTXVyb3MgQ29ydGluYSIsCiAgICAiZGVzY3JpcGNpb24iOiAiU2lzdGVt
-YXMgZXN0cnVjdHVyYWxlcyBkZSB2aWRyaW8gcGFyYSBlZGlmaWNpb3MiLAog
-ICAgImljb25vIjogImFwYXJ0bWVudCIsCiAgICAiaW1hZ2VuZXMiOiBbXQog
-IH0sCiAgIm1vdG9yaXphY2lvbmVzIjogewogICAgInNsdWciOiAibW90b3Jp
-emFjaW9uZXMiLAogICAgIm5vbWJyZSI6ICJNb3Rvcml6YWNpb25lcyIsCiAg
-ICAiZGVzY3JpcGNpb24iOiAiU2lzdGVtYXMgZGUgZGUgbW92aW1pZW50byBh
-dXRvbWF0aXphZG8iLAogICAgImljb25vIjogInNldHRpbmdzIiwKICAgICJp
-bWFnZW5lcyI6IFtdCiAgfQp9Cg==
+{
+  "carpinteria-metalica": {
+    "slug": "carpinteria-metalica",
+    "nombre": "Carpintería Metálica",
+    "descripcion": "Estructuras de hierro, acero inoxidable y forja artística personalizada",
+    "icono": "handyman",
+    "imagenes": []
+  },
+  "aluminio-pvc": {
+    "slug": "aluminio-pvc",
+    "nombre": "Aluminio y PVC",
+    "descripcion": "Sistemas de ventanas y puertas de alta eficiencia energética",
+    "icono": "energy_savings_leaf",
+    "imagenes": []
+  },
+  "cristaleria": {
+    "slug": "cristaleria",
+    "nombre": "Cristalería",
+    "descripcion": "Vidrios laminados, templados y de control solar",
+    "icono": "border_all",
+    "imagenes": []
+  },
+  "paneles-composite": {
+    "slug": "paneles-composite",
+    "nombre": "Paneles Composite",
+    "descripcion": "Revestimientos de fachadas modernas con alta durabilidad",
+    "icono": "layers",
+    "imagenes": []
+  },
+  "ventanas-curvas": {
+    "slug": "ventanas-curvas",
+    "nombre": "Ventanas Curvas",
+    "descripcion": "Especialistas en curvado de perfiles arquitectónicos",
+    "icono": "rounded_corner",
+    "imagenes": []
+  },
+  "muros-cortina": {
+    "slug": "muros-cortina",
+    "nombre": "Muros Cortina",
+    "descripcion": "Sistemas estructurales de vidrio para edificios",
+    "icono": "apartment",
+    "imagenes": []
+  },
+  "motorizaciones": {
+    "slug": "motorizaciones",
+    "nombre": "Motorizaciones",
+    "descripcion": "Sistemas de movimiento automatizado",
+    "icono": "settings",
+    "imagenes": []
+  }
+}
