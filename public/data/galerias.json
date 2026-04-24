@@ -4,34 +4,14 @@
     "nombre": "Carpintería Metálica",
     "descripcion": "Estructuras de hierro, acero inoxidable y forja artística personalizada",
     "icono": "handyman",
-    "imagenes": [
-      {
-        "id": "1776947281258",
-        "url": "https://res.cloudinary.com/dypzwjovm/image/upload/v1776947280/Castilglass/carpinteria-metalica.jpg",
-        "public_id": "Castilglass/carpinteria-metalica",
-        "subidaEn": "2026-04-23T12:28:01.258Z"
-      }
-    ]
+    "imagenes": []
   },
   "aluminio-pvc": {
     "slug": "aluminio-pvc",
     "nombre": "Aluminio y PVC",
     "descripcion": "Sistemas de ventanas y puertas de alta eficiencia energética",
     "icono": "energy_savings_leaf",
-    "imagenes": [
-      {
-        "id": "1776947532066",
-        "url": "https://res.cloudinary.com/dypzwjovm/image/upload/v1776947531/Castilglass/aluminio-pvc.jpg",
-        "public_id": "Castilglass/aluminio-pvc",
-        "subidaEn": "2026-04-23T12:32:12.066Z"
-      },
-      {
-        "id": "1776948225662",
-        "url": "https://res.cloudinary.com/dypzwjovm/image/upload/v1776947531/Castilglass/aluminio-pvc.jpg",
-        "public_id": "Castilglass/aluminio-pvc",
-        "subidaEn": "2026-04-23T12:43:45.662Z"
-      }
-    ]
+    "imagenes": []
   },
   "cristaleria": {
     "slug": "cristaleria",
@@ -45,38 +25,7 @@
     "nombre": "Paneles Composite",
     "descripcion": "Revestimientos de fachadas modernas con alta durabilidad",
     "icono": "layers",
-    "imagenes": [
-      {
-        "id": "1777016172866",
-        "url": "https://res.cloudinary.com/dypzwjovm/image/upload/v1777016172/Castilglass/paneles_composite.jpg",
-        "public_id": "Castilglass/paneles_composite",
-        "subidaEn": "2026-04-24T07:36:12.866Z"
-      },
-      {
-        "id": "1777016173603",
-        "url": "https://res.cloudinary.com/dypzwjovm/image/upload/v1777016172/Castilglass/paneles_composite.jpg",
-        "public_id": "Castilglass/paneles_composite",
-        "subidaEn": "2026-04-24T07:36:13.603Z"
-      },
-      {
-        "id": "1777016178811",
-        "url": "https://res.cloudinary.com/dypzwjovm/image/upload/v1777016172/Castilglass/paneles_composite.jpg",
-        "public_id": "Castilglass/paneles_composite",
-        "subidaEn": "2026-04-24T07:36:18.811Z"
-      },
-      {
-        "id": "1777016179673",
-        "url": "https://res.cloudinary.com/dypzwjovm/image/upload/v1777016173/Castilglass/paneles_composite.jpg",
-        "public_id": "Castilglass/paneles_composite",
-        "subidaEn": "2026-04-24T07:36:19.673Z"
-      },
-      {
-        "id": "1777016232915",
-        "url": "https://res.cloudinary.com/dypzwjovm/image/upload/v1777016232/Castilglass/paneles_composite.jpg",
-        "public_id": "Castilglass/paneles_composite",
-        "subidaEn": "2026-04-24T07:37:12.915Z"
-      }
-    ]
+    "imagenes": []
   },
   "ventanas-curvas": {
     "slug": "ventanas-curvas",
