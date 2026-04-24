@@ -22,9 +22,7 @@ export const routes: Routes = [
   {
     path: 'aviso-legal',
     loadComponent: () =>
-      import('./components/footerLinks/aviso-legal/aviso-legal').then(
-        (m) => m.AvisoLegal,
-      ),
+      import('./components/footerLinks/aviso-legal/aviso-legal').then((m) => m.AvisoLegal),
   },
   {
     path: 'solicitar-presupuesto',
@@ -36,8 +34,13 @@ export const routes: Routes = [
   {
     path: 'nuestros-servicios',
     loadComponent: () =>
-      import('./components/apartado-servicios/apartado-servicios').then(
-        (m) => m.ApartadoServicios,
+      import('./components/apartado-servicios/apartado-servicios').then((m) => m.ApartadoServicios),
+  },
+  {
+    path: 'galeria-imagenes/:categoria',
+    loadComponent: () =>
+      import('./components/apartado-servicios/galeria-imagenes/galeria-imagenes').then(
+        (m) => m.GaleriaImagenes,
       ),
-  }
+  },
 ];
