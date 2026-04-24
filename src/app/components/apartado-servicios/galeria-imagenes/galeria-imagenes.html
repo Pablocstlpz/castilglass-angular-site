@@ -1,0 +1,137 @@
+<main class="pt-22 pb-20">
+  <!-- Hero -->
+  <section class="relative h-[360px] flex items-center overflow-hidden bg-on-surface">
+    <div class="absolute inset-0 z-0">
+      <img
+        class="w-full h-full object-cover opacity-30 mix-blend-luminosity"
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXT7MFfNp1tLdhbP8iLFI7fynyxKR9VgRmm7bR0KqOOlAv5cNCIsz33X2UjMqKCzinATkdqdMAnmgZyRXMsArcYoxFNooUS6CeULaLnluIbG0IAQQ_h3_mSR9dTlObg0loCB9ad6gKoukFu-JngVUHtewkv4svL3D0sX-H5QUN62jS4rnbMd9WxTmMdXSOK3-Xlc4eO_FJaWh8lzdWliSrKRYh4-q7GYGipV_bpfcw3ICbmVMha6ki-IK1RPUQRbBizANe88txdfM"
+        alt="Galería Castilglass"
+      />
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-on-surface via-on-surface/70 to-transparent"
+      ></div>
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-8 w-full">
+      <span
+        class="inline-block px-3 py-1 bg-secondary text-on-secondary text-[10px] font-bold tracking-[0.2em] uppercase rounded-sm mb-6"
+      >
+        Proyectos Realizados
+      </span>
+      <h1
+        class="text-5xl md:text-7xl font-extrabold text-surface-bright leading-[1.1] max-w-3xl tracking-tighter"
+      >
+        Galería de proyectos
+      </h1>
+      <p class="mt-4 text-lg text-surface-variant max-w-xl font-body leading-relaxed opacity-80">
+        Soluciones de precisión industrial ejecutadas en Córdoba y provincia.
+      </p>
+    </div>
+  </section>
+
+  <!-- Filters -->
+  <section class="max-w-7xl mx-auto px-8 py-10">
+    <div class="flex flex-wrap gap-3">
+      @for (cat of categoriasFiltro; track cat.slug) {
+        <button
+          type="button"
+          class="px-5 py-2 rounded-full font-label text-sm tracking-widest uppercase border transition-colors"
+          [class]="
+            categoriaActiva() === cat.slug
+              ? 'bg-secondary text-on-secondary border-secondary shadow-sm'
+              : 'bg-surface-container-low text-on-surface border-outline-variant/20 hover:bg-surface-variant'
+          "
+          (click)="setCategoriaActiva(cat.slug)"
+        >
+          {{ cat.nombre }}
+        </button>
+      }
+    </div>
+  </section>
+
+  <!-- Masonry Grid -->
+  <section class="max-w-7xl mx-auto px-8 pb-16">
+    @if (imagenesFiltradas.length === 0) {
+      <div class="flex flex-col items-center justify-center py-24 text-on-surface-variant gap-4">
+        <span class="material-symbols-outlined text-5xl opacity-30">photo_library</span>
+        <p class="font-label text-sm uppercase tracking-widest opacity-50">
+          Próximamente nuevas imágenes
+        </p>
+      </div>
+    } @else {
+      <div class="columns-1 sm:columns-2 lg:columns-3 gap-6">
+        @for (item of imagenesFiltradas; track item.url; let i = $index) {
+          <div
+            class="break-inside-avoid mb-6 group relative overflow-hidden rounded-xl bg-surface-container-low border border-outline-variant/15 cursor-pointer"
+            (click)="abrirLightbox(i)"
+          >
+            <img
+              [src]="item.url"
+              [alt]="item.alt"
+              class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+          </div>
+        }
+      </div>
+    }
+  </section>
+</main>
+
+<!-- Lightbox -->
+@if (lightboxAbierto() && itemActual) {
+  <div
+    class="fixed inset-0 z-[100] bg-inverse-surface/95 backdrop-blur-md flex flex-col"
+    (click)="cerrarLightbox()"
+  >
+    <!-- Header -->
+    <div
+      class="flex justify-between items-center p-6 text-surface-bright"
+      (click)="$event.stopPropagation()"
+    >
+      <div class="font-label text-sm tracking-widest opacity-70 uppercase">
+        Imagen
+        <span class="font-bold text-surface-bright opacity-100">{{ lightboxIndex() + 1 }}</span>
+        de {{ imagenesFiltradas.length }}
+      </div>
+      <button
+        type="button"
+        class="p-2 hover:bg-surface-tint/20 rounded-full transition-colors group"
+        (click)="cerrarLightbox()"
+      >
+        <span
+          class="material-symbols-outlined text-surface-bright opacity-70 group-hover:opacity-100"
+          >close</span
+        >
+      </button>
+    </div>
+
+    <!-- Content -->
+    <div
+      class="flex-grow flex items-center justify-center relative px-4 md:px-12"
+      (click)="$event.stopPropagation()"
+    >
+      <button
+        type="button"
+        class="absolute left-4 md:left-6 p-3 md:p-4 rounded-full bg-surface-tint/10 hover:bg-surface-tint/30 text-surface-bright backdrop-blur-sm transition-colors"
+        (click)="anterior()"
+      >
+        <span class="material-symbols-outlined">chevron_left</span>
+      </button>
+
+      <div class="max-w-5xl w-full flex flex-col items-center">
+        <img
+          [src]="itemActual.urlOriginal"
+          [alt]="itemActual.alt"
+          class="max-w-full max-h-[75vh] object-contain shadow-2xl rounded-lg"
+        />
+      </div>
+
+      <button
+        type="button"
+        class="absolute right-4 md:right-6 p-3 md:p-4 rounded-full bg-surface-tint/10 hover:bg-surface-tint/30 text-surface-bright backdrop-blur-sm transition-colors"
+        (click)="siguiente()"
+      >
+        <span class="material-symbols-outlined">chevron_right</span>
+      </button>
+    </div>
+  </div>
+}
