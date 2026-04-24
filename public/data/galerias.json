@@ -25,7 +25,14 @@
     "nombre": "Paneles Composite",
     "descripcion": "Revestimientos de fachadas modernas con alta durabilidad",
     "icono": "layers",
-    "imagenes": []
+    "imagenes": [
+      {
+        "id": "1777017502028",
+        "url": "https://res.cloudinary.com/dypzwjovm/image/upload/v1777017501/Castilglass/paneles_composite.jpg",
+        "public_id": "Castilglass/paneles_composite",
+        "subidaEn": "2026-04-24T07:58:22.028Z"
+      }
+    ]
   },
   "ventanas-curvas": {
     "slug": "ventanas-curvas",
