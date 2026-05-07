@@ -1,9 +1,0 @@
-{
-  "carpinteria-metalica": {           // El "slug" = identificador único de la galería
-    "slug": "carpinteria-metalica",   // Mismo nombre (para referencia)
-    "nombre": "Carpintería Metálica", // Nombre bonito que ven los usuarios
-    "descripcion": "...",              // Texto descriptivo
-    "icono": "handyman",               // Icono de Material Icons (igual que usas en tu HTML)
-    "imagenes": []                     // Array vacío. Aquí irán las imágenes que subes
-  }
-}
