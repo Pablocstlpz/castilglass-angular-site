@@ -1,32 +1,74 @@
-import { Component, signal, inject, OnInit } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
 
 interface ImagenItem {
-  id: string;
   url: string;
-  public_id: string;
-  subidaEn: string;
+  alt: string;
 }
 
 interface Categoria {
   slug: string;
   nombre: string;
-  descripcion: string;
-  icono: string;
   imagenes: ImagenItem[];
-}
-
-interface GaleriaData {
-  [slug: string]: Categoria;
 }
 
 interface ImagenFlatItem {
   url: string;
-  urlOriginal: string;
   alt: string;
   slug: string;
 }
+
+const CATEGORIAS: Categoria[] = [
+  {
+    slug: 'carpinteria-metalica',
+    nombre: 'Carpintería Metálica',
+    imagenes: [
+      // { url: 'assets/galeria/carpinteria-metalica/imagen-1.jpg', alt: 'Carpintería metálica' },
+    ],
+  },
+  {
+    slug: 'aluminio-pvc',
+    nombre: 'Aluminio y PVC',
+    imagenes: [
+      // { url: 'assets/galeria/aluminio-pvc/imagen-1.jpg', alt: 'Aluminio y PVC' },
+    ],
+  },
+  {
+    slug: 'cristaleria',
+    nombre: 'Cristalería',
+    imagenes: [
+      // { url: 'assets/galeria/cristaleria/imagen-1.jpg', alt: 'Cristalería' },
+    ],
+  },
+  {
+    slug: 'paneles-composite',
+    nombre: 'Paneles Composite',
+    imagenes: [
+      // { url: 'assets/galeria/paneles-composite/imagen-1.jpg', alt: 'Paneles composite' },
+    ],
+  },
+  {
+    slug: 'ventanas-curvas',
+    nombre: 'Ventanas Curvas',
+    imagenes: [
+      // { url: 'assets/galeria/ventanas-curvas/imagen-1.jpg', alt: 'Ventanas curvas' },
+    ],
+  },
+  {
+    slug: 'motorizaciones',
+    nombre: 'Motorizaciones',
+    imagenes: [
+      // { url: 'assets/galeria/motorizaciones/imagen-1.jpg', alt: 'Motorizaciones' },
+    ],
+  },
+  {
+    slug: 'muros-cortina',
+    nombre: 'Muros Cortina',
+    imagenes: [
+      // { url: 'assets/galeria/muros-cortina/imagen-1.jpg', alt: 'Muros cortina' },
+    ],
+  },
+];
 
 @Component({
   selector: 'app-galeria-imagenes',
@@ -35,24 +77,17 @@ interface ImagenFlatItem {
   templateUrl: './galeria-imagenes.html',
   styleUrl: './galeria-imagenes.css',
 })
-export class GaleriaImagenes implements OnInit {
-  private readonly http = inject(HttpClient);
-
-  readonly categorias = signal<Categoria[]>([]);
+export class GaleriaImagenes {
+  readonly categorias = signal<Categoria[]>(CATEGORIAS);
   readonly categoriaActiva = signal<string>('todos');
   readonly lightboxAbierto = signal(false);
   readonly lightboxIndex = signal(0);
 
-  private optimizarUrl(url: string, ancho: number): string {
-    return url.replace('/upload/', `/upload/w_${ancho},c_limit,q_auto,f_auto/`);
-  }
-
   get todasLasImagenes(): ImagenFlatItem[] {
     return this.categorias().flatMap((cat) =>
       cat.imagenes.map((img) => ({
-        url: this.optimizarUrl(img.url, 800),
-        urlOriginal: this.optimizarUrl(img.url, 1600),
-        alt: cat.nombre,
+        url: img.url,
+        alt: img.alt,
         slug: cat.slug,
       })),
     );
@@ -73,13 +108,6 @@ export class GaleriaImagenes implements OnInit {
 
   get itemActual(): ImagenFlatItem {
     return this.imagenesFiltradas[this.lightboxIndex()];
-  }
-
-  ngOnInit(): void {
-    this.http.get<GaleriaData>('data/galerias.json').subscribe({
-      next: (data) => this.categorias.set(Object.values(data)),
-      error: (err) => console.error('Error cargando galería:', err),
-    });
   }
 
   setCategoriaActiva(slug: string): void {
