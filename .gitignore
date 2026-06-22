@@ -1,68 +1,37 @@
-# --- DEPENDENCIAS ---
-/node_modules/
-/libpeerconnection.log
-/typings
+# Dependencies
+/node_modules
 
-# --- COMPILACIÓN Y CACHÉ ---
-/dist/
-/.angular/
-/.angular/cache
-/.next/
-/out/
-/build/
+# Build output
+/dist
 /tmp
 /out-tsc
 /bazel-out
-.sass-cache/
-/connect.lock
 
-# --- CONFIGURACIÓN DE DEPLOY (Vercel, etc.) ---
-.vercel
+# Angular cache
+/.angular/cache
 
-# --- SEGURIDAD Y ENTORNO (Crítico) ---
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-*.pem
-
-# --- ARCHIVOS DEL SISTEMA Y EDITORES ---
-.DS_Store
-Thumbs.db
-.idea/
+# IDEs / editors
+/.idea
+/.vscode/*
+!/.vscode/extensions.json
 .project
 .classpath
 .c9/
 *.launch
 .settings/
 *.sublime-workspace
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-
-# --- VISUAL STUDIO CODE ---
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-!.vscode/mcp.json
 .history/*
 
-# --- LOGS DE ERRORES ---
+# Misc
+.DS_Store
+Thumbs.db
 npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-testem.log
-logs
+yarn-error.log
 *.log
 
-# --- TESTEO Y SCREENSHOTS ---
-/coverage/
-/cypress/screenshots/
-/cypress/videos/
-__screenshots__/
+# Env
+.env
+.env.*
+
+# aider
 .aider*

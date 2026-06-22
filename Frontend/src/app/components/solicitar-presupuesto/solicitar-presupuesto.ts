@@ -1,10 +1,11 @@
 import { Component, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { FormspreeService } from '../../services/formspree.service';
 
 @Component({
   selector: 'app-solicitar-presupuesto',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './solicitar-presupuesto.html',
   styleUrl: './solicitar-presupuesto.css',
 })
