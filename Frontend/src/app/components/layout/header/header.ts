@@ -1,23 +1,18 @@
 import { ChangeDetectionStrategy, Component, DestroyRef, inject, signal } from '@angular/core';
 import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { filter } from 'rxjs';
-import { COMPANY } from '../../../data/company';
-import { Button } from '../../ui/button/button';
-import { Icon } from '../../ui/icon/icon';
-import { PadPipe } from '../../ui/pad.pipe';
 
 type HeaderSection = 'inicio' | 'servicios' | 'nosotros' | 'contacto';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink, Button, Icon, PadPipe],
+  imports: [RouterLink],
   templateUrl: './header.html',
+  styleUrl: './header.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { '(document:keydown.escape)': 'menuOpen.set(false)' },
 })
 export class Header {
-  protected readonly company = COMPANY;
-
   readonly sections: { id: HeaderSection; label: string }[] = [
     { id: 'inicio', label: 'Inicio' },
     { id: 'servicios', label: 'Servicios' },

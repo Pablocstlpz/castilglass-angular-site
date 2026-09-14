@@ -1,105 +1,351 @@
-<app-legal-page heading="Política de privacidad" updated="14 / 09 / 2026" [index]="index">
-  <p class="max-w-3xl pb-10 text-lg leading-relaxed text-ink-900">
-    En Castilglass, la privacidad y protección de sus datos personales son fundamentales. Nuestra
-    política cumple estrictamente con el
-    <strong class="font-semibold">Reglamento General de Protección de Datos (RGPD)</strong> y la
-    <strong class="font-semibold">Ley Orgánica de Protección de Datos y Garantía de Derechos Digitales (LOPDGDD)</strong>,
-    garantizando la transparencia absoluta en el tratamiento de su información técnica y personal.
-  </p>
+<main id="contenido" tabindex="-1">
+  <!-- ============================================
+       HERO compacto
+       ============================================ -->
+  <section class="relative pt-12 pb-16 md:pt-20 md:pb-24 px-4 md:px-8 bg-ink-900 text-white overflow-hidden">
+    <div class="absolute inset-0 bg-blueprint opacity-[0.04]"></div>
 
-  <section appLegalSection id="responsable" number="01" heading="Responsable del tratamiento">
-    <dl class="border-t border-ink-200">
-      <div appDataRow term="Identidad">{{ company.legalName }}</div>
-      <div appDataRow term="NIF">{{ company.nif }}</div>
-      <div appDataRow term="Dirección postal">
-        @for (line of company.addressLines; track line) {
-          <span class="block">{{ line }}</span>
-        }
-        <span class="block">España</span>
+    <div class="relative z-10 max-w-7xl mx-auto">
+      <div class="rise rise-d1 flex items-center gap-3 mb-5">
+        <span class="h-px w-10 bg-brand-400"></span>
+        <span class="font-mono text-[11px] uppercase tracking-[0.22em] text-brand-300">
+          Información legal
+        </span>
       </div>
-      <div appDataRow term="Email de contacto">
-        <a [href]="company.emailHref">{{ company.email }}</a>
+      <h1 class="rise rise-d2 display text-white text-4xl md:text-6xl mb-4">
+        Política de privacidad
+      </h1>
+      <div class="rise rise-d3 flex items-center gap-3 text-ink-300">
+        <span class="material-symbols-outlined text-[18px]" aria-hidden="true">event</span>
+        <p class="text-sm font-mono">Última actualización: 14 / 09 / 2026</p>
       </div>
-      <div appDataRow term="Teléfono">
-        <a [href]="company.phoneHref">{{ company.phone }}</a>
+    </div>
+  </section>
+
+  <!-- ============================================
+       Content
+       ============================================ -->
+  <section class="py-16 md:py-24 px-4 md:px-8 bg-surface">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16">
+
+      <!-- Sticky index (desktop only) -->
+      <aside class="hidden lg:block lg:col-span-3">
+        <div class="sticky top-32 space-y-4">
+          <p class="eyebrow-dim mb-6">Índice</p>
+          <nav class="flex flex-col gap-2">
+            <a class="text-sm font-medium text-ink-700 hover:text-brand-700 transition-colors border-l-2 border-transparent pl-4 hover:border-brand-700 py-1"
+               [routerLink]="['/politica-privacidad']" fragment="responsable">Responsable</a>
+            <a class="text-sm font-medium text-ink-700 hover:text-brand-700 transition-colors border-l-2 border-transparent pl-4 hover:border-brand-700 py-1"
+               [routerLink]="['/politica-privacidad']" fragment="datos">Datos recopilados</a>
+            <a class="text-sm font-medium text-ink-700 hover:text-brand-700 transition-colors border-l-2 border-transparent pl-4 hover:border-brand-700 py-1"
+               [routerLink]="['/politica-privacidad']" fragment="finalidad">Finalidad</a>
+            <a class="text-sm font-medium text-ink-700 hover:text-brand-700 transition-colors border-l-2 border-transparent pl-4 hover:border-brand-700 py-1"
+               [routerLink]="['/politica-privacidad']" fragment="base">Base jurídica</a>
+            <a class="text-sm font-medium text-ink-700 hover:text-brand-700 transition-colors border-l-2 border-transparent pl-4 hover:border-brand-700 py-1"
+               [routerLink]="['/politica-privacidad']" fragment="conservacion">Conservación</a>
+            <a class="text-sm font-medium text-ink-700 hover:text-brand-700 transition-colors border-l-2 border-transparent pl-4 hover:border-brand-700 py-1"
+               [routerLink]="['/politica-privacidad']" fragment="derechos">Sus derechos</a>
+            <a class="text-sm font-medium text-ink-700 hover:text-brand-700 transition-colors border-l-2 border-transparent pl-4 hover:border-brand-700 py-1"
+               [routerLink]="['/politica-privacidad']" fragment="seguridad">Seguridad</a>
+          </nav>
+        </div>
+      </aside>
+
+      <div class="lg:col-span-9 space-y-12 md:space-y-16">
+
+        <section class="max-w-3xl">
+          <p class="text-ink-700 text-base md:text-lg leading-relaxed">
+            En Castilglass, la privacidad y protección de sus datos personales son fundamentales.
+            Nuestra política cumple estrictamente con el
+            <strong class="text-ink-900">Reglamento General de Protección de Datos (RGPD)</strong>
+            y la
+            <strong class="text-ink-900">Ley Orgánica de Protección de Datos y Garantía de Derechos Digitales (LOPDGDD)</strong>,
+            garantizando la transparencia absoluta en el tratamiento de su información técnica y personal.
+          </p>
+        </section>
+
+        <section id="responsable" class="scroll-mt-32">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="font-mono text-xs text-ink-500">01</span>
+            <span class="rule-hair flex-1"></span>
+          </div>
+          <h2 class="display text-2xl md:text-3xl text-ink-900 mb-6">
+            Responsable del tratamiento
+          </h2>
+          <div class="bg-white p-6 md:p-8 rounded-2xl border border-ink-200/70 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <span class="eyebrow-dim text-brand-700">Identidad</span>
+              <p class="font-headline font-bold text-ink-900 mt-1">Castilglass, S.L.L.</p>
+            </div>
+            <div>
+              <span class="eyebrow-dim text-brand-700">N.I.F.</span>
+              <p class="font-mono text-ink-700 mt-1">B14973499</p>
+            </div>
+            <div class="md:col-span-2">
+              <span class="eyebrow-dim text-brand-700">Dirección postal</span>
+              <p class="text-ink-700 mt-1 leading-relaxed">
+                Polígono Industrial Las Quemadas, Calle Diego Galván, Nave 18, Parcela 280,
+                14014 Córdoba, España
+              </p>
+            </div>
+            <div>
+              <span class="eyebrow-dim text-brand-700">Email de contacto</span>
+              <a href="mailto:castilglass@hotmail.com"
+                 class="block text-brand-700 font-semibold mt-1 hover:underline break-words">
+                castilglass&#64;hotmail.com
+              </a>
+            </div>
+            <div>
+              <span class="eyebrow-dim text-brand-700">Teléfono</span>
+              <a href="tel:+34600952601" class="block text-brand-700 font-semibold mt-1 hover:underline">
+                +34 600 952 601
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section id="datos" class="scroll-mt-32">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="font-mono text-xs text-ink-500">02</span>
+            <span class="rule-hair flex-1"></span>
+          </div>
+          <h2 class="display text-2xl md:text-3xl text-ink-900 mb-6">
+            Datos que recopilamos
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
+            <div class="bg-white p-6 rounded-2xl border border-ink-200/70 card-lift">
+              <span class="material-symbols-outlined text-brand-700 mb-4 block" aria-hidden="true">badge</span>
+              <h3 class="font-headline font-bold text-ink-900 mb-2">Contacto</h3>
+              <p class="text-sm text-ink-600 leading-relaxed">
+                Nombre, email y teléfono proporcionados en formularios de consulta.
+              </p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border border-ink-200/70 card-lift">
+              <span class="material-symbols-outlined text-brand-700 mb-4 block" aria-hidden="true">architecture</span>
+              <h3 class="font-headline font-bold text-ink-900 mb-2">Proyectos</h3>
+              <p class="text-sm text-ink-600 leading-relaxed">
+                Especificaciones técnicas, planos y requisitos de obra compartidos para presupuestos.
+              </p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border border-ink-200/70 card-lift">
+              <span class="material-symbols-outlined text-brand-700 mb-4 block" aria-hidden="true">dns</span>
+              <h3 class="font-headline font-bold text-ink-900 mb-2">Navegación</h3>
+              <p class="text-sm text-ink-600 leading-relaxed">
+                Datos técnicos básicos (dirección IP y tipo de navegador) que el servidor registra
+                por seguridad. No usamos herramientas de analítica.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="finalidad" class="scroll-mt-32">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="font-mono text-xs text-ink-500">03</span>
+            <span class="rule-hair flex-1"></span>
+          </div>
+          <h2 class="display text-2xl md:text-3xl text-ink-900 mb-6">
+            Finalidad del tratamiento
+          </h2>
+          <ul class="space-y-4">
+            <li class="flex gap-4 bg-white p-5 rounded-xl border border-ink-200/50">
+              <div class="w-2 h-2 rounded-full bg-brand-700 mt-2.5 shrink-0"></div>
+              <p class="text-ink-700 leading-relaxed">
+                <strong class="text-ink-900">Gestión comercial:</strong>
+                Elaboración de presupuestos técnicos para carpintería de aluminio, PVC
+                y hierro de alta precisión.
+              </p>
+            </li>
+            <li class="flex gap-4 bg-white p-5 rounded-xl border border-ink-200/50">
+              <div class="w-2 h-2 rounded-full bg-brand-700 mt-2.5 shrink-0"></div>
+              <p class="text-ink-700 leading-relaxed">
+                <strong class="text-ink-900">Prestación de servicios:</strong>
+                Ejecución técnica de los contratos de instalación y fabricación.
+              </p>
+            </li>
+          </ul>
+        </section>
+
+        <section id="base" class="scroll-mt-32">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="font-mono text-xs text-ink-500">04</span>
+            <span class="rule-hair flex-1"></span>
+          </div>
+          <h2 class="display text-2xl md:text-3xl text-ink-900 mb-6">
+            Base jurídica
+          </h2>
+          <div class="bg-white p-6 md:p-8 rounded-2xl border border-ink-200/70">
+            <p class="text-ink-700 leading-relaxed">
+              El tratamiento de sus datos se fundamenta en el
+              <strong class="text-ink-900">consentimiento explícito</strong> del interesado para
+              consultas comerciales, la
+              <strong class="text-ink-900">ejecución de un contrato</strong> de prestación de
+              servicios industriales, y nuestro
+              <strong class="text-ink-900">interés legítimo</strong> en garantizar la seguridad
+              técnica de nuestro sitio web.
+            </p>
+          </div>
+        </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          <section id="conservacion" class="scroll-mt-32">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="font-mono text-xs text-ink-500">05</span>
+              <span class="rule-hair flex-1"></span>
+            </div>
+            <h2 class="display text-xl text-ink-900 mb-3">
+              Plazo de conservación
+            </h2>
+            <p class="text-sm text-ink-600 leading-relaxed">
+              Mantendremos sus datos durante el tiempo estrictamente necesario para cumplir
+              con la finalidad para la que fueron recabados y para determinar las posibles
+              responsabilidades.
+            </p>
+          </section>
+          <section class="scroll-mt-32">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="font-mono text-xs text-ink-500">06</span>
+              <span class="rule-hair flex-1"></span>
+            </div>
+            <h2 class="display text-xl text-ink-900 mb-3">
+              Destinatarios
+            </h2>
+            <p class="text-sm text-ink-600 leading-relaxed">
+              No se cederán datos a terceros, salvo obligación legal o en el marco de la
+              ejecución de obra donde intervengan subcontratas certificadas, siempre bajo
+              estrictos acuerdos de confidencialidad.
+            </p>
+            <p class="text-sm text-ink-600 leading-relaxed mt-3">
+              Para prestar el servicio utilizamos proveedores que pueden acceder a sus datos:
+              Web3Forms (envío de los formularios a nuestro correo), Microsoft (correo
+              electrónico), nuestro proveedor de alojamiento web y Google (mapa y tipografías
+              de la web). Si alguno trata datos fuera del Espacio Económico Europeo, la
+              transferencia se ampara en las garantías previstas por el RGPD.
+            </p>
+          </section>
+        </div>
+
+        <section id="derechos" class="scroll-mt-32 bg-white p-6 md:p-10 rounded-2xl border border-ink-200/70">
+          <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-8">
+            <div class="max-w-2xl">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="font-mono text-xs text-ink-500">07</span>
+                <span class="rule-hair flex-1"></span>
+              </div>
+              <h2 class="display text-2xl md:text-3xl text-ink-900">
+                Sus derechos (ARCO-POL)
+              </h2>
+              <p class="mt-3 text-ink-600 leading-relaxed">
+                Usted tiene derecho a controlar su información personal. Para ejercer cualquiera
+                de estos derechos, escríbanos a
+                <a href="mailto:castilglass@hotmail.com" class="text-brand-700 font-semibold hover:underline">
+                  castilglass&#64;hotmail.com
+                </a>.
+                Si considera que no hemos tratado sus datos correctamente, puede presentar una
+                reclamación ante la
+                <a href="https://www.aepd.es" target="_blank" rel="noopener" class="text-brand-700 font-semibold hover:underline">
+                  Agencia Española de Protección de Datos
+                </a>.
+              </p>
+            </div>
+            <div class="flex items-center gap-3 bg-ink-50 border border-ink-200 rounded-xl px-4 py-3 self-start">
+              <span class="material-symbols-outlined text-brand-700" aria-hidden="true" style="font-variation-settings: 'FILL' 1">verified_user</span>
+              <p class="text-xs font-semibold text-ink-700">Respuesta en plazo legal</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
+            <div class="group bg-ink-50 border border-ink-200/50 rounded-xl p-5 hover:border-brand-700/30 hover:bg-white transition-all">
+              <div class="flex items-start gap-4">
+                <div class="w-11 h-11 rounded-lg bg-brand-700/10 text-brand-700 flex items-center justify-center shrink-0 group-hover:bg-brand-700 group-hover:text-white transition-colors">
+                  <span class="material-symbols-outlined" aria-hidden="true">visibility</span>
+                </div>
+                <div>
+                  <p class="font-bold text-ink-900">Acceso</p>
+                  <p class="text-sm text-ink-600 mt-1">Saber qué datos tratamos sobre usted.</p>
+                </div>
+              </div>
+            </div>
+            <div class="group bg-ink-50 border border-ink-200/50 rounded-xl p-5 hover:border-brand-700/30 hover:bg-white transition-all">
+              <div class="flex items-start gap-4">
+                <div class="w-11 h-11 rounded-lg bg-brand-700/10 text-brand-700 flex items-center justify-center shrink-0 group-hover:bg-brand-700 group-hover:text-white transition-colors">
+                  <span class="material-symbols-outlined" aria-hidden="true">edit</span>
+                </div>
+                <div>
+                  <p class="font-bold text-ink-900">Rectificación</p>
+                  <p class="text-sm text-ink-600 mt-1">Corregir datos inexactos.</p>
+                </div>
+              </div>
+            </div>
+            <div class="group bg-ink-50 border border-ink-200/50 rounded-xl p-5 hover:border-brand-700/30 hover:bg-white transition-all">
+              <div class="flex items-start gap-4">
+                <div class="w-11 h-11 rounded-lg bg-brand-700/10 text-brand-700 flex items-center justify-center shrink-0 group-hover:bg-brand-700 group-hover:text-white transition-colors">
+                  <span class="material-symbols-outlined" aria-hidden="true">delete</span>
+                </div>
+                <div>
+                  <p class="font-bold text-ink-900">Supresión</p>
+                  <p class="text-sm text-ink-600 mt-1">Solicitar la eliminación.</p>
+                </div>
+              </div>
+            </div>
+            <div class="group bg-ink-50 border border-ink-200/50 rounded-xl p-5 hover:border-brand-700/30 hover:bg-white transition-all">
+              <div class="flex items-start gap-4">
+                <div class="w-11 h-11 rounded-lg bg-brand-700/10 text-brand-700 flex items-center justify-center shrink-0 group-hover:bg-brand-700 group-hover:text-white transition-colors">
+                  <span class="material-symbols-outlined" aria-hidden="true">block</span>
+                </div>
+                <div>
+                  <p class="font-bold text-ink-900">Oposición</p>
+                  <p class="text-sm text-ink-600 mt-1">Oponerse al tratamiento.</p>
+                </div>
+              </div>
+            </div>
+            <div class="group bg-ink-50 border border-ink-200/50 rounded-xl p-5 hover:border-brand-700/30 hover:bg-white transition-all">
+              <div class="flex items-start gap-4">
+                <div class="w-11 h-11 rounded-lg bg-brand-700/10 text-brand-700 flex items-center justify-center shrink-0 group-hover:bg-brand-700 group-hover:text-white transition-colors">
+                  <span class="material-symbols-outlined" aria-hidden="true">sync_alt</span>
+                </div>
+                <div>
+                  <p class="font-bold text-ink-900">Portabilidad</p>
+                  <p class="text-sm text-ink-600 mt-1">Recibir datos en formato digital.</p>
+                </div>
+              </div>
+            </div>
+            <div class="group bg-ink-50 border border-ink-200/50 rounded-xl p-5 hover:border-brand-700/30 hover:bg-white transition-all">
+              <div class="flex items-start gap-4">
+                <div class="w-11 h-11 rounded-lg bg-brand-700/10 text-brand-700 flex items-center justify-center shrink-0 group-hover:bg-brand-700 group-hover:text-white transition-colors">
+                  <span class="material-symbols-outlined" aria-hidden="true">hourglass_top</span>
+                </div>
+                <div>
+                  <p class="font-bold text-ink-900">Limitación</p>
+                  <p class="text-sm text-ink-600 mt-1">Restringir el tratamiento.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="seguridad" class="scroll-mt-32">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="font-mono text-xs text-ink-500">08</span>
+            <span class="rule-hair flex-1"></span>
+          </div>
+          <div class="flex items-start gap-5 bg-white p-6 md:p-8 rounded-2xl border border-ink-200/70">
+            <div class="w-12 h-12 bg-brand-50 flex items-center justify-center rounded-lg shrink-0">
+              <span class="material-symbols-outlined text-brand-700" aria-hidden="true" style="font-variation-settings: 'FILL' 1">gpp_good</span>
+            </div>
+            <div>
+              <h2 class="display text-xl md:text-2xl text-ink-900 mb-3">
+                Seguridad
+              </h2>
+              <p class="text-ink-700 leading-relaxed">
+                Aplicamos medidas técnicas y organizativas de última generación para evitar
+                la pérdida, mal uso, alteración, acceso no autorizado y robo de los datos
+                personales facilitados, habida cuenta del estado de la tecnología y los riesgos
+                a los que están expuestos.
+              </p>
+            </div>
+          </div>
+        </section>
       </div>
-    </dl>
+    </div>
   </section>
-
-  <section appLegalSection id="datos" number="02" heading="Datos que recopilamos">
-    <dl class="border-t border-ink-200">
-      <div appDataRow term="Contacto">Nombre, email y teléfono proporcionados en formularios de consulta.</div>
-      <div appDataRow term="Proyectos">
-        Especificaciones técnicas, planos y requisitos de obra compartidos para presupuestos.
-      </div>
-      <div appDataRow term="Navegación">
-        Datos técnicos básicos (dirección IP y tipo de navegador) que el servidor registra por seguridad.
-        No usamos herramientas de analítica.
-      </div>
-    </dl>
-  </section>
-
-  <section appLegalSection id="finalidad" number="03" heading="Finalidad del tratamiento">
-    <dl class="border-t border-ink-200">
-      <div appDataRow term="Gestión comercial">
-        Elaboración de presupuestos técnicos para carpintería de aluminio, PVC y hierro de alta precisión.
-      </div>
-      <div appDataRow term="Prestación de servicios">
-        Ejecución técnica de los contratos de instalación y fabricación.
-      </div>
-    </dl>
-  </section>
-
-  <section appLegalSection id="base" number="04" heading="Base jurídica">
-    <p>
-      El tratamiento de sus datos se fundamenta en el <strong>consentimiento explícito</strong> del
-      interesado para consultas comerciales, la <strong>ejecución de un contrato</strong> de prestación
-      de servicios industriales, y nuestro <strong>interés legítimo</strong> en garantizar la seguridad
-      técnica de nuestro sitio web.
-    </p>
-  </section>
-
-  <section appLegalSection id="conservacion" number="05" heading="Plazo de conservación">
-    <p>
-      Mantendremos sus datos durante el tiempo estrictamente necesario para cumplir con la finalidad
-      para la que fueron recabados y para determinar las posibles responsabilidades.
-    </p>
-  </section>
-
-  <section appLegalSection id="destinatarios" number="06" heading="Destinatarios">
-    <p>
-      No se cederán datos a terceros, salvo obligación legal o en el marco de la ejecución de obra
-      donde intervengan subcontratas certificadas, siempre bajo estrictos acuerdos de confidencialidad.
-    </p>
-    <p>
-      Para prestar el servicio utilizamos proveedores que pueden acceder a sus datos: Web3Forms (envío
-      de los formularios a nuestro correo), Microsoft (correo electrónico), nuestro proveedor de
-      alojamiento web y Google (mapa de la página de inicio). Si alguno trata datos fuera del Espacio
-      Económico Europeo, la transferencia se ampara en las garantías previstas por el RGPD.
-    </p>
-  </section>
-
-  <section appLegalSection id="derechos" number="07" heading="Sus derechos (ARCO-POL)">
-    <p>
-      Usted tiene derecho a controlar su información personal. Para ejercer cualquiera de estos
-      derechos, escríbanos a <a [href]="company.emailHref">{{ company.email }}</a>. Si considera que no
-      hemos tratado sus datos correctamente, puede presentar una reclamación ante la
-      <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer"
-        >Agencia Española de Protección de Datos<span class="sr-only"> (se abre en una pestaña nueva)</span></a
-      >. Respondemos a las solicitudes en el plazo legal.
-    </p>
-    <dl class="border-t border-ink-200">
-      @for (right of rights; track right.name) {
-        <div appDataRow [term]="right.name">{{ right.text }}</div>
-      }
-    </dl>
-  </section>
-
-  <section appLegalSection id="seguridad" number="08" heading="Seguridad">
-    <p>
-      Aplicamos medidas técnicas y organizativas apropiadas para evitar la pérdida, mal uso, alteración,
-      acceso no autorizado y robo de los datos personales facilitados, habida cuenta del estado de la
-      tecnología y los riesgos a los que están expuestos.
-    </p>
-  </section>
-</app-legal-page>
+</main>

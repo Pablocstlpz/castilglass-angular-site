@@ -1,112 +1,216 @@
+/* You can add global styles to this file, and also import other style files */
+
 @config '../tailwind.config.mjs';
 @import 'tailwindcss';
 
-/* Self-hosted Latin subsets: no third-party font requests. The two above-the-fold faces are preloaded in index.html. */
-@font-face {
-  font-family: 'Barlow Condensed';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url('/fonts/barlow-condensed-600.woff2') format('woff2');
-}
+/* ============================================
+   Base
+   ============================================ */
+:root {
+  --color-brand-700: #1a5685;
+  --color-brand-800: #164870;
+  --color-accent-500: #b67a4f;
+  --color-ink-900: #181715;
+  --color-ink-700: #3f3c37;
+  --color-ink-200: #e7e5e2;
 
-@font-face {
-  font-family: 'Barlow Condensed';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('/fonts/barlow-condensed-700.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Barlow';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('/fonts/barlow-400.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Barlow';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url('/fonts/barlow-500.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Barlow';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url('/fonts/barlow-600.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'IBM Plex Mono';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url('/fonts/ibm-plex-mono-500.woff2') format('woff2');
+  --transition-base: 220ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 html {
   scroll-behavior: smooth;
-  /* Anchors and focused elements stay clear of the 64px sticky header (WCAG 2.4.11). */
-  scroll-padding-top: 4rem;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 body {
-  background-color: #fff;
-  color: #181715;
-  font-family: 'Barlow', Arial, sans-serif;
+  background-color: #fafaf8;
+  color: #1c2025;
+  font-feature-settings: 'cv02', 'cv11', 'ss01';
 }
 
 ::selection {
-  background-color: #1a5685;
-  color: #fff;
+  background-color: rgba(26, 86, 133, 0.18);
+  color: #143b5c;
 }
 
+/* Custom classes live in the components layer so Tailwind utilities
+   (e.g. `eyebrow text-brand-300`) can override them. */
 @layer components {
-  /* Skip link — visible only on keyboard focus */
+  /* ============================================
+     Material Symbols
+     ============================================ */
+  .material-symbols-outlined {
+    font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24;
+  }
+
+  /* ============================================
+     Brand utilities
+     ============================================ */
+  .metallic-gradient {
+    background: linear-gradient(135deg, #216394 0%, #1a5685 50%, #143b5c 100%);
+  }
+
+  .metallic-gradient-soft {
+    background: linear-gradient(135deg, #f1f7fc 0%, #fafaf8 100%);
+  }
+
+  .glass-nav {
+    backdrop-filter: blur(14px) saturate(180%);
+    -webkit-backdrop-filter: blur(14px) saturate(180%);
+  }
+
+  /* Hairline rule used as a "blueprint" detail */
+  .rule-hair {
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(28, 32, 37, 0.18) 20%,
+      rgba(28, 32, 37, 0.18) 80%,
+      transparent
+    );
+  }
+
+  /* Eyebrow label (small caps tracked) */
+  .eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #1a5685;
+  }
+
+  .eyebrow-dim {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #69645d;
+  }
+
+  /* Display headline — tighter tracking */
+  .display {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 1.02;
+  }
+
+  /* Number / metric — mono accent */
+  .metric {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ============================================
+     Subtle ambient backgrounds
+     ============================================ */
+  .bg-blueprint {
+    background-color: #fafaf8;
+    background-image:
+      linear-gradient(to right, rgba(26, 86, 133, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 86, 133, 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .bg-noise {
+    background-image: radial-gradient(rgba(28, 32, 37, 0.025) 1px, transparent 1px);
+    background-size: 4px 4px;
+  }
+
+  /* ============================================
+     Motion — subtle reveal on first paint
+     ============================================ */
+  .rise {
+    animation: rise 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .rise-d1 { animation-delay: 80ms; }
+  .rise-d2 { animation-delay: 160ms; }
+  .rise-d3 { animation-delay: 240ms; }
+  .rise-d4 { animation-delay: 320ms; }
+  .rise-d5 { animation-delay: 400ms; }
+
+  /* ============================================
+     Card hover lift (used across services / cards)
+     ============================================ */
+  .card-lift {
+    transition:
+      transform var(--transition-base),
+      box-shadow var(--transition-base),
+      border-color var(--transition-base);
+  }
+  .card-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 2px 4px rgba(28, 32, 37, 0.04), 0 24px 48px -10px rgba(28, 32, 37, 0.14);
+  }
+
+  /* ============================================
+     Skip link — visible only on keyboard focus
+     ============================================ */
   .skip-link {
     position: absolute;
     left: 1rem;
     top: -10rem;
     z-index: 100;
     padding: 0.75rem 1.25rem;
+    border-radius: 0.5rem;
     background: #1a5685;
     color: #fff;
     font-weight: 600;
   }
-
   .skip-link:focus {
     top: 1rem;
   }
 }
 
-/* Square brand outline with a white gap: readable on white, carbon and brand-blue surfaces alike. */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 16px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise,
+  .rise-d1,
+  .rise-d2,
+  .rise-d3,
+  .rise-d4,
+  .rise-d5 {
+    animation: none;
+  }
+  .card-lift,
+  .card-lift:hover {
+    transition: none;
+    transform: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Focus ring — accessible and on-brand */
 *:focus-visible {
   outline: 2px solid #1a5685;
-  outline-offset: 2px;
-  box-shadow: 0 0 0 2px #fff;
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
 /* Skip-link target: focused by script, no ring around the whole page */
 main:focus-visible {
   outline: none;
-  box-shadow: none;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    transition-duration: 0.01ms !important;
-  }
 }

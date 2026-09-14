@@ -1,368 +1,691 @@
 <main id="contenido" tabindex="-1">
-  <section id="inicio" class="border-b border-ink-900">
-    <div
-      class="mx-auto grid max-w-7xl grid-cols-1 gap-y-8 px-4 pb-10 pt-10 sm:px-6 md:pt-16 lg:grid-cols-12 lg:gap-x-8 lg:px-8 lg:pt-20"
-    >
-      <p class="font-mono text-xs font-medium uppercase tracking-wider text-ink-700 lg:col-span-12">
-        Córdoba · Tercera generación · Más de 50 años
-      </p>
-      <h1
-        class="text-balance font-headline text-[2.75rem] font-bold uppercase leading-[0.9] text-ink-900 sm:text-6xl md:text-7xl lg:col-span-11 xl:text-8xl"
-      >
-        Carpintería metálica, aluminio y PVC <span class="text-brand-700">en Córdoba</span>
-      </h1>
-      <p class="max-w-xl text-lg leading-relaxed text-ink-900 lg:col-span-6 lg:self-end">
-        Empresa familiar especializada en la fabricación, instalación y montaje de carpintería
-        metálica y cristalería, para hogares y negocios.
-      </p>
-      <div class="flex flex-col gap-3 sm:flex-row lg:col-span-6 lg:justify-end lg:self-end">
-        <a appButton routerLink="/solicitar-presupuesto">
-          Solicitar presupuesto
-          <app-icon name="arrow-right" />
-        </a>
-        <a appButton variant="outline" [href]="company.phoneHref">
-          {{ company.phone }}
-          <app-icon name="phone" />
-        </a>
-      </div>
-    </div>
-
-    <nav aria-label="Especialidades" class="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
-      <ul class="grid grid-cols-2 gap-px border border-ink-900 bg-ink-900 lg:grid-cols-5">
-        @for (pillar of pillars; track pillar.name; let i = $index) {
-          <li class="bg-white last:col-span-2 lg:last:col-span-1">
-            <a
-              routerLink="/nuestros-servicios"
-              [fragment]="pillar.serviceId"
-              class="group flex min-h-24 flex-col justify-between gap-4 p-4 text-ink-900 transition-colors duration-150 ease-out hover:bg-ink-900 hover:text-white"
-            >
-              <span class="font-mono text-xs font-medium text-ink-700 group-hover:text-ink-300">{{ i + 1 | pad }}</span>
-              <span
-                class="flex items-end justify-between gap-2 font-headline text-2xl font-semibold uppercase leading-none sm:text-3xl"
-              >
-                {{ pillar.name }}
-                <app-icon name="arrow-right" class="text-xl" />
-              </span>
-            </a>
-          </li>
-        }
-      </ul>
-    </nav>
-
-    <figure class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+  <!-- ============================================
+       HERO
+       ============================================ -->
+  <section
+    id="inicio"
+    class="relative min-h-[680px] md:min-h-[760px] flex items-center overflow-hidden scroll-mt-24"
+  >
+    <div class="absolute inset-0 z-0">
       <img
-        src="https://lh3.googleusercontent.com/aida-public/AB6AXuATatQeqnM9RNAgNCz9xgkUEAhDDcOCSxgZe6zY43rZ_PG0Lznj2Hjsk41cJ1luIwtH3P1sULElNtR9olNhPeFHD1EIJ1jyfC6MeTxGB-6hkbohEt6K9hfW_nqpZSrnEXvfqjj0YLUVyVBW78tMViTzjpdudJk6XNgPkZgpHYBXU_ODxwzeFN6vZ0agabgmqK8A1Hunm5C-QcX7pENSR1EyvPI0x662Xtu2__Yw5wWw-RXm3YJ36XZ0QOtL0cjArB85m4lyKnzEZws"
         alt="Instalación de cristalería arquitectónica Castilglass"
-        width="1600"
-        height="900"
+        class="w-full h-full object-cover"
         fetchpriority="high"
-        class="aspect-[4/3] w-full object-cover sm:aspect-[16/9] lg:aspect-[21/9]"
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuATatQeqnM9RNAgNCz9xgkUEAhDDcOCSxgZe6zY43rZ_PG0Lznj2Hjsk41cJ1luIwtH3P1sULElNtR9olNhPeFHD1EIJ1jyfC6MeTxGB-6hkbohEt6K9hfW_nqpZSrnEXvfqjj0YLUVyVBW78tMViTzjpdudJk6XNgPkZgpHYBXU_ODxwzeFN6vZ0agabgmqK8A1Hunm5C-QcX7pENSR1EyvPI0x662Xtu2__Yw5wWw-RXm3YJ36XZ0QOtL0cjArB85m4lyKnzEZws"
       />
-    </figure>
-  </section>
+      <!-- Layered gradients for depth -->
+      <div class="absolute inset-0 bg-gradient-to-r from-ink-900 via-ink-900/85 to-ink-900/30"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-ink-900/70 via-transparent to-transparent"></div>
+    </div>
 
-  <section id="servicios" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-24 lg:px-8">
-    <div class="grid grid-cols-1 gap-y-6 lg:grid-cols-12 lg:gap-x-8">
-      <app-section-heading
-        class="lg:col-span-8"
-        kicker="01 — Servicios"
-        heading="Carpintería metálica, aluminio y cristalería"
-      />
-      <div class="lg:col-span-4 lg:self-end">
-        <p class="text-lg leading-relaxed text-ink-900">
-          Fabricamos cada elemento en nuestro taller de Córdoba. Suministro o colocación, con marcas
-          de primera calidad.
+    <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-8 w-full pt-12 pb-16 md:py-24">
+      <div class="max-w-3xl">
+        <div class="rise rise-d1 flex items-center gap-3 mb-6">
+          <span class="h-px w-10 bg-brand-400"></span>
+          <span class="font-mono text-xs uppercase tracking-[0.22em] text-brand-300">
+            Córdoba · Más de 50 años
+          </span>
+        </div>
+
+        <h1 class="rise rise-d2 display text-white text-4xl sm:text-5xl md:text-7xl mb-6">
+          Carpintería de aluminio,<br />
+          PVC y hierro <span class="text-brand-300">a medida</span>
+        </h1>
+
+        <p class="rise rise-d3 text-ink-200 text-base md:text-xl font-body leading-relaxed mb-10 max-w-xl">
+          Soluciones profesionales en aluminio, PVC, vidrio y metal para hogares y negocios
+          con el sello de precisión técnica de Castilglass.
         </p>
-        <a
-          routerLink="/nuestros-servicios"
-          class="mt-4 inline-flex min-h-11 items-center gap-2 font-headline text-lg font-semibold uppercase tracking-wide text-brand-700 underline-offset-8 transition-colors duration-150 ease-out hover:text-ink-900 hover:underline"
-        >
-          Ver catálogo completo
-          <app-icon name="arrow-right" />
-        </a>
+
+        <div class="rise rise-d4 flex flex-col sm:flex-row gap-4 mb-14">
+          <a
+            class="metallic-gradient text-white px-7 py-4 rounded-lg font-semibold text-base hover:opacity-95 transition-all active:scale-[0.98] shadow-lift inline-flex items-center justify-center gap-2"
+            [routerLink]="['/solicitar-presupuesto']"
+          >
+            Solicitar presupuesto
+            <span class="material-symbols-outlined text-[20px]" aria-hidden="true">arrow_forward</span>
+          </a>
+          <a
+            class="bg-white/10 backdrop-blur-md text-white border border-white/25 px-7 py-4 rounded-lg font-semibold text-base hover:bg-white/15 transition-all active:scale-[0.98] inline-flex items-center justify-center gap-2"
+            [routerLink]="['/nuestros-servicios']"
+          >
+            Ver servicios
+            <span class="material-symbols-outlined text-[20px]" aria-hidden="true">arrow_outward</span>
+          </a>
+        </div>
+
+        <!-- Trust badges row -->
+        <div class="rise rise-d5 grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-5 pt-8 border-t border-white/15">
+          <div>
+            <p class="metric text-white text-2xl md:text-3xl">50+</p>
+            <p class="text-ink-300 text-[11px] font-label tracking-widest uppercase mt-1">
+              Años de experiencia
+            </p>
+          </div>
+          <div>
+            <p class="metric text-white text-2xl md:text-3xl">3<span class="text-brand-300">ª</span> Gen</p>
+            <p class="text-ink-300 text-[11px] font-label tracking-widest uppercase mt-1">
+              Empresa familiar
+            </p>
+          </div>
+          <div>
+            <p class="metric text-white text-2xl md:text-3xl">100<span class="text-brand-300">%</span></p>
+            <p class="text-ink-300 text-[11px] font-label tracking-widest uppercase mt-1">
+              Fabricación a medida
+            </p>
+          </div>
+          <div>
+            <p class="metric text-white text-2xl md:text-3xl">1.500<span class="text-brand-300">+</span></p>
+            <p class="text-ink-300 text-[11px] font-label tracking-widest uppercase mt-1">
+              Proyectos entregados
+            </p>
+          </div>
+        </div>
       </div>
     </div>
 
-    <ol class="mt-10 border-t border-ink-900 md:mt-14">
-      @for (service of services; track service.id; let i = $index) {
-        <li class="border-b border-ink-200">
-          <a
-            routerLink="/nuestros-servicios"
-            [fragment]="service.id"
-            class="group grid grid-cols-[2.5rem_1fr_auto] gap-x-3 py-5 transition-colors duration-150 ease-out hover:bg-ink-100 md:grid-cols-12 md:items-baseline md:gap-x-8 md:py-6"
-          >
-            <span class="font-mono text-xs font-medium text-brand-700 md:col-span-1">{{ i + 1 | pad }}</span>
-            <h3
-              class="font-headline text-2xl font-semibold uppercase leading-none text-ink-900 md:col-span-4 md:text-4xl"
-            >
-              {{ service.name }}
-            </h3>
-            <app-icon
-              name="arrow-right"
-              class="row-span-2 self-center text-xl text-ink-900 transition-transform duration-150 ease-out group-hover:translate-x-1 md:order-last md:col-span-1 md:row-span-1 md:justify-self-end"
-            />
-            <p class="col-start-2 mt-2 text-base leading-relaxed text-ink-900 md:col-span-6 md:col-start-auto md:mt-0">
-              {{ service.description }}
-            </p>
-          </a>
-        </li>
-      }
-    </ol>
+    <!-- Decorative scroll indicator -->
+    <div class="absolute bottom-6 right-8 hidden lg:flex items-center gap-3 text-white/50 text-xs uppercase tracking-widest font-mono">
+      <span>Desliza</span>
+      <span class="h-px w-12 bg-white/30"></span>
+    </div>
   </section>
 
-  <section class="border-y border-ink-900 bg-ink-100">
-    <div
-      class="mx-auto grid max-w-7xl grid-cols-1 gap-y-10 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-12 lg:gap-x-8 lg:px-8"
-    >
-      <div class="lg:col-span-7">
-        <app-section-heading kicker="02 — Por qué elegirnos" heading="Una empresa que fabrica, instala y responde">
-          <p class="mt-5 max-w-xl text-lg leading-relaxed text-ink-900">
-            Diseñamos cada cerramiento para que aporte seguridad, eficiencia energética y un acabado a
-            la altura del proyecto, sin renunciar a la durabilidad.
+  <!-- ============================================
+       VALUE STRIP — quick credentials bar
+       ============================================ -->
+  <section class="bg-white border-b border-ink-200">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 py-6 md:py-7">
+      <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-ink-200">
+        <div class="flex items-center gap-3 px-4 first:pl-0">
+          <span class="material-symbols-outlined text-brand-700" aria-hidden="true">check_circle</span>
+          <p class="text-sm font-semibold text-ink-800 leading-tight">
+            Presupuesto<br /><span class="font-normal text-ink-500 text-xs">sin compromiso</span>
           </p>
-        </app-section-heading>
+        </div>
+        <div class="flex items-center gap-3 px-4">
+          <span class="material-symbols-outlined text-brand-700" aria-hidden="true">precision_manufacturing</span>
+          <p class="text-sm font-semibold text-ink-800 leading-tight">
+            Taller<br /><span class="font-normal text-ink-500 text-xs">propio</span>
+          </p>
+        </div>
+        <div class="flex items-center gap-3 px-4">
+          <span class="material-symbols-outlined text-brand-700" aria-hidden="true">support_agent</span>
+          <p class="text-sm font-semibold text-ink-800 leading-tight">
+            Asesoría<br /><span class="font-normal text-ink-500 text-xs">técnica directa</span>
+          </p>
+        </div>
+        <div class="flex items-center gap-3 px-4">
+          <span class="material-symbols-outlined text-brand-700" aria-hidden="true">local_shipping</span>
+          <p class="text-sm font-semibold text-ink-800 leading-tight">
+            Entrega<br /><span class="font-normal text-ink-500 text-xs">e instalación</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <ol class="mt-10 border-t border-ink-900">
-          @for (step of steps; track step.title; let i = $index) {
-            <li class="grid grid-cols-[3.5rem_1fr] gap-x-4 border-b border-ink-300 py-6">
-              <span class="font-headline text-4xl font-bold leading-none text-brand-700">{{ i + 1 | pad }}</span>
-              <div>
-                <h3 class="font-headline text-2xl font-semibold uppercase leading-tight text-ink-900">
-                  {{ step.title }}
+  <!-- ============================================
+       BENEFICIOS
+       ============================================ -->
+  <section id="beneficios" class="py-20 md:py-28 bg-surface scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-end mb-14 md:mb-20">
+        <div class="md:col-span-7">
+          <p class="eyebrow mb-4">Excelencia técnica</p>
+          <h2 class="display text-3xl md:text-5xl text-ink-900 max-w-2xl">
+            Soluciones técnicas que <span class="text-brand-700">elevan</span> tu espacio
+          </h2>
+        </div>
+        <div class="md:col-span-5">
+          <p class="text-ink-600 text-base md:text-lg leading-relaxed">
+            Diseñamos cada cerramiento para que aporte seguridad, eficiencia energética
+            y un acabado a la altura del proyecto, sin renunciar a la durabilidad.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
+        <div class="card-lift bg-white p-7 rounded-2xl border border-ink-200/70">
+          <div class="w-12 h-12 bg-brand-50 flex items-center justify-center rounded-lg mb-6">
+            <span class="material-symbols-outlined text-brand-700" aria-hidden="true" style="font-variation-settings: 'FILL' 1">security</span>
+          </div>
+          <h3 class="text-lg font-headline font-bold text-ink-900 mb-2">Máxima seguridad</h3>
+          <p class="text-ink-600 text-sm leading-relaxed">
+            Cerramientos reforzados y vidrios de seguridad para tu tranquilidad.
+          </p>
+        </div>
+
+        <div class="card-lift bg-white p-7 rounded-2xl border border-ink-200/70">
+          <div class="w-12 h-12 bg-brand-50 flex items-center justify-center rounded-lg mb-6">
+            <span class="material-symbols-outlined text-brand-700" aria-hidden="true" style="font-variation-settings: 'FILL' 1">thermostat</span>
+          </div>
+          <h3 class="text-lg font-headline font-bold text-ink-900 mb-2">Aislamiento eficiente</h3>
+          <p class="text-ink-600 text-sm leading-relaxed">
+            Rotura de puente térmico y doble o triple acristalamiento para máximo ahorro energético y confort.
+          </p>
+        </div>
+
+        <div class="card-lift bg-white p-7 rounded-2xl border border-ink-200/70">
+          <div class="w-12 h-12 bg-brand-50 flex items-center justify-center rounded-lg mb-6">
+            <span class="material-symbols-outlined text-brand-700" aria-hidden="true" style="font-variation-settings: 'FILL' 1">architecture</span>
+          </div>
+          <h3 class="text-lg font-headline font-bold text-ink-900 mb-2">Acabados modernos</h3>
+          <p class="text-ink-600 text-sm leading-relaxed">
+            Estética minimalista con perfiles ocultos y una amplia gama de texturas industriales.
+          </p>
+        </div>
+
+        <div class="card-lift bg-white p-7 rounded-2xl border border-ink-200/70">
+          <div class="w-12 h-12 bg-brand-50 flex items-center justify-center rounded-lg mb-6">
+            <span class="material-symbols-outlined text-brand-700" aria-hidden="true" style="font-variation-settings: 'FILL' 1">construction</span>
+          </div>
+          <h3 class="text-lg font-headline font-bold text-ink-900 mb-2">Instalación experta</h3>
+          <p class="text-ink-600 text-sm leading-relaxed">
+            Montaje realizado por personal propio altamente cualificado para un ajuste perfecto.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SERVICIOS — Bento grid
+       ============================================ -->
+  <section
+    id="servicios"
+    class="py-20 md:py-28 bg-ink-50 border-y border-ink-200/70 scroll-mt-24"
+  >
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-16">
+        <div class="max-w-xl">
+          <p class="eyebrow mb-4">Catálogo</p>
+          <h2 class="display text-3xl md:text-5xl text-ink-900">
+            Servicios de precisión industrial
+          </h2>
+        </div>
+        <div class="md:text-right">
+          <p class="text-ink-600 text-sm md:text-base max-w-sm">
+            Fabricamos cada elemento en nuestro taller de Córdoba. Suministro o colocación, con marcas de primera calidad.
+          </p>
+          <a
+            [routerLink]="['/nuestros-servicios']"
+            class="inline-flex items-center gap-2 mt-3 text-sm font-semibold text-brand-700 hover:text-brand-800"
+          >
+            Ver catálogo completo
+            <span class="material-symbols-outlined text-[18px]" aria-hidden="true">arrow_outward</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-5">
+        <!-- Featured: Carpintería metálica -->
+        <article class="md:col-span-6 md:row-span-2 group relative overflow-hidden rounded-2xl bg-ink-900 text-white p-8 md:p-10 min-h-[340px] flex flex-col justify-between">
+          <div
+            class="absolute inset-0 bg-cover bg-center opacity-30 group-hover:opacity-40 transition-opacity"
+            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCQKUkvjUYZLPFY-ZmsXEmLGM7jgfwt1wARD07W-QF9Spbpz2oTSqRKGb-wKjrIqI__txgblDN7iubEBuHl9SPbdYQ-WOHYruiqNxyPQOaeDqA_XLOexS-5SXWs_YMdFbRmMg1f02-xvH5aM9WEKf32-om-axkq0loTFJ754fybHMhfCb54hpA28LfXwP6D1ijMzV4ncpwJ4vx4X9XVfXJ1jsV4IkWti13ovzBdKsQW9xwsSzRfLXZKnEI7w4mI6XA8hM_rQUkVItg')"
+          ></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-ink-900 via-ink-900/70 to-transparent"></div>
+
+          <div class="relative">
+            <span class="font-mono text-[11px] uppercase tracking-widest text-brand-300">01 / Destacado</span>
+          </div>
+
+          <div class="relative">
+            <span class="material-symbols-outlined text-brand-300 text-3xl mb-4 block" aria-hidden="true">handyman</span>
+            <h3 class="text-2xl md:text-3xl font-headline font-bold mb-3">Carpintería metálica</h3>
+            <p class="text-ink-200 text-sm md:text-base leading-relaxed max-w-md">
+              Rejas, puertas, balcones, barandas y pérgolas. Estructuras de hierro, acero
+              inoxidable y forja artística a medida.
+            </p>
+          </div>
+        </article>
+
+        <!-- Aluminio y PVC -->
+        <article class="md:col-span-3 group bg-white p-7 rounded-2xl border border-ink-200/70 card-lift">
+          <span class="material-symbols-outlined text-2xl text-brand-700 mb-4 block" aria-hidden="true">window</span>
+          <h3 class="text-lg font-headline font-bold text-ink-900 mb-2">Aluminio y PVC</h3>
+          <p class="text-ink-600 text-sm leading-relaxed">
+            Fabricación de cierres, ventanas y puertas a medida.
+          </p>
+        </article>
+
+        <!-- Cristalería -->
+        <article class="md:col-span-3 group bg-white p-7 rounded-2xl border border-ink-200/70 card-lift">
+          <span class="material-symbols-outlined text-2xl text-brand-700 mb-4 block" aria-hidden="true">border_all</span>
+          <h3 class="text-lg font-headline font-bold text-ink-900 mb-2">Cristalería</h3>
+          <p class="text-ink-600 text-sm leading-relaxed">
+            Doble y triple acristalamiento, barandas, divisiones de oficina, techos y cortinas de cristal.
+          </p>
+        </article>
+
+        <!-- Paneles composite -->
+        <article class="md:col-span-3 group bg-white p-7 rounded-2xl border border-ink-200/70 card-lift">
+          <span class="material-symbols-outlined text-2xl text-brand-700 mb-4 block" aria-hidden="true">layers</span>
+          <h3 class="text-lg font-headline font-bold text-ink-900 mb-2">Paneles composite</h3>
+          <p class="text-ink-600 text-sm leading-relaxed">
+            Revestimiento de fachadas y decoración. Soluciones modernas y duraderas.
+          </p>
+        </article>
+
+        <!-- Ventanas curvas -->
+        <article class="md:col-span-3 group bg-white p-7 rounded-2xl border border-ink-200/70 card-lift">
+          <span class="material-symbols-outlined text-2xl text-brand-700 mb-4 block" aria-hidden="true">rounded_corner</span>
+          <h3 class="text-lg font-headline font-bold text-ink-900 mb-2">Ventanas curvas</h3>
+          <p class="text-ink-600 text-sm leading-relaxed">
+            Curvamos perfiles de aluminio y hierro para ventanas curvas a medida e invernaderos.
+          </p>
+        </article>
+
+        <!-- Motorización -->
+        <article class="md:col-span-6 group bg-white p-7 rounded-2xl border border-ink-200/70 card-lift flex items-start gap-5">
+          <span class="material-symbols-outlined text-2xl text-brand-700" aria-hidden="true">settings_input_component</span>
+          <div>
+            <h3 class="text-lg font-headline font-bold text-ink-900 mb-2">Motorización</h3>
+            <p class="text-ink-600 text-sm leading-relaxed">
+              Motorización de portones de cochera, puertas seccionales, puertas rápidas y persianas de seguridad.
+            </p>
+          </div>
+        </article>
+
+        <!-- Muros cortina -->
+        <article class="md:col-span-6 group bg-brand-700 text-white p-7 rounded-2xl card-lift flex items-start gap-5">
+          <span class="material-symbols-outlined text-2xl text-brand-200" aria-hidden="true">apartment</span>
+          <div>
+            <h3 class="text-lg font-headline font-bold mb-2">Muros cortina</h3>
+            <p class="text-brand-100 text-sm leading-relaxed">
+              Fabricación e instalación de muros cortina, con vidrio o paneles. Amplia gama de colores y modelos.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       PROCESO / DIFERENCIACIÓN
+       ============================================ -->
+  <section class="py-20 md:py-28 bg-surface scroll-mt-24" id="proceso">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-16 items-center">
+        <!-- Image -->
+        <div class="lg:col-span-5 relative">
+          <div class="absolute -top-6 -left-6 w-32 h-32 bg-brand-50 rounded-full -z-0"></div>
+          <div class="relative z-10 overflow-hidden rounded-2xl shadow-lift">
+            <img
+              loading="lazy"
+              alt="Taller de fabricación Castilglass en Córdoba"
+              class="w-full h-full object-cover aspect-[4/5]"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhMPE0OeayzSJ-LmwZVQXNYL3UFIpBWFWf-ZL6aY3U4T-dEVxCfvXihC3l4OPrAWutVit2SpJ9ieP3cpUPOzyHfR38Gfw94CCLn3XzzD0bzURXfC7eNPq9K6bU2wIXV5Im9cg5o5V4p_PIeDfzg8GQkOOrSf1kO2osFoSGcgge8tag3U9hWtRtldl7vbl5F9aBynKSzERV5lXdcOYV4a7VedWQXGLvkRDDlf_gvVYcLhpY6dzOXPzLLgEOgrBQCq3PDxKcJZZ5bQY"
+            />
+          </div>
+        </div>
+
+        <!-- Steps -->
+        <div class="lg:col-span-7">
+          <p class="eyebrow mb-4">Por qué elegirnos</p>
+          <h2 class="display text-3xl md:text-5xl text-ink-900 mb-10">
+            Una empresa que <span class="text-brand-700">fabrica</span>, instala y responde
+          </h2>
+
+          <ol class="space-y-8 md:space-y-10">
+            <li class="flex gap-5 md:gap-6">
+              <div class="shrink-0">
+                <div class="w-12 h-12 rounded-lg bg-ink-900 text-white font-mono font-medium flex items-center justify-center">
+                  01
+                </div>
+              </div>
+              <div class="pt-1">
+                <h3 class="font-headline font-bold text-lg text-ink-900 mb-1.5">
+                  Asesoramiento técnico directo
                 </h3>
-                <p class="mt-2 text-base leading-relaxed text-ink-900">{{ step.text }}</p>
+                <p class="text-ink-600 text-sm leading-relaxed">
+                  No somos comerciales, somos técnicos. Te orientamos sobre qué perfilería
+                  y vidrio se ajusta mejor a tu presupuesto.
+                </p>
               </div>
             </li>
-          }
-        </ol>
+            <li class="flex gap-5 md:gap-6">
+              <div class="shrink-0">
+                <div class="w-12 h-12 rounded-lg bg-ink-900 text-white font-mono font-medium flex items-center justify-center">
+                  02
+                </div>
+              </div>
+              <div class="pt-1">
+                <h3 class="font-headline font-bold text-lg text-ink-900 mb-1.5">
+                  Fabricación propia a medida
+                </h3>
+                <p class="text-ink-600 text-sm leading-relaxed">
+                  Fabricamos a medida en nuestro propio taller de Córdoba para garantizar
+                  un ajuste perfecto.
+                </p>
+              </div>
+            </li>
+            <li class="flex gap-5 md:gap-6">
+              <div class="shrink-0">
+                <div class="w-12 h-12 rounded-lg bg-brand-700 text-white font-mono font-medium flex items-center justify-center">
+                  03
+                </div>
+              </div>
+              <div class="pt-1">
+                <h3 class="font-headline font-bold text-lg text-ink-900 mb-1.5">
+                  Montaje de precisión
+                </h3>
+                <p class="text-ink-600 text-sm leading-relaxed">
+                  Nuestro propio equipo de montaje asegura que el rendimiento térmico
+                  prometido sea el real.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <figure class="lg:col-span-5">
-        <img
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhMPE0OeayzSJ-LmwZVQXNYL3UFIpBWFWf-ZL6aY3U4T-dEVxCfvXihC3l4OPrAWutVit2SpJ9ieP3cpUPOzyHfR38Gfw94CCLn3XzzD0bzURXfC7eNPq9K6bU2wIXV5Im9cg5o5V4p_PIeDfzg8GQkOOrSf1kO2osFoSGcgge8tag3U9hWtRtldl7vbl5F9aBynKSzERV5lXdcOYV4a7VedWQXGLvkRDDlf_gvVYcLhpY6dzOXPzLLgEOgrBQCq3PDxKcJZZ5bQY"
-          alt="Taller de fabricación Castilglass en Córdoba"
-          width="800"
-          height="1000"
-          loading="lazy"
-          class="aspect-[4/5] w-full border border-ink-900 object-cover"
-        />
-      </figure>
+  <!-- ============================================
+       SOBRE NOSOTROS
+       ============================================ -->
+  <section
+    id="nosotros"
+    class="py-20 md:py-28 bg-ink-900 text-white relative overflow-hidden scroll-mt-24"
+  >
+    <div class="absolute inset-0 bg-blueprint opacity-[0.04]"></div>
 
-      <div class="lg:col-span-12">
-        <h3 class="font-mono text-xs font-medium uppercase tracking-wider text-ink-700">
-          Soluciones técnicas que elevan tu espacio
-        </h3>
-        <dl class="mt-3 grid grid-cols-1 gap-px border border-ink-900 bg-ink-900 sm:grid-cols-2 lg:grid-cols-4">
-          @for (benefit of benefits; track benefit.title) {
-            <div class="bg-ink-100 p-5">
-              <dt class="font-headline text-xl font-semibold uppercase text-ink-900">{{ benefit.title }}</dt>
-              <dd class="mt-2 text-base leading-relaxed text-ink-900">{{ benefit.text }}</dd>
+    <div class="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-16 items-center">
+        <div class="lg:col-span-6">
+          <p class="eyebrow text-brand-300 mb-4">Historia &amp; valores</p>
+          <h2 class="display text-3xl md:text-5xl text-white mb-8">
+            Tres generaciones trabajando con el mismo compromiso
+          </h2>
+
+          <div class="space-y-5 text-ink-200 font-body text-base leading-relaxed max-w-xl">
+            <p>
+              Castilglass (Castillo Cañizares) es una empresa familiar, hoy con la tercera
+              generación al frente, especializada en la fabricación, instalación y montaje de
+              carpintería metálica, aluminio, PVC y cristalería. Profesionales con más de
+              50 años de experiencia en Córdoba.
+            </p>
+            <p>
+              Nuestra filosofía: la precisión no es negociable. Cada corte, cada soldadura
+              y cada montaje se supervisa con el rigor de un maestro artesano.
+            </p>
+          </div>
+
+          <div class="mt-10 max-w-md pt-8 border-t border-white/15">
+            <div>
+              <p class="metric text-white text-3xl md:text-4xl">1.500<span class="text-brand-300">+</span></p>
+              <p class="text-ink-300 text-[11px] font-label uppercase tracking-widest mt-2">
+                Proyectos entregados
+              </p>
             </div>
-          }
-        </dl>
-      </div>
-    </div>
-  </section>
-
-  <section id="nosotros" class="bg-ink-900 text-white">
-    <div
-      class="mx-auto grid max-w-7xl grid-cols-1 gap-y-10 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-12 lg:gap-x-8 lg:px-8"
-    >
-      <div class="lg:col-span-6">
-        <app-section-heading
-          inverse
-          kicker="03 — Sobre nosotros"
-          heading="Tres generaciones trabajando con el mismo compromiso"
-        />
-        <div class="mt-8 max-w-xl space-y-5 text-lg leading-relaxed text-ink-200">
-          <p>
-            Castilglass (Castillo Cañizares) es una empresa familiar, hoy con la tercera generación al
-            frente, especializada en la fabricación, instalación y montaje de carpintería metálica,
-            aluminio, PVC y cristalería. Profesionales con más de 50 años de experiencia en Córdoba.
-          </p>
-          <p>
-            Nuestra filosofía: la precisión no es negociable. Cada corte, cada soldadura y cada montaje
-            se supervisa con el rigor de un maestro artesano.
-          </p>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-2 gap-px self-start border border-ink-700 bg-ink-700 lg:col-span-6">
-        <img
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjsdFb2JHq1bCqcYs3pR2mQi2TE0nPaLuXhBu5hH2CLjxg1I-OwIPgOBU9uZ7V8cFc8dgczaVKWnFOYFSg9KnrJMDgCjLIpM5oaprNOJXRIub_XM8qZQfEHfMq5UF4qwAK59f93Vlrv9DJvTx5wfMs8STR_bRhh5vvGsAKuw482Zh2uTPzIV-XBqPLG0C_2WqS_vdiorg_RRRb5HOFwUkMCVysrURm95B5XEG5L0tu6AkTU5oS7PpT1nyxWBLDeUJsz45W81WkiT8"
-          alt="Detalle técnico de carpintería metálica"
-          width="600"
-          height="800"
-          loading="lazy"
-          class="aspect-[3/4] w-full object-cover"
-        />
-        <img
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYJ81bwEj65M9QjE3xhzSX5uOcXuvfMsynCXRB7wPG4vaCdZ0HHyJ_bNP_HwZNUWDTz-m2RiiuBmcnhW9Dj-CdMbOV2Q1H9YOOJwcXeYRZX7OT6t9d0VbwoTHEhqROUlpc3SqYk0Cp1elEwXMH86M1x13kn0fqVYopfU0iE1BM45XMa8REsYUJA1GeSANp2QpY7eJstCyS79pZqjIwe3ddHSw0b2OIYrgjhufTL3J0NPgP4MNajCrG_6LBB3ec7hwubhL4Lsgy8HE"
-          alt="Fachada terminada por Castilglass"
-          width="600"
-          height="800"
-          loading="lazy"
-          class="aspect-[3/4] w-full object-cover"
-        />
-      </div>
-
-      <dl class="grid grid-cols-2 gap-px border border-ink-700 bg-ink-700 lg:col-span-12 lg:grid-cols-4">
-        @for (figure of figures; track figure.label) {
-          <div class="flex flex-col-reverse gap-3 bg-ink-900 p-5">
-            <dt class="font-mono text-xs font-medium uppercase tracking-wider text-ink-300">{{ figure.label }}</dt>
-            <dd class="font-headline text-5xl font-bold leading-none text-white md:text-6xl">{{ figure.value }}</dd>
           </div>
-        }
-      </dl>
-    </div>
-  </section>
-
-  <section class="bg-brand-700 text-white">
-    <div
-      class="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 py-14 sm:px-6 md:py-20 lg:grid-cols-12 lg:items-end lg:gap-x-8 lg:px-8"
-    >
-      <h2 class="text-balance font-headline text-5xl font-bold uppercase leading-[0.9] lg:col-span-7 lg:text-7xl">
-        ¿Tienes un proyecto en mente?
-      </h2>
-      <div class="lg:col-span-5">
-        <p class="text-lg leading-relaxed text-white">
-          Hablemos sobre tus necesidades técnicas. Te ofrecemos un presupuesto detallado sin compromiso.
-        </p>
-        <div class="mt-6 flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-          <a appButton variant="light" routerLink="/solicitar-presupuesto">
-            Solicitar presupuesto
-            <app-icon name="arrow-right" />
-          </a>
-          <a appButton variant="outline-dark" [href]="company.phoneHref">
-            {{ company.phone }}
-            <app-icon name="phone" />
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contacto" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-24 lg:px-8">
-    <div class="grid grid-cols-1 gap-y-12 lg:grid-cols-12 lg:gap-x-8">
-      <app-section-heading class="lg:col-span-5" kicker="04 — Contacto" heading="Cuéntanos tu proyecto">
-        <p class="mt-5 max-w-md text-lg leading-relaxed text-ink-900">
-          Rellena el formulario y te contactaremos en menos de 24 horas hábiles con una primera
-          valoración.
-        </p>
-      </app-section-heading>
-
-      <form
-        class="border-t-4 border-ink-900 pt-6 lg:col-span-7 lg:col-start-6 lg:row-span-2 lg:row-start-1"
-        (submit)="onSubmitContacto($event)"
-      >
-        <input class="hidden" type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
-        <input type="hidden" name="form_name" value="Contacto (Home)" />
-
-        <p class="flex justify-between gap-4 font-mono text-xs uppercase tracking-wider text-ink-700">
-          <span>Formulario de contacto</span>
-          <span><span class="text-brand-700" aria-hidden="true">*</span> Obligatorio</span>
-        </p>
-
-        <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-5 sm:grid-cols-2">
-          <app-field label="Nombre completo" name="nombre" autocomplete="name" required />
-          <app-field label="Teléfono" name="telefono" type="tel" autocomplete="tel" required />
-          <app-field
-            class="sm:col-span-2"
-            label="Correo electrónico"
-            name="email"
-            type="email"
-            autocomplete="email"
-            required
-          />
-          <app-field
-            class="sm:col-span-2"
-            label="Tipo de proyecto"
-            name="tipo_proyecto"
-            type="select"
-            [options]="projectTypes"
-          />
-          <app-field
-            class="sm:col-span-2"
-            label="Mensaje"
-            name="mensaje"
-            type="textarea"
-            placeholder="Describe brevemente lo que necesitas"
-            required
-          />
         </div>
 
-        <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <p class="text-sm leading-relaxed text-ink-900">
-            Al enviar este formulario aceptas nuestra
-            <a
-              routerLink="/politica-privacidad"
-              class="font-medium text-brand-700 underline underline-offset-4 hover:text-ink-900"
-              >política de privacidad</a
-            >.
-          </p>
-          <button appButton type="submit" [disabled]="contactStatus() === 'sending'">
-            {{ contactStatus() === 'sending' ? 'Enviando…' : 'Enviar mensaje' }}
-            <app-icon name="arrow-right" />
-          </button>
-        </div>
-
-        <app-form-status
-          class="mt-6"
-          [status]="contactStatus()"
-          successMessage="Mensaje enviado correctamente. Te contactaremos lo antes posible."
-        />
-      </form>
-
-      <div class="lg:col-span-5">
-        <dl class="border-t border-ink-900">
-          <div appDataRow term="Dirección">
-            <address class="not-italic">
-              @for (line of company.addressLines; track line) {
-                <span class="block">{{ line }}</span>
-              }
-            </address>
-          </div>
-          <div appDataRow term="Teléfono">
-            <a
-              [href]="company.phoneHref"
-              class="font-medium text-brand-700 underline underline-offset-4 hover:text-ink-900"
-              >{{ company.phone }}</a
-            >
-          </div>
-          <div appDataRow term="Email">
-            <a
-              [href]="company.emailHref"
-              class="break-all font-medium text-brand-700 underline underline-offset-4 hover:text-ink-900"
-              >{{ company.email }}</a
-            >
-          </div>
-          <div appDataRow term="Horario">
-            {{ company.hours }}
-            <span class="block">{{ company.hoursNote }}</span>
-          </div>
-        </dl>
-
-        <figure class="mt-8 border border-ink-900">
-          <iframe
-            class="block aspect-[4/3] w-full"
-            title="Ubicación de Castilglass en Córdoba"
-            src="https://maps.google.com/maps?q=Calle%20Diego%20Galv%C3%A1n,%20280,%20C%C3%B3rdoba&t=&z=16&ie=UTF8&iwloc=&output=embed"
+        <div class="lg:col-span-6 grid grid-cols-2 gap-4">
+          <img
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-          <figcaption class="border-t border-ink-900">
+            alt="Detalle técnico de carpintería metálica"
+            class="rounded-xl w-full h-48 md:h-64 object-cover"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjsdFb2JHq1bCqcYs3pR2mQi2TE0nPaLuXhBu5hH2CLjxg1I-OwIPgOBU9uZ7V8cFc8dgczaVKWnFOYFSg9KnrJMDgCjLIpM5oaprNOJXRIub_XM8qZQfEHfMq5UF4qwAK59f93Vlrv9DJvTx5wfMs8STR_bRhh5vvGsAKuw482Zh2uTPzIV-XBqPLG0C_2WqS_vdiorg_RRRb5HOFwUkMCVysrURm95B5XEG5L0tu6AkTU5oS7PpT1nyxWBLDeUJsz45W81WkiT8"
+          />
+          <img
+            loading="lazy"
+            alt="Fachada terminada por Castilglass"
+            class="rounded-xl w-full h-56 md:h-80 object-cover mt-6 md:mt-10"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYJ81bwEj65M9QjE3xhzSX5uOcXuvfMsynCXRB7wPG4vaCdZ0HHyJ_bNP_HwZNUWDTz-m2RiiuBmcnhW9Dj-CdMbOV2Q1H9YOOJwcXeYRZX7OT6t9d0VbwoTHEhqROUlpc3SqYk0Cp1elEwXMH86M1x13kn0fqVYopfU0iE1BM45XMa8REsYUJA1GeSANp2QpY7eJstCyS79pZqjIwe3ddHSw0b2OIYrgjhufTL3J0NPgP4MNajCrG_6LBB3ec7hwubhL4Lsgy8HE"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CTA banner
+       ============================================ -->
+  <section class="py-20 md:py-24 bg-surface scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+      <div class="metallic-gradient rounded-2xl px-8 md:px-16 py-14 md:py-20 relative overflow-hidden">
+        <div class="absolute -top-32 -right-32 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
+
+        <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-7">
+            <p class="font-mono text-[11px] uppercase tracking-[0.22em] text-brand-200 mb-4">
+              Próximo paso
+            </p>
+            <h2 class="display text-white text-3xl md:text-5xl mb-4">
+              ¿Tienes un proyecto en mente?
+            </h2>
+            <p class="text-brand-100 text-base md:text-lg max-w-xl leading-relaxed">
+              Hablemos sobre tus necesidades técnicas. Te ofrecemos un presupuesto detallado
+              sin compromiso.
+            </p>
+          </div>
+
+          <div class="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-3 lg:items-end">
             <a
-              [href]="company.mapsHref"
+              [routerLink]="['/solicitar-presupuesto']"
+              class="bg-white text-brand-700 px-7 py-4 rounded-lg font-semibold text-base hover:bg-ink-50 transition-all active:scale-[0.98] shadow-lift inline-flex items-center justify-center gap-2"
+            >
+              Solicitar presupuesto
+              <span class="material-symbols-outlined text-[20px]" aria-hidden="true">arrow_forward</span>
+            </a>
+            <a
+              href="tel:+34600952601"
+              class="border border-white/30 text-white px-7 py-4 rounded-lg font-semibold text-base hover:bg-white/10 transition-all active:scale-[0.98] inline-flex items-center justify-center gap-2"
+            >
+              <span class="material-symbols-outlined text-[20px]" aria-hidden="true">call</span>
+              +34 600 952 601
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CONTACTO
+       ============================================ -->
+  <section id="contacto" class="py-20 md:py-28 bg-white scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-16">
+        <!-- Form -->
+        <div class="lg:col-span-7">
+          <p class="eyebrow mb-4">Contacto</p>
+          <h2 class="display text-3xl md:text-5xl text-ink-900 mb-3">
+            Cuéntanos tu proyecto
+          </h2>
+          <p class="text-ink-600 text-base mb-10 max-w-lg">
+            Rellena el formulario y te contactaremos en menos de 24 horas hábiles
+            con una primera valoración.
+          </p>
+
+          <form class="space-y-5" (submit)="onSubmitContacto($event)">
+            <input class="hidden" type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+            <input type="hidden" name="form_name" value="Contacto (Home)" />
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label for="campo-nombre" class="block text-xs font-label font-bold text-ink-700 uppercase tracking-widest mb-2">
+                  Nombre completo
+                </label>
+                <input
+                  class="w-full bg-ink-50 border border-ink-500 focus:border-brand-700 focus:ring-2 focus:ring-brand-100 rounded-lg px-4 py-3 transition-all text-ink-900"
+                  placeholder="Ej. Juan Pérez"
+                  id="campo-nombre" name="nombre" autocomplete="name"
+                  type="text"
+                  required
+                />
+              </div>
+              <div>
+                <label for="campo-telefono" class="block text-xs font-label font-bold text-ink-700 uppercase tracking-widest mb-2">
+                  Teléfono
+                </label>
+                <input
+                  class="w-full bg-ink-50 border border-ink-500 focus:border-brand-700 focus:ring-2 focus:ring-brand-100 rounded-lg px-4 py-3 transition-all text-ink-900"
+                  placeholder="000 000 000"
+                  id="campo-telefono" name="telefono" autocomplete="tel"
+                  type="tel"
+                  required
+                />
+              </div>
+            </div>
+
+            <div>
+              <label for="campo-email" class="block text-xs font-label font-bold text-ink-700 uppercase tracking-widest mb-2">
+                Correo electrónico
+              </label>
+              <input
+                class="w-full bg-ink-50 border border-ink-500 focus:border-brand-700 focus:ring-2 focus:ring-brand-100 rounded-lg px-4 py-3 transition-all text-ink-900"
+                placeholder="tu@email.com"
+                id="campo-email" name="email" autocomplete="email"
+                type="email"
+                required
+              />
+            </div>
+
+            <div>
+              <label for="campo-tipo_proyecto" class="block text-xs font-label font-bold text-ink-700 uppercase tracking-widest mb-2">
+                Tipo de proyecto
+              </label>
+              <select
+                class="w-full bg-ink-50 border border-ink-500 focus:border-brand-700 focus:ring-2 focus:ring-brand-100 rounded-lg px-4 py-3 transition-all text-ink-900"
+                id="campo-tipo_proyecto" name="tipo_proyecto"
+              >
+                <option>Vivienda unifamiliar</option>
+                <option>Local comercial</option>
+                <option>Mantenimiento industrial</option>
+                <option>Otros</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="campo-mensaje" class="block text-xs font-label font-bold text-ink-700 uppercase tracking-widest mb-2">
+                Mensaje
+              </label>
+              <textarea
+                class="w-full bg-ink-50 border border-ink-500 focus:border-brand-700 focus:ring-2 focus:ring-brand-100 rounded-lg px-4 py-3 transition-all text-ink-900"
+                placeholder="Describe brevemente lo que necesitas..."
+                id="campo-mensaje" name="mensaje"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+
+            <button
+              class="w-full sm:w-auto inline-flex items-center justify-center gap-2 metallic-gradient text-white px-8 py-4 rounded-lg font-semibold text-base hover:opacity-95 transition-all active:scale-[0.98] shadow-lift disabled:opacity-60 disabled:cursor-not-allowed"
+              type="submit"
+              [disabled]="contactStatus() === 'sending'"
+            >
+              {{ contactStatus() === 'sending' ? 'Enviando…' : 'Enviar mensaje' }}
+              <span class="material-symbols-outlined text-[20px]" aria-hidden="true">arrow_forward</span>
+            </button>
+
+            <p class="text-xs text-ink-500 leading-relaxed">
+              Al enviar este formulario aceptas nuestra
+              <a [routerLink]="['/politica-privacidad']" class="text-brand-700 font-semibold underline">política de privacidad</a>.
+            </p>
+
+            <div role="status">
+            @if (contactStatus() === 'success') {
+              <p class="text-sm font-semibold text-brand-700 flex items-center gap-2">
+                <span class="material-symbols-outlined text-[18px]" aria-hidden="true">check_circle</span>
+                Mensaje enviado correctamente. Te contactaremos lo antes posible.
+              </p>
+            }
+            @if (contactStatus() === 'error') {
+              <p class="text-sm font-semibold text-red-700 flex items-center gap-2">
+                <span class="material-symbols-outlined text-[18px]" aria-hidden="true">error</span>
+                No se pudo enviar. Inténtalo de nuevo en unos minutos.
+              </p>
+            }
+            @if (contactStatus() === 'not_configured') {
+              <p class="text-sm font-semibold text-red-700 flex items-center gap-2">
+                <span class="material-symbols-outlined text-[18px]" aria-hidden="true">warning</span>
+                El formulario no está disponible ahora mismo. Llámanos al 600 952 601 o escríbenos por WhatsApp.
+              </p>
+            }
+            </div>
+          </form>
+        </div>
+
+        <!-- Info + map -->
+        <div class="lg:col-span-5 flex flex-col gap-8">
+          <div class="bg-ink-50 rounded-2xl p-7 md:p-8 border border-ink-200/70">
+            <h3 class="font-headline font-bold text-xl text-ink-900 mb-6">
+              Información de contacto
+            </h3>
+
+            <ul class="space-y-5">
+              <li class="flex gap-4">
+                <span class="material-symbols-outlined text-brand-700 mt-0.5" aria-hidden="true">location_on</span>
+                <div>
+                  <p class="font-bold text-sm text-ink-900 mb-1">Nuestra central</p>
+                  <p class="text-ink-600 text-sm leading-relaxed">
+                    Polígono Industrial Las Quemadas<br />
+                    Calle Diego Galván, Nave 18<br />
+                    Parcela 280, 14014 Córdoba
+                  </p>
+                </div>
+              </li>
+              <li class="flex gap-4">
+                <span class="material-symbols-outlined text-brand-700 mt-0.5" aria-hidden="true">call</span>
+                <div>
+                  <p class="font-bold text-sm text-ink-900 mb-1">Teléfono</p>
+                  <a
+                    href="tel:+34600952601"
+                    class="text-ink-600 text-sm hover:text-brand-700 transition-colors"
+                  >
+                    +34 600 952 601
+                  </a>
+                </div>
+              </li>
+              <li class="flex gap-4">
+                <span class="material-symbols-outlined text-brand-700 mt-0.5" aria-hidden="true">mail</span>
+                <div>
+                  <p class="font-bold text-sm text-ink-900 mb-1">Email</p>
+                  <a
+                    href="mailto:castilglass@hotmail.com"
+                    class="text-ink-600 text-sm hover:text-brand-700 transition-colors"
+                  >
+                    castilglass&#64;hotmail.com
+                  </a>
+                </div>
+              </li>
+              <li class="flex gap-4">
+                <span class="material-symbols-outlined text-brand-700 mt-0.5" aria-hidden="true">schedule</span>
+                <div>
+                  <p class="font-bold text-sm text-ink-900 mb-1">Horario de atención</p>
+                  <p class="text-ink-600 text-sm">Lunes a Viernes · 7:00 – 15:00</p>
+                  <p class="text-ink-600 text-sm">Tardes con cita previa</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="h-72 rounded-2xl overflow-hidden border border-ink-200 relative group shadow-soft">
+            <iframe
+              class="w-full h-full"
+              title="Ubicación de Castilglass en Córdoba"
+              src="https://maps.google.com/maps?q=Calle%20Diego%20Galv%C3%A1n,%20280,%20C%C3%B3rdoba&t=&z=16&ie=UTF8&iwloc=&output=embed"
+              frameborder="0"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+            <a
+              href="https://www.google.com/maps?cid=4761733920034228552"
               target="_blank"
               rel="noopener noreferrer"
-              class="flex min-h-12 items-center justify-between gap-4 px-4 font-headline text-lg font-semibold uppercase tracking-wide text-ink-900 transition-colors duration-150 ease-out hover:bg-ink-900 hover:text-white"
+              class="absolute bottom-4 right-4 bg-white text-brand-700 px-4 py-2 rounded-lg font-semibold text-sm shadow-lift opacity-0 group-hover:opacity-100 focus-visible:opacity-100 transition-opacity flex items-center gap-2 hover:bg-ink-50"
             >
-              Abrir en Google Maps
-              <span class="sr-only">(se abre en una pestaña nueva)</span>
-              <app-icon name="arrow-up-right" />
+              <span class="material-symbols-outlined text-[16px]" aria-hidden="true">open_in_new</span>
+              Abrir en Maps
             </a>
-          </figcaption>
-        </figure>
+          </div>
+        </div>
       </div>
     </div>
   </section>

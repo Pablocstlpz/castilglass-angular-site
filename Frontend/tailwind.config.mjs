@@ -1,4 +1,5 @@
 import forms from '@tailwindcss/forms';
+import containerQueries from '@tailwindcss/container-queries';
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -6,7 +7,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Azul corporativo principal: acentos, CTAs y estados activos
+        // ---- Brand ----
+        // Azul corporativo principal (más profundo, autoritativo)
         brand: {
           50: '#f1f7fc',
           100: '#dceaf5',
@@ -33,7 +35,7 @@ export default {
           800: '#704334',
           900: '#5c382e',
         },
-        // Neutros técnicos: blanco, gris de plano y carbón para el 90 % de las superficies
+        // Neutros cálidos (gris ligeramente cálido, no frío)
         ink: {
           50: '#fafaf9',
           100: '#f4f3f1',
@@ -46,13 +48,89 @@ export default {
           800: '#262421',
           900: '#181715',
         },
+
+        // ---- Tokens existentes (mantenidos por compatibilidad) ----
+        'on-tertiary-fixed-variant': '#536372',
+        'surface-tint': '#5f5e5e',
+        'inverse-on-surface': '#9c9d9d',
+        'secondary-container': '#cee5ff',
+        'tertiary-container': '#dcedff',
+        'on-secondary': '#f6f9ff',
+        'on-primary-container': '#525151',
+        'primary-fixed': '#e5e2e1',
+        'on-primary': '#faf7f6',
+        'on-tertiary-container': '#495867',
+        'on-background': '#1c2025',
+        'on-tertiary': '#f6f9ff',
+        secondary: '#216394',
+        background: '#fafaf8',
+        'on-surface': '#1c2025',
+        outline: '#7a756d',
+        'surface-container-lowest': '#ffffff',
+        'surface-container-high': '#ebe9e5',
+        'tertiary-fixed-dim': '#cedff1',
+        'surface-variant': '#e7e5e2',
+        'on-error-container': '#752121',
+        error: '#9f403d',
+        'error-container': '#fe8983',
+        'tertiary-fixed': '#dcedff',
+        'on-surface-variant': '#5a5650',
+        'secondary-dim': '#0a5787',
+        'on-primary-fixed-variant': '#5c5b5b',
+        'on-tertiary-fixed': '#374655',
+        'primary-dim': '#535252',
+        tertiary: '#516170',
+        'surface-container': '#f1efeb',
+        'tertiary-dim': '#455564',
+        'surface-container-low': '#f4f3f1',
+        'on-primary-fixed': '#403f3f',
+        'on-error': '#fff7f6',
+        'surface-dim': '#d2cfca',
+        'surface-bright': '#fafaf8',
+        'secondary-fixed-dim': '#b2d8ff',
+        primary: '#1c2025',
+        'inverse-primary': '#ffffff',
+        'surface-container-highest': '#e3e0db',
+        'secondary-fixed': '#cee5ff',
+        'on-secondary-fixed-variant': '#1b6090',
+        surface: '#fafaf8',
+        'inverse-surface': '#0c0f0f',
+        'on-secondary-fixed': '#00436a',
+        'on-secondary-container': '#065685',
+        'error-dim': '#4e0309',
+        'primary-fixed-dim': '#d7d4d3',
+        'outline-variant': '#d2cfca',
+        'primary-container': '#e5e2e1',
+      },
+      borderRadius: {
+        DEFAULT: '0.125rem',
+        lg: '0.375rem',
+        xl: '0.625rem',
+        '2xl': '1rem',
+        full: '9999px',
       },
       fontFamily: {
-        headline: ['"Barlow Condensed"', '"Arial Narrow"', 'sans-serif'],
-        body: ['Barlow', 'Arial', 'sans-serif'],
-        mono: ['"IBM Plex Mono"', 'ui-monospace', 'monospace'],
+        headline: ['Manrope', 'sans-serif'],
+        body: ['Inter', 'sans-serif'],
+        label: ['Inter', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+      },
+      letterSpacing: {
+        tightest: '-0.04em',
+        crisp: '-0.025em',
+      },
+      boxShadow: {
+        soft: '0 1px 2px rgba(28,32,37,0.04), 0 8px 24px rgba(28,32,37,0.06)',
+        lift: '0 2px 4px rgba(28,32,37,0.04), 0 20px 40px -8px rgba(28,32,37,0.10)',
+      },
+      backgroundImage: {
+        'grid-faint':
+          'linear-gradient(to right, rgba(28,32,37,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(28,32,37,0.04) 1px, transparent 1px)',
+      },
+      backgroundSize: {
+        grid: '40px 40px',
       },
     },
   },
-  plugins: [forms],
+  plugins: [forms, containerQueries],
 };
