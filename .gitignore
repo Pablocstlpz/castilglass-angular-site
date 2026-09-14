@@ -1,37 +1,32 @@
-# Dependencies
-/node_modules
+# Dependencias
+node_modules/
 
-# Build output
-/dist
-/tmp
-/out-tsc
-/bazel-out
+# Build y caché de Angular
+dist/
+.angular/
+out-tsc/
+coverage/
 
-# Angular cache
-/.angular/cache
-
-# IDEs / editors
-/.idea
-/.vscode/*
-!/.vscode/extensions.json
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
-.history/*
-
-# Misc
-.DS_Store
-Thumbs.db
-npm-debug.log*
-yarn-error.log
-*.log
-
-# Env
+# Entorno y secretos
 .env
 .env.*
+*.pem
 
-# aider
+# Logs
+*.log
+
+# Editores y sistema
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/mcp.json
+!.vscode/tasks.json
+.history/
+*.sw?
+.DS_Store
+Thumbs.db
+
+# Herramientas locales
 .aider*
+.claude/settings.local.json
