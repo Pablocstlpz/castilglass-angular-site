@@ -1,16 +1,8 @@
-import {
-  AfterViewInit,
-  ChangeDetectionStrategy,
-  Component,
-  DestroyRef,
-  inject,
-  signal,
-} from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { ChangeDetectionStrategy, Component, DestroyRef, inject, signal } from '@angular/core';
+import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { filter } from 'rxjs';
-import { RouterLink } from '@angular/router';
 
-type HeaderSection = 'inicio' | 'servicios' | 'proyectos' | 'nosotros' | 'contacto';
+type HeaderSection = 'inicio' | 'servicios' | 'nosotros' | 'contacto';
 
 @Component({
   selector: 'app-header',
@@ -18,11 +10,20 @@ type HeaderSection = 'inicio' | 'servicios' | 'proyectos' | 'nosotros' | 'contac
   templateUrl: './header.html',
   styleUrl: './header.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  host: { '(document:keydown.escape)': 'menuOpen.set(false)' },
 })
 export class Header {
-  readonly activeSection = signal<HeaderSection>('inicio');
+  readonly sections: { id: HeaderSection; label: string }[] = [
+    { id: 'inicio', label: 'Inicio' },
+    { id: 'servicios', label: 'Servicios' },
+    { id: 'nosotros', label: 'Sobre nosotros' },
+    { id: 'contacto', label: 'Contacto' },
+  ];
 
-  private readonly destroyRef = inject(DestroyRef);
+  readonly activeSection = signal<HeaderSection>('inicio');
+  readonly isHome = signal(true);
+  readonly menuOpen = signal(false);
+
   private readonly router = inject(Router);
   private observer?: IntersectionObserver;
 
@@ -31,28 +32,48 @@ export class Header {
       return;
     }
 
-    const navigationEnd = this.router.events.pipe(
-      filter((event): event is NavigationEnd => event instanceof NavigationEnd),
-    );
+    const subscription = this.router.events
+      .pipe(filter((event): event is NavigationEnd => event instanceof NavigationEnd))
+      .subscribe(() => {
+        this.menuOpen.set(false);
+        this.isHome.set(this.router.url.split(/[?#]/)[0] === '/');
 
-    const subscription = navigationEnd.subscribe(() => {
-      const fragment = this.router.parseUrl(this.router.url).fragment as HeaderSection | null;
+        const fragment = this.router.parseUrl(this.router.url).fragment as HeaderSection | null;
+        if (fragment) {
+          this.activeSection.set(fragment);
+        }
 
-      if (fragment) {
-        this.activeSection.set(fragment);
-        window.setTimeout(() => this.scrollToSectionElement(fragment), 0);
-      }
+        // Home sections are re-created on every visit, so observe them again after render.
+        window.setTimeout(() => {
+          if (fragment) this.scrollToSectionElement(fragment);
+          this.observeSections();
+        }, 0);
+      });
+
+    inject(DestroyRef).onDestroy(() => {
+      subscription.unsubscribe();
+      this.observer?.disconnect();
     });
-
-    this.destroyRef.onDestroy(() => subscription.unsubscribe());
   }
 
-  ngAfterViewInit(): void {
-    if (typeof window === 'undefined' || typeof IntersectionObserver === 'undefined') {
+  isActive(sectionId: HeaderSection): boolean {
+    return this.isHome() && this.activeSection() === sectionId;
+  }
+
+  // routerLink handles navigation; this covers re-clicking the current fragment, which the router ignores.
+  goToSection(sectionId: HeaderSection): void {
+    this.menuOpen.set(false);
+    if (this.isHome()) {
+      this.activeSection.set(sectionId);
+      this.scrollToSectionElement(sectionId);
+    }
+  }
+
+  private observeSections(): void {
+    this.observer?.disconnect();
+    if (!this.isHome() || typeof IntersectionObserver === 'undefined') {
       return;
     }
-
-    const sections: HeaderSection[] = ['inicio', 'servicios', 'proyectos', 'nosotros', 'contacto'];
 
     this.observer = new IntersectionObserver(
       (entries) => {
@@ -64,55 +85,16 @@ export class Header {
           this.activeSection.set(visibleEntry.target.id as HeaderSection);
         }
       },
-      {
-        root: null,
-        threshold: [0.2, 0.4, 0.6, 0.8],
-        rootMargin: '-20% 0px -55% 0px',
-      },
+      { threshold: [0.2, 0.4, 0.6, 0.8], rootMargin: '-20% 0px -55% 0px' },
     );
 
-    sections.forEach((sectionId) => {
-      const element = document.getElementById(sectionId);
-
-      if (element) {
-        this.observer?.observe(element);
-      }
-    });
-
-    this.destroyRef.onDestroy(() => this.observer?.disconnect());
-  }
-
-  scrollToSection(sectionId: HeaderSection): void {
-    this.activeSection.set(sectionId);
-
-    if (this.isHomeRoute()) {
-      this.scrollToSectionElement(sectionId);
-      this.closeMobileMenu();
-      return;
+    for (const { id } of this.sections) {
+      const element = document.getElementById(id);
+      if (element) this.observer.observe(element);
     }
-
-    void this.router.navigate(['/'], { fragment: sectionId });
-    this.closeMobileMenu();
-  }
-
-  goToSolicitarPresupuesto(): void {
-    void this.router.navigate(['/solicitar-presupuesto']);
-    this.closeMobileMenu();
-  }
-
-  private isHomeRoute(): boolean {
-    return this.router.url.split('?')[0].split('#')[0] === '/';
   }
 
   private scrollToSectionElement(sectionId: HeaderSection): void {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-
-  private closeMobileMenu(): void {
-    const mobileMenuToggle = document.getElementById('mobile-menu-toggle') as HTMLInputElement | null;
-
-    if (mobileMenuToggle) {
-      mobileMenuToggle.checked = false;
-    }
   }
 }

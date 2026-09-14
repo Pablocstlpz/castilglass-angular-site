@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { FormspreeService } from '../../services/formspree.service';
+import { ContactFormService, FormNotConfiguredError } from '../../services/contact-form.service';
 
 @Component({
   selector: 'app-solicitar-presupuesto',
@@ -12,7 +12,7 @@ import { FormspreeService } from '../../services/formspree.service';
 export class SolicitarPresupuesto {
   readonly status = signal<'idle' | 'sending' | 'success' | 'error' | 'not_configured'>('idle');
 
-  constructor(private readonly formspree: FormspreeService) {}
+  constructor(private readonly contactForm: ContactFormService) {}
 
   async onSubmitPresupuesto(event: SubmitEvent): Promise<void> {
     event.preventDefault();
@@ -30,11 +30,11 @@ export class SolicitarPresupuesto {
     this.status.set('sending');
 
     try {
-      await this.formspree.submit(new FormData(form));
+      await this.contactForm.submit(new FormData(form), 'Nueva solicitud de presupuesto - castilglass.es');
       this.status.set('success');
       form.reset();
     } catch (err) {
-      if (String(err).includes('Formspree no está configurado')) {
+      if (err instanceof FormNotConfiguredError) {
         this.status.set('not_configured');
       } else {
         this.status.set('error');

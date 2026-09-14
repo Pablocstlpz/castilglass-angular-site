@@ -1,4 +1,4 @@
-<main>
+<main id="contenido" tabindex="-1">
   <!-- ============================================
        HERO
        ============================================ -->
@@ -15,8 +15,8 @@
         </div>
 
         <h1 class="rise rise-d2 display text-ink-900 text-4xl sm:text-5xl md:text-7xl mb-6">
-          Nuestros<br />
-          <span class="text-brand-700">servicios</span>
+          Servicios de aluminio,<br />
+          PVC y <span class="text-brand-700">hierro</span>
         </h1>
 
         <p class="rise rise-d3 text-ink-600 text-base md:text-xl leading-relaxed max-w-xl mb-8">
@@ -30,13 +30,13 @@
             class="metallic-gradient text-white px-6 py-3.5 rounded-lg font-semibold text-base shadow-soft hover:shadow-lift transition-all active:scale-[0.98] inline-flex items-center justify-center gap-2 min-h-[48px]"
           >
             Solicitar presupuesto
-            <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+            <span class="material-symbols-outlined text-[20px]" aria-hidden="true">arrow_forward</span>
           </a>
           <a
             href="tel:+34600952601"
             class="border border-ink-300 text-ink-900 px-6 py-3.5 rounded-lg font-semibold text-base hover:bg-ink-50 transition-all active:scale-[0.98] inline-flex items-center justify-center gap-2 min-h-[48px]"
           >
-            <span class="material-symbols-outlined text-[20px] text-brand-700">call</span>
+            <span class="material-symbols-outlined text-[20px] text-brand-700" aria-hidden="true">call</span>
             Llamar ahora
           </a>
         </div>
@@ -46,6 +46,7 @@
         <div class="relative aspect-[4/5] sm:aspect-square lg:aspect-[4/5] rounded-2xl overflow-hidden shadow-lift">
           <img
             class="absolute inset-0 w-full h-full object-cover"
+            fetchpriority="high"
             alt="Detalle de carpintería metálica industrial Castilglass"
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzmOWzr27LIOtCmSGh__QqnXLu-l458KX7VPjRgXeDzhEYex_CHrH0l3aYK9adHzK55S9-oVKMCho7aMfWBCM1jpakHvgCQ7XQqK3BpjoOe0G1hN-OX1osJHtFH_hbvs5rTgMm_rdHfpYNrg-NfqHRWxWJDhAQgrNGBsZQCNuqcPhw7wN4DbFLoHCW2g2uKyZXv4q-woWFsRSw7sKVMknJT9L7_tPefjDxuFwj_B4ynqb1VSmu58xjnD2QmxA4TIKvZw0i-E3cF9g"
           />
@@ -54,10 +55,10 @@
           <!-- Floating spec card on image (responsive position) -->
           <div class="absolute bottom-4 left-4 right-4 sm:left-6 sm:right-auto sm:max-w-[260px] bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lift border border-white/50">
             <p class="font-mono text-[10px] uppercase tracking-widest text-brand-700 mb-1">
-              Desde 1972
+              Tercera generación
             </p>
             <p class="text-sm font-semibold text-ink-900 leading-snug">
-              50+ años perfeccionando la carpintería metálica en Córdoba.
+              Más de 50 años de experiencia en Córdoba.
             </p>
           </div>
         </div>
@@ -91,20 +92,21 @@
           <div>
             <div class="flex items-start justify-between gap-4 mb-6">
               <div class="w-12 h-12 bg-brand-700 text-white flex items-center justify-center rounded-lg group-hover:bg-brand-800 transition-colors">
-                <span class="material-symbols-outlined">handyman</span>
+                <span class="material-symbols-outlined" aria-hidden="true">handyman</span>
               </div>
-              <span class="font-mono text-[11px] uppercase tracking-widest text-ink-400">
+              <span class="font-mono text-[11px] uppercase tracking-widest text-ink-500">
                 01
               </span>
             </div>
             <h3 class="display text-ink-900 text-2xl md:text-3xl mb-3">Carpintería metálica</h3>
             <p class="text-ink-600 text-sm md:text-base leading-relaxed max-w-md">
-              Estructuras de hierro y acero inoxidable con acabados industriales de alta resistencia.
-              Soluciones robustas para proyectos residenciales y comerciales.
+              Fabricación de rejas, puertas, balcones, barandas y pérgolas. Estructuras de hierro,
+              acero inoxidable y forja artística a medida para viviendas y negocios.
             </p>
           </div>
           <div class="mt-8">
             <img
+              loading="lazy"
               class="w-full h-32 md:h-40 object-cover rounded-lg grayscale group-hover:grayscale-0 transition-all duration-500"
               alt="Estructuras de acero industrial"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQKUkvjUYZLPFY-ZmsXEmLGM7jgfwt1wARD07W-QF9Spbpz2oTSqRKGb-wKjrIqI__txgblDN7iubEBuHl9SPbdYQ-WOHYruiqNxyPQOaeDqA_XLOexS-5SXWs_YMdFbRmMg1f02-xvH5aM9WEKf32-om-axkq0loTFJ754fybHMhfCb54hpA28LfXwP6D1ijMzV4ncpwJ4vx4X9XVfXJ1jsV4IkWti13ovzBdKsQW9xwsSzRfLXZKnEI7w4mI6XA8hM_rQUkVItg"
@@ -116,14 +118,14 @@
         <article class="md:col-span-4 group bg-white p-7 rounded-2xl border border-ink-200/70 card-lift flex flex-col">
           <div class="flex items-start justify-between gap-4 mb-6">
             <div class="w-12 h-12 bg-brand-50 text-brand-700 flex items-center justify-center rounded-lg group-hover:bg-brand-700 group-hover:text-white transition-colors">
-              <span class="material-symbols-outlined">energy_savings_leaf</span>
+              <span class="material-symbols-outlined" aria-hidden="true">energy_savings_leaf</span>
             </div>
-            <span class="font-mono text-[11px] uppercase tracking-widest text-ink-400">02</span>
+            <span class="font-mono text-[11px] uppercase tracking-widest text-ink-500">02</span>
           </div>
           <h3 class="font-headline font-bold text-xl text-ink-900 mb-3">Aluminio y PVC</h3>
           <p class="text-ink-600 text-sm leading-relaxed">
-            Sistemas de alta eficiencia energética con rotura de puente térmico para un aislamiento
-            total.
+            Fabricación de cierres, ventanas y puertas, con rotura de puente térmico para un mejor
+            aislamiento.
           </p>
         </article>
 
@@ -131,13 +133,13 @@
         <article class="md:col-span-4 group bg-white p-7 rounded-2xl border border-ink-200/70 card-lift flex flex-col">
           <div class="flex items-start justify-between gap-4 mb-6">
             <div class="w-12 h-12 bg-brand-50 text-brand-700 flex items-center justify-center rounded-lg group-hover:bg-brand-700 group-hover:text-white transition-colors">
-              <span class="material-symbols-outlined">layers</span>
+              <span class="material-symbols-outlined" aria-hidden="true">layers</span>
             </div>
-            <span class="font-mono text-[11px] uppercase tracking-widest text-ink-400">03</span>
+            <span class="font-mono text-[11px] uppercase tracking-widest text-ink-500">03</span>
           </div>
           <h3 class="font-headline font-bold text-xl text-ink-900 mb-3">Cristalería</h3>
           <p class="text-ink-600 text-sm leading-relaxed">
-            Vidrios templados, laminados de seguridad y cristales de control solar inteligentes.
+            Instalación de vidrios, doble y triple acristalamiento, barandas, sistemas de seguridad antirrobo, divisiones de oficinas, techos, instalaciones comerciales y cortinas de cristal.
           </p>
         </article>
 
@@ -145,13 +147,13 @@
         <article class="md:col-span-4 group bg-white p-7 rounded-2xl border border-ink-200/70 card-lift flex flex-col">
           <div class="flex items-start justify-between gap-4 mb-6">
             <div class="w-12 h-12 bg-brand-50 text-brand-700 flex items-center justify-center rounded-lg group-hover:bg-brand-700 group-hover:text-white transition-colors">
-              <span class="material-symbols-outlined">view_quilt</span>
+              <span class="material-symbols-outlined" aria-hidden="true">view_quilt</span>
             </div>
-            <span class="font-mono text-[11px] uppercase tracking-widest text-ink-400">04</span>
+            <span class="font-mono text-[11px] uppercase tracking-widest text-ink-500">04</span>
           </div>
           <h3 class="font-headline font-bold text-xl text-ink-900 mb-3">Paneles composite</h3>
           <p class="text-ink-600 text-sm leading-relaxed">
-            Revestimientos de fachadas modernas con alta durabilidad y versatilidad cromática.
+            Revestimiento de fachadas y decoración. Soluciones modernas y duraderas para transformar cualquier espacio.
           </p>
         </article>
 
@@ -159,14 +161,14 @@
         <article class="md:col-span-4 group bg-white p-7 rounded-2xl border border-ink-200/70 card-lift flex flex-col">
           <div class="flex items-start justify-between gap-4 mb-6">
             <div class="w-12 h-12 bg-brand-50 text-brand-700 flex items-center justify-center rounded-lg group-hover:bg-brand-700 group-hover:text-white transition-colors">
-              <span class="material-symbols-outlined">rounded_corner</span>
+              <span class="material-symbols-outlined" aria-hidden="true">rounded_corner</span>
             </div>
-            <span class="font-mono text-[11px] uppercase tracking-widest text-ink-400">05</span>
+            <span class="font-mono text-[11px] uppercase tracking-widest text-ink-500">05</span>
           </div>
           <h3 class="font-headline font-bold text-xl text-ink-900 mb-3">Ventanas curvas</h3>
           <p class="text-ink-600 text-sm leading-relaxed">
-            Expertos en soluciones arquitectónicas singulares con curvatura de perfiles de alta
-            precisión.
+            Curvamos perfiles de aluminio y hierro para fabricar ventanas curvas a medida e
+            invernaderos.
           </p>
         </article>
 
@@ -174,13 +176,13 @@
         <article class="md:col-span-4 group bg-white p-7 rounded-2xl border border-ink-200/70 card-lift flex flex-col">
           <div class="flex items-start justify-between gap-4 mb-6">
             <div class="w-12 h-12 bg-brand-50 text-brand-700 flex items-center justify-center rounded-lg group-hover:bg-brand-700 group-hover:text-white transition-colors">
-              <span class="material-symbols-outlined">settings_input_component</span>
+              <span class="material-symbols-outlined" aria-hidden="true">settings_input_component</span>
             </div>
-            <span class="font-mono text-[11px] uppercase tracking-widest text-ink-400">06</span>
+            <span class="font-mono text-[11px] uppercase tracking-widest text-ink-500">06</span>
           </div>
           <h3 class="font-headline font-bold text-xl text-ink-900 mb-3">Motorizaciones</h3>
           <p class="text-ink-600 text-sm leading-relaxed">
-            Domótica avanzada para persianas y toldos. Control remoto y automatización climática.
+            Motorización para portones de cochera, puertas seccionales, puertas rápidas y persianas de seguridad.
           </p>
         </article>
 
@@ -191,7 +193,7 @@
             <div class="md:col-span-8">
               <div class="flex items-center gap-3 mb-5">
                 <div class="w-12 h-12 bg-white/10 text-white flex items-center justify-center rounded-lg">
-                  <span class="material-symbols-outlined">apartment</span>
+                  <span class="material-symbols-outlined" aria-hidden="true">apartment</span>
                 </div>
                 <span class="font-mono text-[11px] uppercase tracking-widest text-brand-300">
                   07 · Proyectos corporativos
@@ -199,8 +201,8 @@
               </div>
               <h3 class="display text-white text-2xl md:text-3xl mb-3">Muros cortina</h3>
               <p class="text-ink-200 text-sm md:text-base leading-relaxed max-w-xl">
-                Estructuras integrales de vidrio para edificios corporativos que maximizan
-                la luz natural y el rendimiento térmico.
+                Fabricación e instalación de muros cortina, con vidrio o paneles.
+                Amplia gama de colores y modelos.
               </p>
             </div>
             <div class="md:col-span-4 md:text-right">
@@ -209,7 +211,7 @@
                 class="inline-flex items-center justify-center gap-2 bg-white text-ink-900 px-6 py-3.5 rounded-lg font-semibold text-sm hover:bg-ink-100 transition-all min-h-[48px] w-full md:w-auto"
               >
                 Pedir información
-                <span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+                <span class="material-symbols-outlined text-[18px]" aria-hidden="true">arrow_outward</span>
               </a>
             </div>
           </div>
@@ -238,11 +240,11 @@
         <article class="relative bg-white p-7 md:p-8 rounded-2xl border border-ink-200/70 card-lift">
           <div class="flex items-start justify-between mb-6">
             <div class="w-12 h-12 rounded-lg bg-brand-50 flex items-center justify-center">
-              <span class="material-symbols-outlined text-brand-700">support_agent</span>
+              <span class="material-symbols-outlined text-brand-700" aria-hidden="true">support_agent</span>
             </div>
             <span class="font-mono text-5xl font-bold text-ink-900/[0.06] leading-none">01</span>
           </div>
-          <h4 class="font-headline font-bold text-lg text-ink-900 mb-2">Asesoramiento</h4>
+          <h3 class="font-headline font-bold text-lg text-ink-900 mb-2">Asesoramiento</h3>
           <p class="text-ink-600 text-sm leading-relaxed">
             Consultoría técnica para definir la mejor solución según el proyecto arquitectónico.
           </p>
@@ -251,11 +253,11 @@
         <article class="relative bg-white p-7 md:p-8 rounded-2xl border border-ink-200/70 card-lift">
           <div class="flex items-start justify-between mb-6">
             <div class="w-12 h-12 rounded-lg bg-brand-50 flex items-center justify-center">
-              <span class="material-symbols-outlined text-brand-700">straighten</span>
+              <span class="material-symbols-outlined text-brand-700" aria-hidden="true">straighten</span>
             </div>
             <span class="font-mono text-5xl font-bold text-ink-900/[0.06] leading-none">02</span>
           </div>
-          <h4 class="font-headline font-bold text-lg text-ink-900 mb-2">Medición</h4>
+          <h3 class="font-headline font-bold text-lg text-ink-900 mb-2">Medición</h3>
           <p class="text-ink-600 text-sm leading-relaxed">
             Toma de datos digital con precisión milimétrica en obra para un ajuste perfecto.
           </p>
@@ -264,13 +266,13 @@
         <article class="relative bg-white p-7 md:p-8 rounded-2xl border border-ink-200/70 card-lift">
           <div class="flex items-start justify-between mb-6">
             <div class="w-12 h-12 rounded-lg bg-brand-50 flex items-center justify-center">
-              <span class="material-symbols-outlined text-brand-700">precision_manufacturing</span>
+              <span class="material-symbols-outlined text-brand-700" aria-hidden="true">precision_manufacturing</span>
             </div>
             <span class="font-mono text-5xl font-bold text-ink-900/[0.06] leading-none">03</span>
           </div>
-          <h4 class="font-headline font-bold text-lg text-ink-900 mb-2">Fabricación</h4>
+          <h3 class="font-headline font-bold text-lg text-ink-900 mb-2">Fabricación</h3>
           <p class="text-ink-600 text-sm leading-relaxed">
-            Manufactura propia en nuestra sede técnica con maquinaria de última generación.
+            Fabricación propia a medida en nuestro taller de Córdoba.
           </p>
         </article>
 
@@ -279,11 +281,11 @@
           <div class="relative">
             <div class="flex items-start justify-between mb-6">
               <div class="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center">
-                <span class="material-symbols-outlined text-white">construction</span>
+                <span class="material-symbols-outlined text-white" aria-hidden="true">construction</span>
               </div>
               <span class="font-mono text-5xl font-bold text-white/10 leading-none">04</span>
             </div>
-            <h4 class="font-headline font-bold text-lg text-white mb-2">Instalación</h4>
+            <h3 class="font-headline font-bold text-lg text-white mb-2">Instalación</h3>
             <p class="text-brand-100 text-sm leading-relaxed">
               Montaje especializado por técnicos cualificados asegurando estanqueidad y acabado.
             </p>
@@ -306,27 +308,27 @@
             <span class="text-brand-700">primera línea</span>
           </h2>
           <p class="text-ink-600 text-base md:text-lg mb-8 leading-relaxed">
-            Seleccionamos únicamente materias primas que superan los test de resistencia
-            y estética más exigentes del sector.
+            Trabajamos con marcas de primera calidad. Los servicios pueden ser suministrados
+            o colocados.
           </p>
 
           <ul class="space-y-3">
             <li class="flex items-center gap-3 p-3 rounded-lg bg-ink-50 border border-ink-200/50">
               <span class="w-2 h-2 bg-brand-700 rounded-full shrink-0"></span>
               <span class="text-sm font-headline font-bold text-ink-900 uppercase tracking-wider">
-                Vidrios técnicos Saint-Gobain
+                Vidrios laminados y de control solar
               </span>
             </li>
             <li class="flex items-center gap-3 p-3 rounded-lg bg-ink-50 border border-ink-200/50">
               <span class="w-2 h-2 bg-brand-700 rounded-full shrink-0"></span>
               <span class="text-sm font-headline font-bold text-ink-900 uppercase tracking-wider">
-                Perfilería de aluminio naval
+                Perfiles de aluminio y PVC
               </span>
             </li>
             <li class="flex items-center gap-3 p-3 rounded-lg bg-ink-50 border border-ink-200/50">
               <span class="w-2 h-2 bg-brand-700 rounded-full shrink-0"></span>
               <span class="text-sm font-headline font-bold text-ink-900 uppercase tracking-wider">
-                Herrajes de alta seguridad
+                Amplia gama de colores y modelos
               </span>
             </li>
           </ul>
@@ -335,6 +337,7 @@
         <div class="lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
           <div class="aspect-square rounded-xl overflow-hidden group relative">
             <img
+              loading="lazy"
               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               alt="Perfiles de aluminio cepillado"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPoEek8cIcugQOxBRDoq3ELIjplT7OZmlzC-Q53y92qmniPtYf_ForaEVnwL0gWkZEBUUFdInHzai8HaxYrs24b2Up4TmZ0eHDWakKKyfNhDAmZ7rStm7sMFHs_wAk44WZiGpjx4rGKUkGGziUtw_iTMGgxMNn7JWD2Wu29xHyohD2LQ8n1UDx8uqgvtcpRjiQBRWbXCSnidLiR3Hz8uFsP7IFbnAtz26_8IGl3ksIHn2s5jAOoVwu80X9kc9hfh5oBs1mzUFMuwU"
@@ -347,6 +350,7 @@
           </div>
           <div class="aspect-square rounded-xl overflow-hidden group relative">
             <img
+              loading="lazy"
               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               alt="Cantos de vidrio templado"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeD8-7EV6WX4nlbTyhBwTrxyGToeg6ujXh1bZo17GffO0U0OzqmkgWEsLqmstM6hCYYKKbF0SmKjoIfrCsjaVDvZumuCgT0Xv5kzsNpagqVlUD97Kqm7qyJUU3M_M5hx0Ps-SG5MHgMUBtpXiLpv4APJctal4q3dqz0E9oaVyPsLU9RqNxkp4w7dWrzHJySoZ33s8H41sg1RFTNA-dp9Y_-OewjtwEzWIMStWvLF9nmS4IVd1EdRT933JH-g5Qxc7knvUK1O4J-rk"
@@ -359,6 +363,7 @@
           </div>
           <div class="aspect-square rounded-xl overflow-hidden group relative">
             <img
+              loading="lazy"
               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               alt="Herrajes en acero inoxidable"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuAo31IudZChC_u5xE6s8J7anIJSoStDHNrNofdqAJmLsLB0qcbvnZmvsTaGo1ouVJB9QqH_EDxc1yjHOApQzFvCVOpD3Cmz1889Qf9YwPO7a7N1L8rJ0I33L08BsbG5rErZHxjuS7apvnqCGhsQGDWF-ijPxbZU4xIRkdHYfl-wYBD1fz9Ba1MwAC1SrH2kYWB0u6Y5u97pDEaQ9oKybEHm_zc1nd-NMz15Dfgj5ueAjx3hl9S9xriH3fOgzmL1abeemEapWuqDXzY"
@@ -371,6 +376,7 @@
           </div>
           <div class="aspect-square rounded-xl overflow-hidden group relative col-span-2 md:col-span-3">
             <img
+              loading="lazy"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               alt="Acabados composite antracita"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGLNcAA3sqlZXLaydENaeoEPDA2vbbSdDkX_cTgjcJbj__evDcwwB7moRifhVUNTja0ptVqIdvmHg4brQiO_hnbNWI_lJ82-paBXC5PrsTPrHETZXhgO5kmP0e01S-I9jiHalGw5zglwrhJQ8vqZfgO5ubSSFC9kThTOusnIhzU2UZcdfyHyXw4xwFRcxtwzDheVl-n1bwjOxjcFznDDnI2rddEtiDQuNTUHyOWYLnmPzTmU_EjTqX26KQsRvu23gKGQceJNHQciM"
@@ -411,13 +417,13 @@
             class="inline-flex items-center justify-center gap-2 bg-brand-700 hover:bg-brand-800 text-white px-7 py-4 rounded-lg font-semibold text-base transition-all active:scale-[0.98] shadow-lift min-h-[48px]"
           >
             Solicitar presupuesto
-            <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+            <span class="material-symbols-outlined text-[20px]" aria-hidden="true">arrow_forward</span>
           </a>
           <a
             href="tel:+34600952601"
             class="inline-flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 text-white px-7 py-4 rounded-lg font-semibold text-base transition-all active:scale-[0.98] border border-white/15 min-h-[48px]"
           >
-            <span class="material-symbols-outlined text-[20px]">call</span>
+            <span class="material-symbols-outlined text-[20px]" aria-hidden="true">call</span>
             Llamar ahora
           </a>
         </div>

@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { FormspreeService } from '../../../services/formspree.service';
+import { ContactFormService, FormNotConfiguredError } from '../../../services/contact-form.service';
 
 @Component({
   selector: 'app-main',
@@ -12,7 +12,7 @@ import { FormspreeService } from '../../../services/formspree.service';
 export class Main {
   readonly contactStatus = signal<'idle' | 'sending' | 'success' | 'error' | 'not_configured'>('idle');
 
-  constructor(private readonly formspree: FormspreeService) {}
+  constructor(private readonly contactForm: ContactFormService) {}
 
   async onSubmitContacto(event: SubmitEvent): Promise<void> {
     event.preventDefault();
@@ -31,11 +31,11 @@ export class Main {
     this.contactStatus.set('sending');
 
     try {
-      await this.formspree.submit(new FormData(form));
+      await this.contactForm.submit(new FormData(form), 'Nuevo mensaje de contacto - castilglass.es');
       this.contactStatus.set('success');
       form.reset();
     } catch (err) {
-      if (String(err).includes('Formspree no está configurado')) {
+      if (err instanceof FormNotConfiguredError) {
         this.contactStatus.set('not_configured');
       } else {
         this.contactStatus.set('error');

@@ -1,4 +1,4 @@
-<main>
+<main id="contenido" tabindex="-1">
   <!-- ============================================
        HERO
        ============================================ -->
@@ -10,6 +10,7 @@
       <img
         alt="Instalación de cristalería arquitectónica Castilglass"
         class="w-full h-full object-cover"
+        fetchpriority="high"
         src="https://lh3.googleusercontent.com/aida-public/AB6AXuATatQeqnM9RNAgNCz9xgkUEAhDDcOCSxgZe6zY43rZ_PG0Lznj2Hjsk41cJ1luIwtH3P1sULElNtR9olNhPeFHD1EIJ1jyfC6MeTxGB-6hkbohEt6K9hfW_nqpZSrnEXvfqjj0YLUVyVBW78tMViTzjpdudJk6XNgPkZgpHYBXU_ODxwzeFN6vZ0agabgmqK8A1Hunm5C-QcX7pENSR1EyvPI0x662Xtu2__Yw5wWw-RXm3YJ36XZ0QOtL0cjArB85m4lyKnzEZws"
       />
       <!-- Layered gradients for depth -->
@@ -22,13 +23,13 @@
         <div class="rise rise-d1 flex items-center gap-3 mb-6">
           <span class="h-px w-10 bg-brand-400"></span>
           <span class="font-mono text-xs uppercase tracking-[0.22em] text-brand-300">
-            Córdoba · Desde 1972
+            Córdoba · Más de 50 años
           </span>
         </div>
 
         <h1 class="rise rise-d2 display text-white text-4xl sm:text-5xl md:text-7xl mb-6">
-          Carpintería metálica<br />
-          y cristalería <span class="text-brand-300">a medida</span>
+          Carpintería de aluminio,<br />
+          PVC y hierro <span class="text-brand-300">a medida</span>
         </h1>
 
         <p class="rise rise-d3 text-ink-200 text-base md:text-xl font-body leading-relaxed mb-10 max-w-xl">
@@ -42,14 +43,14 @@
             [routerLink]="['/solicitar-presupuesto']"
           >
             Solicitar presupuesto
-            <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+            <span class="material-symbols-outlined text-[20px]" aria-hidden="true">arrow_forward</span>
           </a>
           <a
             class="bg-white/10 backdrop-blur-md text-white border border-white/25 px-7 py-4 rounded-lg font-semibold text-base hover:bg-white/15 transition-all active:scale-[0.98] inline-flex items-center justify-center gap-2"
             [routerLink]="['/nuestros-servicios']"
           >
             Ver servicios
-            <span class="material-symbols-outlined text-[20px]">arrow_outward</span>
+            <span class="material-symbols-outlined text-[20px]" aria-hidden="true">arrow_outward</span>
           </a>
         </div>
 
@@ -97,25 +98,25 @@
     <div class="max-w-7xl mx-auto px-4 md:px-8 py-6 md:py-7">
       <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-ink-200">
         <div class="flex items-center gap-3 px-4 first:pl-0">
-          <span class="material-symbols-outlined text-brand-700">verified</span>
+          <span class="material-symbols-outlined text-brand-700" aria-hidden="true">check_circle</span>
           <p class="text-sm font-semibold text-ink-800 leading-tight">
-            Calidad<br /><span class="font-normal text-ink-500 text-xs">certificada</span>
+            Presupuesto<br /><span class="font-normal text-ink-500 text-xs">sin compromiso</span>
           </p>
         </div>
         <div class="flex items-center gap-3 px-4">
-          <span class="material-symbols-outlined text-brand-700">precision_manufacturing</span>
+          <span class="material-symbols-outlined text-brand-700" aria-hidden="true">precision_manufacturing</span>
           <p class="text-sm font-semibold text-ink-800 leading-tight">
-            Taller<br /><span class="font-normal text-ink-500 text-xs">propio CNC</span>
+            Taller<br /><span class="font-normal text-ink-500 text-xs">propio</span>
           </p>
         </div>
         <div class="flex items-center gap-3 px-4">
-          <span class="material-symbols-outlined text-brand-700">support_agent</span>
+          <span class="material-symbols-outlined text-brand-700" aria-hidden="true">support_agent</span>
           <p class="text-sm font-semibold text-ink-800 leading-tight">
             Asesoría<br /><span class="font-normal text-ink-500 text-xs">técnica directa</span>
           </p>
         </div>
         <div class="flex items-center gap-3 px-4">
-          <span class="material-symbols-outlined text-brand-700">local_shipping</span>
+          <span class="material-symbols-outlined text-brand-700" aria-hidden="true">local_shipping</span>
           <p class="text-sm font-semibold text-ink-800 leading-tight">
             Entrega<br /><span class="font-normal text-ink-500 text-xs">e instalación</span>
           </p>
@@ -147,27 +148,27 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
         <div class="card-lift bg-white p-7 rounded-2xl border border-ink-200/70">
           <div class="w-12 h-12 bg-brand-50 flex items-center justify-center rounded-lg mb-6">
-            <span class="material-symbols-outlined text-brand-700" style="font-variation-settings: 'FILL' 1">security</span>
+            <span class="material-symbols-outlined text-brand-700" aria-hidden="true" style="font-variation-settings: 'FILL' 1">security</span>
           </div>
           <h3 class="text-lg font-headline font-bold text-ink-900 mb-2">Máxima seguridad</h3>
           <p class="text-ink-600 text-sm leading-relaxed">
-            Cerramientos reforzados y vidrios de seguridad certificados para tu tranquilidad.
+            Cerramientos reforzados y vidrios de seguridad para tu tranquilidad.
           </p>
         </div>
 
         <div class="card-lift bg-white p-7 rounded-2xl border border-ink-200/70">
           <div class="w-12 h-12 bg-brand-50 flex items-center justify-center rounded-lg mb-6">
-            <span class="material-symbols-outlined text-brand-700" style="font-variation-settings: 'FILL' 1">thermostat</span>
+            <span class="material-symbols-outlined text-brand-700" aria-hidden="true" style="font-variation-settings: 'FILL' 1">thermostat</span>
           </div>
           <h3 class="text-lg font-headline font-bold text-ink-900 mb-2">Aislamiento eficiente</h3>
           <p class="text-ink-600 text-sm leading-relaxed">
-            Rotura de puente térmico y vidrios acústicos para máximo ahorro energético y confort.
+            Rotura de puente térmico y doble o triple acristalamiento para máximo ahorro energético y confort.
           </p>
         </div>
 
         <div class="card-lift bg-white p-7 rounded-2xl border border-ink-200/70">
           <div class="w-12 h-12 bg-brand-50 flex items-center justify-center rounded-lg mb-6">
-            <span class="material-symbols-outlined text-brand-700" style="font-variation-settings: 'FILL' 1">architecture</span>
+            <span class="material-symbols-outlined text-brand-700" aria-hidden="true" style="font-variation-settings: 'FILL' 1">architecture</span>
           </div>
           <h3 class="text-lg font-headline font-bold text-ink-900 mb-2">Acabados modernos</h3>
           <p class="text-ink-600 text-sm leading-relaxed">
@@ -177,7 +178,7 @@
 
         <div class="card-lift bg-white p-7 rounded-2xl border border-ink-200/70">
           <div class="w-12 h-12 bg-brand-50 flex items-center justify-center rounded-lg mb-6">
-            <span class="material-symbols-outlined text-brand-700" style="font-variation-settings: 'FILL' 1">construction</span>
+            <span class="material-symbols-outlined text-brand-700" aria-hidden="true" style="font-variation-settings: 'FILL' 1">construction</span>
           </div>
           <h3 class="text-lg font-headline font-bold text-ink-900 mb-2">Instalación experta</h3>
           <p class="text-ink-600 text-sm leading-relaxed">
@@ -205,14 +206,14 @@
         </div>
         <div class="md:text-right">
           <p class="text-ink-600 text-sm md:text-base max-w-sm">
-            Fabricamos cada elemento en nuestro taller de Córdoba con maquinaria CNC.
+            Fabricamos cada elemento en nuestro taller de Córdoba. Suministro o colocación, con marcas de primera calidad.
           </p>
           <a
             [routerLink]="['/nuestros-servicios']"
             class="inline-flex items-center gap-2 mt-3 text-sm font-semibold text-brand-700 hover:text-brand-800"
           >
             Ver catálogo completo
-            <span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+            <span class="material-symbols-outlined text-[18px]" aria-hidden="true">arrow_outward</span>
           </a>
         </div>
       </div>
@@ -231,69 +232,69 @@
           </div>
 
           <div class="relative">
-            <span class="material-symbols-outlined text-brand-300 text-3xl mb-4 block">handyman</span>
+            <span class="material-symbols-outlined text-brand-300 text-3xl mb-4 block" aria-hidden="true">handyman</span>
             <h3 class="text-2xl md:text-3xl font-headline font-bold mb-3">Carpintería metálica</h3>
             <p class="text-ink-200 text-sm md:text-base leading-relaxed max-w-md">
-              Estructuras de hierro, acero inoxidable y forja artística personalizada con
-              acabados industriales de alta resistencia.
+              Rejas, puertas, balcones, barandas y pérgolas. Estructuras de hierro, acero
+              inoxidable y forja artística a medida.
             </p>
           </div>
         </article>
 
         <!-- Aluminio y PVC -->
         <article class="md:col-span-3 group bg-white p-7 rounded-2xl border border-ink-200/70 card-lift">
-          <span class="material-symbols-outlined text-2xl text-brand-700 mb-4 block">window</span>
-          <h4 class="text-lg font-headline font-bold text-ink-900 mb-2">Aluminio y PVC</h4>
+          <span class="material-symbols-outlined text-2xl text-brand-700 mb-4 block" aria-hidden="true">window</span>
+          <h3 class="text-lg font-headline font-bold text-ink-900 mb-2">Aluminio y PVC</h3>
           <p class="text-ink-600 text-sm leading-relaxed">
-            Sistemas de ventanas y puertas de alta eficiencia con herrajes de seguridad.
+            Fabricación de cierres, ventanas y puertas a medida.
           </p>
         </article>
 
         <!-- Cristalería -->
         <article class="md:col-span-3 group bg-white p-7 rounded-2xl border border-ink-200/70 card-lift">
-          <span class="material-symbols-outlined text-2xl text-brand-700 mb-4 block">border_all</span>
-          <h4 class="text-lg font-headline font-bold text-ink-900 mb-2">Cristalería</h4>
+          <span class="material-symbols-outlined text-2xl text-brand-700 mb-4 block" aria-hidden="true">border_all</span>
+          <h3 class="text-lg font-headline font-bold text-ink-900 mb-2">Cristalería</h3>
           <p class="text-ink-600 text-sm leading-relaxed">
-            Vidrios laminados, templados y de control solar para fachadas e interiores.
+            Doble y triple acristalamiento, barandas, divisiones de oficina, techos y cortinas de cristal.
           </p>
         </article>
 
         <!-- Paneles composite -->
         <article class="md:col-span-3 group bg-white p-7 rounded-2xl border border-ink-200/70 card-lift">
-          <span class="material-symbols-outlined text-2xl text-brand-700 mb-4 block">layers</span>
-          <h4 class="text-lg font-headline font-bold text-ink-900 mb-2">Paneles composite</h4>
+          <span class="material-symbols-outlined text-2xl text-brand-700 mb-4 block" aria-hidden="true">layers</span>
+          <h3 class="text-lg font-headline font-bold text-ink-900 mb-2">Paneles composite</h3>
           <p class="text-ink-600 text-sm leading-relaxed">
-            Revestimientos de fachadas modernas con alta durabilidad y diseño.
+            Revestimiento de fachadas y decoración. Soluciones modernas y duraderas.
           </p>
         </article>
 
         <!-- Ventanas curvas -->
         <article class="md:col-span-3 group bg-white p-7 rounded-2xl border border-ink-200/70 card-lift">
-          <span class="material-symbols-outlined text-2xl text-brand-700 mb-4 block">rounded_corner</span>
-          <h4 class="text-lg font-headline font-bold text-ink-900 mb-2">Ventanas curvas</h4>
+          <span class="material-symbols-outlined text-2xl text-brand-700 mb-4 block" aria-hidden="true">rounded_corner</span>
+          <h3 class="text-lg font-headline font-bold text-ink-900 mb-2">Ventanas curvas</h3>
           <p class="text-ink-600 text-sm leading-relaxed">
-            Especialistas en curvado de perfiles para diseños arquitectónicos singulares.
+            Curvamos perfiles de aluminio y hierro para ventanas curvas a medida e invernaderos.
           </p>
         </article>
 
         <!-- Motorización -->
         <article class="md:col-span-6 group bg-white p-7 rounded-2xl border border-ink-200/70 card-lift flex items-start gap-5">
-          <span class="material-symbols-outlined text-2xl text-brand-700">settings_input_component</span>
+          <span class="material-symbols-outlined text-2xl text-brand-700" aria-hidden="true">settings_input_component</span>
           <div>
-            <h4 class="text-lg font-headline font-bold text-ink-900 mb-2">Motorización</h4>
+            <h3 class="text-lg font-headline font-bold text-ink-900 mb-2">Motorización</h3>
             <p class="text-ink-600 text-sm leading-relaxed">
-              Automatización de persianas, toldos y accesos con control domótico integrado.
+              Motorización de portones de cochera, puertas seccionales, puertas rápidas y persianas de seguridad.
             </p>
           </div>
         </article>
 
         <!-- Muros cortina -->
         <article class="md:col-span-6 group bg-brand-700 text-white p-7 rounded-2xl card-lift flex items-start gap-5">
-          <span class="material-symbols-outlined text-2xl text-brand-200">apartment</span>
+          <span class="material-symbols-outlined text-2xl text-brand-200" aria-hidden="true">apartment</span>
           <div>
-            <h4 class="text-lg font-headline font-bold mb-2">Muros cortina</h4>
+            <h3 class="text-lg font-headline font-bold mb-2">Muros cortina</h3>
             <p class="text-brand-100 text-sm leading-relaxed">
-              Sistemas estructurales de vidrio para edificios comerciales y residencias de lujo.
+              Fabricación e instalación de muros cortina, con vidrio o paneles. Amplia gama de colores y modelos.
             </p>
           </div>
         </article>
@@ -312,21 +313,11 @@
           <div class="absolute -top-6 -left-6 w-32 h-32 bg-brand-50 rounded-full -z-0"></div>
           <div class="relative z-10 overflow-hidden rounded-2xl shadow-lift">
             <img
+              loading="lazy"
               alt="Taller de fabricación Castilglass en Córdoba"
               class="w-full h-full object-cover aspect-[4/5]"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhMPE0OeayzSJ-LmwZVQXNYL3UFIpBWFWf-ZL6aY3U4T-dEVxCfvXihC3l4OPrAWutVit2SpJ9ieP3cpUPOzyHfR38Gfw94CCLn3XzzD0bzURXfC7eNPq9K6bU2wIXV5Im9cg5o5V4p_PIeDfzg8GQkOOrSf1kO2osFoSGcgge8tag3U9hWtRtldl7vbl5F9aBynKSzERV5lXdcOYV4a7VedWQXGLvkRDDlf_gvVYcLhpY6dzOXPzLLgEOgrBQCq3PDxKcJZZ5bQY"
             />
-          </div>
-          <div class="absolute -bottom-5 -right-5 md:-bottom-6 md:-right-6 bg-white p-4 md:p-5 rounded-xl shadow-lift z-20 border border-ink-200">
-            <div class="flex items-center gap-3">
-              <span class="material-symbols-outlined text-brand-700 text-3xl">verified</span>
-              <div>
-                <p class="font-headline font-bold text-base text-ink-900">ISO 9001</p>
-                <p class="text-[10px] text-ink-500 font-label uppercase tracking-widest">
-                  Calidad certificada
-                </p>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -345,9 +336,9 @@
                 </div>
               </div>
               <div class="pt-1">
-                <h5 class="font-headline font-bold text-lg text-ink-900 mb-1.5">
+                <h3 class="font-headline font-bold text-lg text-ink-900 mb-1.5">
                   Asesoramiento técnico directo
-                </h5>
+                </h3>
                 <p class="text-ink-600 text-sm leading-relaxed">
                   No somos comerciales, somos técnicos. Te orientamos sobre qué perfilería
                   y vidrio se ajusta mejor a tu presupuesto.
@@ -361,12 +352,12 @@
                 </div>
               </div>
               <div class="pt-1">
-                <h5 class="font-headline font-bold text-lg text-ink-900 mb-1.5">
+                <h3 class="font-headline font-bold text-lg text-ink-900 mb-1.5">
                   Fabricación propia a medida
-                </h5>
+                </h3>
                 <p class="text-ink-600 text-sm leading-relaxed">
-                  Contamos con taller propio equipado con maquinaria CNC de última generación
-                  para garantizar acabados milimétricos.
+                  Fabricamos a medida en nuestro propio taller de Córdoba para garantizar
+                  un ajuste perfecto.
                 </p>
               </div>
             </li>
@@ -377,12 +368,12 @@
                 </div>
               </div>
               <div class="pt-1">
-                <h5 class="font-headline font-bold text-lg text-ink-900 mb-1.5">
+                <h3 class="font-headline font-bold text-lg text-ink-900 mb-1.5">
                   Montaje de precisión
-                </h5>
+                </h3>
                 <p class="text-ink-600 text-sm leading-relaxed">
-                  Nuestro equipo de instaladores oficiales asegura que el rendimiento térmico
-                  y acústico prometido sea el real.
+                  Nuestro propio equipo de montaje asegura que el rendimiento térmico
+                  prometido sea el real.
                 </p>
               </div>
             </li>
@@ -411,9 +402,10 @@
 
           <div class="space-y-5 text-ink-200 font-body text-base leading-relaxed max-w-xl">
             <p>
-              Castilglass nació hace más de medio siglo en Córdoba como un pequeño taller
-              artesanal. Hoy, la tercera generación de la familia lidera una empresa puntera
-              que combina experiencia con tecnología.
+              Castilglass (Castillo Cañizares) es una empresa familiar, hoy con la tercera
+              generación al frente, especializada en la fabricación, instalación y montaje de
+              carpintería metálica, aluminio, PVC y cristalería. Profesionales con más de
+              50 años de experiencia en Córdoba.
             </p>
             <p>
               Nuestra filosofía: la precisión no es negociable. Cada corte, cada soldadura
@@ -421,17 +413,11 @@
             </p>
           </div>
 
-          <div class="mt-10 grid grid-cols-2 gap-6 max-w-md pt-8 border-t border-white/15">
+          <div class="mt-10 max-w-md pt-8 border-t border-white/15">
             <div>
               <p class="metric text-white text-3xl md:text-4xl">1.500<span class="text-brand-300">+</span></p>
               <p class="text-ink-300 text-[11px] font-label uppercase tracking-widest mt-2">
                 Proyectos entregados
-              </p>
-            </div>
-            <div>
-              <p class="metric text-white text-3xl md:text-4xl">15</p>
-              <p class="text-ink-300 text-[11px] font-label uppercase tracking-widest mt-2">
-                Técnicos en plantilla
               </p>
             </div>
           </div>
@@ -439,11 +425,13 @@
 
         <div class="lg:col-span-6 grid grid-cols-2 gap-4">
           <img
+            loading="lazy"
             alt="Detalle técnico de carpintería metálica"
             class="rounded-xl w-full h-48 md:h-64 object-cover"
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjsdFb2JHq1bCqcYs3pR2mQi2TE0nPaLuXhBu5hH2CLjxg1I-OwIPgOBU9uZ7V8cFc8dgczaVKWnFOYFSg9KnrJMDgCjLIpM5oaprNOJXRIub_XM8qZQfEHfMq5UF4qwAK59f93Vlrv9DJvTx5wfMs8STR_bRhh5vvGsAKuw482Zh2uTPzIV-XBqPLG0C_2WqS_vdiorg_RRRb5HOFwUkMCVysrURm95B5XEG5L0tu6AkTU5oS7PpT1nyxWBLDeUJsz45W81WkiT8"
           />
           <img
+            loading="lazy"
             alt="Fachada terminada por Castilglass"
             class="rounded-xl w-full h-56 md:h-80 object-cover mt-6 md:mt-10"
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYJ81bwEj65M9QjE3xhzSX5uOcXuvfMsynCXRB7wPG4vaCdZ0HHyJ_bNP_HwZNUWDTz-m2RiiuBmcnhW9Dj-CdMbOV2Q1H9YOOJwcXeYRZX7OT6t9d0VbwoTHEhqROUlpc3SqYk0Cp1elEwXMH86M1x13kn0fqVYopfU0iE1BM45XMa8REsYUJA1GeSANp2QpY7eJstCyS79pZqjIwe3ddHSw0b2OIYrgjhufTL3J0NPgP4MNajCrG_6LBB3ec7hwubhL4Lsgy8HE"
@@ -481,13 +469,13 @@
               class="bg-white text-brand-700 px-7 py-4 rounded-lg font-semibold text-base hover:bg-ink-50 transition-all active:scale-[0.98] shadow-lift inline-flex items-center justify-center gap-2"
             >
               Solicitar presupuesto
-              <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+              <span class="material-symbols-outlined text-[20px]" aria-hidden="true">arrow_forward</span>
             </a>
             <a
               href="tel:+34600952601"
               class="border border-white/30 text-white px-7 py-4 rounded-lg font-semibold text-base hover:bg-white/10 transition-all active:scale-[0.98] inline-flex items-center justify-center gap-2"
             >
-              <span class="material-symbols-outlined text-[20px]">call</span>
+              <span class="material-symbols-outlined text-[20px]" aria-hidden="true">call</span>
               +34 600 952 601
             </a>
           </div>
@@ -519,25 +507,25 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
-                <label class="block text-xs font-label font-bold text-ink-700 uppercase tracking-widest mb-2">
+                <label for="campo-nombre" class="block text-xs font-label font-bold text-ink-700 uppercase tracking-widest mb-2">
                   Nombre completo
                 </label>
                 <input
-                  class="w-full bg-ink-50 border border-ink-200 focus:border-brand-700 focus:ring-2 focus:ring-brand-100 rounded-lg px-4 py-3 transition-all text-ink-900"
+                  class="w-full bg-ink-50 border border-ink-500 focus:border-brand-700 focus:ring-2 focus:ring-brand-100 rounded-lg px-4 py-3 transition-all text-ink-900"
                   placeholder="Ej. Juan Pérez"
-                  name="nombre"
+                  id="campo-nombre" name="nombre" autocomplete="name"
                   type="text"
                   required
                 />
               </div>
               <div>
-                <label class="block text-xs font-label font-bold text-ink-700 uppercase tracking-widest mb-2">
+                <label for="campo-telefono" class="block text-xs font-label font-bold text-ink-700 uppercase tracking-widest mb-2">
                   Teléfono
                 </label>
                 <input
-                  class="w-full bg-ink-50 border border-ink-200 focus:border-brand-700 focus:ring-2 focus:ring-brand-100 rounded-lg px-4 py-3 transition-all text-ink-900"
+                  class="w-full bg-ink-50 border border-ink-500 focus:border-brand-700 focus:ring-2 focus:ring-brand-100 rounded-lg px-4 py-3 transition-all text-ink-900"
                   placeholder="000 000 000"
-                  name="telefono"
+                  id="campo-telefono" name="telefono" autocomplete="tel"
                   type="tel"
                   required
                 />
@@ -545,25 +533,25 @@
             </div>
 
             <div>
-              <label class="block text-xs font-label font-bold text-ink-700 uppercase tracking-widest mb-2">
+              <label for="campo-email" class="block text-xs font-label font-bold text-ink-700 uppercase tracking-widest mb-2">
                 Correo electrónico
               </label>
               <input
-                class="w-full bg-ink-50 border border-ink-200 focus:border-brand-700 focus:ring-2 focus:ring-brand-100 rounded-lg px-4 py-3 transition-all text-ink-900"
+                class="w-full bg-ink-50 border border-ink-500 focus:border-brand-700 focus:ring-2 focus:ring-brand-100 rounded-lg px-4 py-3 transition-all text-ink-900"
                 placeholder="tu@email.com"
-                name="email"
+                id="campo-email" name="email" autocomplete="email"
                 type="email"
                 required
               />
             </div>
 
             <div>
-              <label class="block text-xs font-label font-bold text-ink-700 uppercase tracking-widest mb-2">
+              <label for="campo-tipo_proyecto" class="block text-xs font-label font-bold text-ink-700 uppercase tracking-widest mb-2">
                 Tipo de proyecto
               </label>
               <select
-                class="w-full bg-ink-50 border border-ink-200 focus:border-brand-700 focus:ring-2 focus:ring-brand-100 rounded-lg px-4 py-3 transition-all text-ink-900"
-                name="tipo_proyecto"
+                class="w-full bg-ink-50 border border-ink-500 focus:border-brand-700 focus:ring-2 focus:ring-brand-100 rounded-lg px-4 py-3 transition-all text-ink-900"
+                id="campo-tipo_proyecto" name="tipo_proyecto"
               >
                 <option>Vivienda unifamiliar</option>
                 <option>Local comercial</option>
@@ -573,13 +561,13 @@
             </div>
 
             <div>
-              <label class="block text-xs font-label font-bold text-ink-700 uppercase tracking-widest mb-2">
+              <label for="campo-mensaje" class="block text-xs font-label font-bold text-ink-700 uppercase tracking-widest mb-2">
                 Mensaje
               </label>
               <textarea
-                class="w-full bg-ink-50 border border-ink-200 focus:border-brand-700 focus:ring-2 focus:ring-brand-100 rounded-lg px-4 py-3 transition-all text-ink-900"
+                class="w-full bg-ink-50 border border-ink-500 focus:border-brand-700 focus:ring-2 focus:ring-brand-100 rounded-lg px-4 py-3 transition-all text-ink-900"
                 placeholder="Describe brevemente lo que necesitas..."
-                name="mensaje"
+                id="campo-mensaje" name="mensaje"
                 rows="5"
                 required
               ></textarea>
@@ -591,27 +579,34 @@
               [disabled]="contactStatus() === 'sending'"
             >
               {{ contactStatus() === 'sending' ? 'Enviando…' : 'Enviar mensaje' }}
-              <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+              <span class="material-symbols-outlined text-[20px]" aria-hidden="true">arrow_forward</span>
             </button>
 
+            <p class="text-xs text-ink-500 leading-relaxed">
+              Al enviar este formulario aceptas nuestra
+              <a [routerLink]="['/politica-privacidad']" class="text-brand-700 font-semibold underline">política de privacidad</a>.
+            </p>
+
+            <div role="status">
             @if (contactStatus() === 'success') {
               <p class="text-sm font-semibold text-brand-700 flex items-center gap-2">
-                <span class="material-symbols-outlined text-[18px]">check_circle</span>
+                <span class="material-symbols-outlined text-[18px]" aria-hidden="true">check_circle</span>
                 Mensaje enviado correctamente. Te contactaremos lo antes posible.
               </p>
             }
             @if (contactStatus() === 'error') {
               <p class="text-sm font-semibold text-red-700 flex items-center gap-2">
-                <span class="material-symbols-outlined text-[18px]">error</span>
+                <span class="material-symbols-outlined text-[18px]" aria-hidden="true">error</span>
                 No se pudo enviar. Inténtalo de nuevo en unos minutos.
               </p>
             }
             @if (contactStatus() === 'not_configured') {
               <p class="text-sm font-semibold text-red-700 flex items-center gap-2">
-                <span class="material-symbols-outlined text-[18px]">warning</span>
-                Formulario no configurado. Falta configurar Formspree.
+                <span class="material-symbols-outlined text-[18px]" aria-hidden="true">warning</span>
+                El formulario no está disponible ahora mismo. Llámanos al 600 952 601 o escríbenos por WhatsApp.
               </p>
             }
+            </div>
           </form>
         </div>
 
@@ -624,7 +619,7 @@
 
             <ul class="space-y-5">
               <li class="flex gap-4">
-                <span class="material-symbols-outlined text-brand-700 mt-0.5">location_on</span>
+                <span class="material-symbols-outlined text-brand-700 mt-0.5" aria-hidden="true">location_on</span>
                 <div>
                   <p class="font-bold text-sm text-ink-900 mb-1">Nuestra central</p>
                   <p class="text-ink-600 text-sm leading-relaxed">
@@ -635,7 +630,7 @@
                 </div>
               </li>
               <li class="flex gap-4">
-                <span class="material-symbols-outlined text-brand-700 mt-0.5">call</span>
+                <span class="material-symbols-outlined text-brand-700 mt-0.5" aria-hidden="true">call</span>
                 <div>
                   <p class="font-bold text-sm text-ink-900 mb-1">Teléfono</p>
                   <a
@@ -647,7 +642,7 @@
                 </div>
               </li>
               <li class="flex gap-4">
-                <span class="material-symbols-outlined text-brand-700 mt-0.5">mail</span>
+                <span class="material-symbols-outlined text-brand-700 mt-0.5" aria-hidden="true">mail</span>
                 <div>
                   <p class="font-bold text-sm text-ink-900 mb-1">Email</p>
                   <a
@@ -659,10 +654,11 @@
                 </div>
               </li>
               <li class="flex gap-4">
-                <span class="material-symbols-outlined text-brand-700 mt-0.5">schedule</span>
+                <span class="material-symbols-outlined text-brand-700 mt-0.5" aria-hidden="true">schedule</span>
                 <div>
                   <p class="font-bold text-sm text-ink-900 mb-1">Horario de atención</p>
-                  <p class="text-ink-600 text-sm">Lunes a Viernes · 8:00 – 18:00</p>
+                  <p class="text-ink-600 text-sm">Lunes a Viernes · 7:00 – 15:00</p>
+                  <p class="text-ink-600 text-sm">Tardes con cita previa</p>
                 </div>
               </li>
             </ul>
@@ -680,12 +676,12 @@
               referrerpolicy="no-referrer-when-downgrade"
             ></iframe>
             <a
-              href="https://maps.google.com/maps?q=Calle+Diego+Galv%C3%A1n,+280,+C%C3%B3rdoba"
+              href="https://www.google.com/maps?cid=4761733920034228552"
               target="_blank"
               rel="noopener noreferrer"
-              class="absolute bottom-4 right-4 bg-white text-brand-700 px-4 py-2 rounded-lg font-semibold text-sm shadow-lift opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-2 hover:bg-ink-50"
+              class="absolute bottom-4 right-4 bg-white text-brand-700 px-4 py-2 rounded-lg font-semibold text-sm shadow-lift opacity-0 group-hover:opacity-100 focus-visible:opacity-100 transition-opacity flex items-center gap-2 hover:bg-ink-50"
             >
-              <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+              <span class="material-symbols-outlined text-[16px]" aria-hidden="true">open_in_new</span>
               Abrir en Maps
             </a>
           </div>

@@ -1,16 +1,13 @@
 <!-- Top utility bar (oculto en mobile) -->
-<div
-  class="hidden md:block w-full bg-ink-900 text-ink-100 text-xs"
-  aria-label="Información de contacto"
->
+<div class="hidden md:block w-full bg-ink-900 text-ink-100 text-xs">
   <div class="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-9">
     <div class="flex items-center gap-6">
       <span class="flex items-center gap-2 text-ink-200">
-        <span class="material-symbols-outlined text-[14px] text-brand-400">schedule</span>
-        Lun – Vie · 8:00 – 18:00
+        <span class="material-symbols-outlined text-[14px] text-brand-400" aria-hidden="true">schedule</span>
+        Lun – Vie · 7:00 – 15:00 · Tardes con cita
       </span>
       <span class="hidden lg:flex items-center gap-2 text-ink-200">
-        <span class="material-symbols-outlined text-[14px] text-brand-400">location_on</span>
+        <span class="material-symbols-outlined text-[14px] text-brand-400" aria-hidden="true">location_on</span>
         Polígono Las Quemadas, Córdoba
       </span>
     </div>
@@ -19,14 +16,14 @@
         class="flex items-center gap-2 text-ink-100 hover:text-white transition-colors"
         href="tel:+34600952601"
       >
-        <span class="material-symbols-outlined text-[14px] text-brand-400">call</span>
+        <span class="material-symbols-outlined text-[14px] text-brand-400" aria-hidden="true">call</span>
         +34 600 952 601
       </a>
       <a
         class="hidden lg:flex items-center gap-2 text-ink-100 hover:text-white transition-colors"
         href="mailto:castilglass@hotmail.com"
       >
-        <span class="material-symbols-outlined text-[14px] text-brand-400">mail</span>
+        <span class="material-symbols-outlined text-[14px] text-brand-400" aria-hidden="true">mail</span>
         castilglass&#64;hotmail.com
       </a>
     </div>
@@ -39,129 +36,87 @@
   aria-label="Navegación principal"
 >
   <div class="flex justify-between items-center px-4 md:px-8 py-3 md:py-4 max-w-7xl mx-auto">
-    <a
-      class="flex items-center gap-3 cursor-pointer group"
-      routerLink="/"
-      aria-label="Castilglass — Inicio"
-    >
+    <a class="flex items-center gap-3 group" routerLink="/" aria-label="Castilglass — Inicio">
       <img
-        src="images/Logo-Castilglass.png"
+        src="images/logo-castilglass.webp"
         alt="Castilglass"
+        width="288"
+        height="192"
         class="h-14 md:h-16 w-auto transition-transform group-hover:scale-[1.02]"
       />
     </a>
 
     <!-- Desktop nav -->
     <div class="hidden md:flex items-center gap-7 lg:gap-9">
-      <button
-        type="button"
-        class="nav-link"
-        [class.nav-link-active]="activeSection() === 'inicio'"
-        (click)="scrollToSection('inicio')"
-      >
-        Inicio
-      </button>
-      <button
-        type="button"
-        class="nav-link"
-        [class.nav-link-active]="activeSection() === 'servicios'"
-        (click)="scrollToSection('servicios')"
-      >
-        Servicios
-      </button>
-      <button
-        type="button"
-        class="nav-link"
-        [class.nav-link-active]="activeSection() === 'nosotros'"
-        (click)="scrollToSection('nosotros')"
-      >
-        Sobre nosotros
-      </button>
-      <button
-        type="button"
-        class="nav-link"
-        [class.nav-link-active]="activeSection() === 'contacto'"
-        (click)="scrollToSection('contacto')"
-      >
-        Contacto
-      </button>
+      @for (section of sections; track section.id) {
+        <a
+          class="nav-link"
+          routerLink="/"
+          [fragment]="section.id"
+          [class.nav-link-active]="isActive(section.id)"
+          [attr.aria-current]="isActive(section.id) ? 'location' : null"
+          (click)="goToSection(section.id)"
+        >
+          {{ section.label }}
+        </a>
+      }
     </div>
 
     <div class="flex items-center gap-3 md:gap-5">
-      <button
-        type="button"
+      <a
         class="hidden md:inline-flex items-center gap-2 bg-brand-700 text-white px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-brand-800 active:scale-[0.98] transition-all shadow-soft"
-        (click)="goToSolicitarPresupuesto()"
+        routerLink="/solicitar-presupuesto"
       >
         Solicitar presupuesto
-        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-      </button>
+        <span class="material-symbols-outlined text-[18px]" aria-hidden="true">arrow_forward</span>
+      </a>
 
       <!-- Mobile menu button -->
-      <label
-        class="md:hidden flex items-center cursor-pointer p-1 text-ink-900"
-        for="mobile-menu-toggle"
-        aria-label="Abrir menú"
+      <button
+        type="button"
+        class="md:hidden flex items-center justify-center w-11 h-11 text-ink-900"
+        aria-controls="mobile-menu"
+        [attr.aria-expanded]="menuOpen()"
+        [attr.aria-label]="menuOpen() ? 'Cerrar menú' : 'Abrir menú'"
+        (click)="menuOpen.set(!menuOpen())"
       >
-        <span class="material-symbols-outlined text-3xl">menu</span>
-      </label>
+        <span class="material-symbols-outlined text-3xl" aria-hidden="true">{{ menuOpen() ? 'close' : 'menu' }}</span>
+      </button>
     </div>
   </div>
 
   <!-- Mobile menu -->
-  <input class="hidden peer" id="mobile-menu-toggle" type="checkbox" />
-  <div
-    class="hidden peer-checked:flex flex-col absolute top-full left-0 w-full bg-white border-t border-ink-200 p-6 space-y-3 shadow-lift md:hidden"
-    id="mobile-menu"
-  >
-    <button
-      type="button"
-      class="nav-link nav-link-mobile"
-      [class.nav-link-active]="activeSection() === 'inicio'"
-      (click)="scrollToSection('inicio')"
+  @if (menuOpen()) {
+    <div
+      class="flex flex-col absolute top-full left-0 w-full bg-white border-t border-ink-200 p-6 space-y-3 shadow-lift md:hidden"
+      id="mobile-menu"
     >
-      Inicio
-    </button>
-    <button
-      type="button"
-      class="nav-link nav-link-mobile"
-      [class.nav-link-active]="activeSection() === 'servicios'"
-      (click)="scrollToSection('servicios')"
-    >
-      Servicios
-    </button>
-    <button
-      type="button"
-      class="nav-link nav-link-mobile"
-      [class.nav-link-active]="activeSection() === 'nosotros'"
-      (click)="scrollToSection('nosotros')"
-    >
-      Sobre nosotros
-    </button>
-    <button
-      type="button"
-      class="nav-link nav-link-mobile"
-      [class.nav-link-active]="activeSection() === 'contacto'"
-      (click)="scrollToSection('contacto')"
-    >
-      Contacto
-    </button>
-    <div class="pt-4 mt-2 border-t border-ink-200 flex flex-col gap-3">
-      <a
-        class="flex items-center gap-2 text-ink-700 font-medium"
-        href="tel:+34600952601"
-      >
-        <span class="material-symbols-outlined text-[18px] text-brand-700">call</span>
-        +34 600 952 601
-      </a>
-      <button
-        type="button"
-        class="inline-flex items-center justify-center gap-2 bg-brand-700 text-white px-5 py-3 rounded-lg font-semibold text-sm"
-        (click)="goToSolicitarPresupuesto()"
-      >
-        Solicitar presupuesto
-        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-      </button>
+      @for (section of sections; track section.id) {
+        <a
+          class="nav-link nav-link-mobile"
+          routerLink="/"
+          [fragment]="section.id"
+          [class.nav-link-active]="isActive(section.id)"
+          [attr.aria-current]="isActive(section.id) ? 'location' : null"
+          (click)="goToSection(section.id)"
+        >
+          {{ section.label }}
+        </a>
+      }
+      <div class="pt-4 mt-2 border-t border-ink-200 flex flex-col gap-3">
+        <a class="flex items-center gap-2 text-ink-700 font-medium" href="tel:+34600952601">
+          <span class="material-symbols-outlined text-[18px] text-brand-700" aria-hidden="true">call</span>
+          +34 600 952 601
+        </a>
+        <a
+          class="inline-flex items-center justify-center gap-2 bg-brand-700 text-white px-5 py-3 rounded-lg font-semibold text-sm"
+          routerLink="/solicitar-presupuesto"
+          (click)="menuOpen.set(false)"
+        >
+          Solicitar presupuesto
+          <span class="material-symbols-outlined text-[18px]" aria-hidden="true">arrow_forward</span>
+        </a>
+      </div>
     </div>
-  </div>
+  }
 </nav>
