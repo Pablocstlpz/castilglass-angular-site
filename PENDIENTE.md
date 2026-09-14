@@ -20,10 +20,8 @@ Todas las imágenes de contenido son de prueba (`lh3.googleusercontent.com/aida-
 
 | Archivo | Imágenes |
 |---|---|
-| `Frontend/src/app/components/layout/main/main.html` | 5 |
-| `Frontend/src/app/components/apartado-servicios/apartado-servicios.html` | 6 |
-| `Frontend/src/app/components/solicitar-presupuesto/solicitar-presupuesto.html` | 1 |
-| `Frontend/src/app/components/footerLinks/aviso-legal/aviso-legal.html` | 1 |
+| `Frontend/src/app/components/layout/main/main.html` | 4 |
+| `Frontend/src/app/components/apartado-servicios/apartado-servicios.html` y `.ts` | 5 |
 
 - Guardar las fotos en `Frontend/public/images/` (formato `.webp`, ancho máximo ~1600 px) y usar rutas `images/nombre.webp`.
 - Poner textos `alt` descriptivos con aluminio / PVC / hierro. El de la foto principal de la home aún dice "cristalería".
@@ -114,7 +112,6 @@ IONOS → Dominios y SSL → `castilglass.es` → DNS:
 3. **Google Search Console:** verificar el dominio con un registro TXT en IONOS y enviar `https://castilglass.es/sitemap.xml`.
 4. **Una página por servicio:** por ejemplo `/ventanas-aluminio-cordoba`, `/ventanas-pvc-cordoba` y `/herreria-cordoba`, con texto propio y fotos. Es lo que más ayuda a posicionar búsquedas concretas. Añadirlas también a `Frontend/public/sitemap.xml`.
 5. **Directorios:** Páginas Amarillas, Habitissimo, Cronoshare…, siempre con los mismos datos.
-6. **Opcional (velocidad):** descargar las fuentes Inter, Manrope y Material Symbols y servirlas desde el propio servidor en lugar de Google Fonts. Mejora la carga y evita enviar la IP a Google. Si se hace, quitar Google Fonts de la política de cookies.
 
 ## 4. Mejoras menores
 
@@ -129,4 +126,5 @@ IONOS → Dominios y SSL → `castilglass.es` → DNS:
 - Formularios migrados de Formspree a Web3Forms (plan gratuito).
 - Textos legales corregidos (privacidad y cookies) y aviso de privacidad en el formulario de la home.
 - Build estático: sin Node ni Express; eliminado `vercel.json`.
+- Rediseño visual (estilo industrial): componentes UI reutilizables, datos de contacto y servicios centralizados en `Frontend/src/app/data/`, tipografías autoalojadas (Barlow, Barlow Condensed, IBM Plex Mono) sin peticiones a Google Fonts, iconos SVG propios y logo recortado.
 - Auditoría de SEO y accesibilidad corregida: formularios con etiquetas y `autocomplete`, iconos ocultos a lectores de pantalla, menú móvil accesible con teclado, enlaces rastreables en el menú, contraste, jerarquía de encabezados, enlace "Saltar al contenido", mensajes de formulario anunciados, logo optimizado (2,3 MB → WebP), fuente de iconos recortada y descripciones en las páginas legales.

@@ -1,178 +1,61 @@
-<main id="contenido" tabindex="-1">
-  <!-- ============================================
-       HERO compacto
-       ============================================ -->
-  <section class="relative pt-12 pb-16 md:pt-20 md:pb-24 px-4 md:px-8 bg-ink-900 text-white overflow-hidden">
-    <div class="absolute inset-0 z-0">
-      <img
-        alt=""
-        aria-hidden="true"
-        class="w-full h-full object-cover opacity-25"
-        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAe1-Z5m8Pu-nDDH-VmB8UKtGSQFK2KRu9VhuH_CdQK4puuNtSQE89HHEvfQd1yyGe5fUiecFPe2YNSontVH3G1Sx3NNOMkZ_XEtAyvxpEpRIhNr32rMqdDLF7pQQ6DfXYRTWE9Ox5O6GGQtvWdXEUo92yNmCaKEiEqQhrBMp9Zurkz-51Ztu4y3aqJYTdQPQW1T2XT5qIGimXjF_Mpqj63VMjDDV6vES4sblwKKeixqXbtmsAyK2Urf5YK4pu-yvUHQBoiUFIl3Ng"
-      />
-      <div class="absolute inset-0 bg-gradient-to-r from-ink-900 via-ink-900/80 to-ink-900/40"></div>
-      <div class="absolute inset-0 bg-blueprint opacity-[0.04]"></div>
-    </div>
-
-    <div class="relative z-10 max-w-7xl mx-auto">
-      <div class="rise rise-d1 flex items-center gap-3 mb-5">
-        <span class="h-px w-10 bg-brand-400"></span>
-        <span class="font-mono text-[11px] uppercase tracking-[0.22em] text-brand-300">
-          Información legal
-        </span>
+<app-legal-page heading="Aviso legal" updated="14 / 09 / 2026" [index]="index">
+  <section appLegalSection id="titular" number="01" heading="Identificación del titular">
+    <dl class="border-t border-ink-200">
+      <div appDataRow term="Razón social">{{ company.legalName }}</div>
+      <div appDataRow term="Nombres comerciales">{{ company.name }} · {{ company.tradeName }}</div>
+      <div appDataRow term="NIF">{{ company.nif }}</div>
+      <div appDataRow term="Domicilio social">
+        @for (line of company.addressLines; track line) {
+          <span class="block">{{ line }}</span>
+        }
       </div>
-      <h1 class="rise rise-d2 display text-white text-4xl md:text-6xl mb-4">
-        Aviso legal
-      </h1>
-      <p class="rise rise-d3 text-ink-200 text-base md:text-lg max-w-2xl leading-relaxed">
-        Cumplimiento normativo y transparencia corporativa de Castilglass.
-      </p>
-    </div>
+      <div appDataRow term="Contacto">
+        <a [href]="company.emailHref">{{ company.email }}</a>
+      </div>
+    </dl>
+    <p>
+      Para cualquier consulta relacionada con este aviso legal, contacta con nosotros a través del
+      email indicado o el formulario de contacto.
+    </p>
   </section>
 
-  <!-- ============================================
-       Content grid
-       ============================================ -->
-  <section class="py-16 md:py-24 px-4 md:px-8 bg-surface">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16">
-
-      <!-- Aside -->
-      <aside class="lg:col-span-4 lg:order-1 order-2">
-        <div class="lg:sticky lg:top-32 space-y-6">
-          <div class="bg-white p-6 md:p-7 rounded-2xl border border-ink-200/70 space-y-5 shadow-soft">
-            <h2 class="font-headline font-bold text-lg text-ink-900">
-              Identificación del titular
-            </h2>
-            <div class="space-y-4">
-              <div>
-                <span class="eyebrow-dim text-brand-700">Razón Social</span>
-                <p class="font-headline font-bold text-base text-ink-900 mt-1">CASTILGLASS, S.L.L.</p>
-              </div>
-              <div>
-                <span class="eyebrow-dim text-brand-700">Nombres comerciales</span>
-                <p class="text-sm text-ink-700 mt-1">Castilglass · Castillo Cañizares</p>
-              </div>
-              <div>
-                <span class="eyebrow-dim text-brand-700">N.I.F.</span>
-                <p class="font-mono text-sm text-ink-700 mt-1">B14973499</p>
-              </div>
-              <div>
-                <span class="eyebrow-dim text-brand-700">Domicilio Social</span>
-                <p class="text-sm text-ink-700 mt-1 leading-relaxed">
-                  Polígono Industrial Las Quemadas<br />
-                  Calle Diego Galván, Nave 18<br />
-                  Parcela 280, 14014 Córdoba
-                </p>
-              </div>
-              <div>
-                <span class="eyebrow-dim text-brand-700">Contacto</span>
-                <a
-                  href="mailto:castilglass@hotmail.com"
-                  class="block text-sm text-brand-700 font-semibold mt-1 hover:underline"
-                >
-                  castilglass&#64;hotmail.com
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="border-l-2 border-brand-700/30 pl-5 py-2">
-            <p class="text-sm text-ink-600 italic leading-relaxed">
-              Para cualquier consulta relacionada con este aviso legal, contacta con nosotros
-              a través del email indicado o el formulario de contacto.
-            </p>
-          </div>
-        </div>
-      </aside>
-
-      <!-- Main legal text -->
-      <div class="lg:col-span-8 lg:order-2 order-1 space-y-10 md:space-y-12">
-
-        <section class="space-y-5">
-          <div class="flex items-center gap-3">
-            <span class="font-mono text-xs text-ink-500">01</span>
-            <span class="rule-hair flex-1"></span>
-          </div>
-          <h2 class="display text-2xl md:text-3xl text-ink-900">
-            Condiciones de acceso
-          </h2>
-          <div class="bg-white p-6 md:p-8 rounded-2xl border border-ink-200/70">
-            <p class="text-ink-700 leading-relaxed text-base">
-              El acceso al sitio web de
-              <span class="font-bold text-ink-900">CASTILGLASS, S.L.L.</span> (en adelante, CASTILGLASS)
-              es gratuito. El usuario se compromete a hacer un uso diligente del sitio
-              web y de los servicios accesibles desde el mismo, con total sujeción a la Ley,
-              a las buenas costumbres y al presente Aviso Legal.
-            </p>
-          </div>
-        </section>
-
-        <section class="space-y-5">
-          <div class="flex items-center gap-3">
-            <span class="font-mono text-xs text-ink-500">02</span>
-            <span class="rule-hair flex-1"></span>
-          </div>
-          <h2 class="display text-2xl md:text-3xl text-ink-900">
-            Propiedad intelectual e industrial
-          </h2>
-          <div class="bg-white p-6 md:p-8 rounded-2xl border border-ink-200/70 space-y-5">
-            <p class="text-ink-700 leading-relaxed text-base">
-              Todo el contenido es propiedad intelectual de
-              <span class="font-bold text-ink-900">CASTILGLASS</span>. Esto incluye, a título
-              enunciativo pero no limitativo, el diseño gráfico, código fuente, logotipos, textos,
-              gráficos, ilustraciones, fotografías, y demás elementos que aparecen en el sitio web.
-            </p>
-            <div class="bg-brand-50 p-5 rounded-lg border-l-4 border-brand-700">
-              <p class="text-ink-900 font-semibold italic text-sm md:text-base">
-                Cualquier utilización contraria a las normas en materia de propiedad intelectual
-                será perseguida con arreglo a la legislación vigente.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section class="space-y-5">
-          <div class="flex items-center gap-3">
-            <span class="font-mono text-xs text-ink-500">03</span>
-            <span class="rule-hair flex-1"></span>
-          </div>
-          <h2 class="display text-2xl md:text-3xl text-ink-900">
-            Limitación de responsabilidad
-          </h2>
-          <div class="bg-white p-6 md:p-8 rounded-2xl border border-ink-200/70">
-            <p class="text-ink-700 leading-relaxed text-base">
-              CASTILGLASS no garantiza la inexistencia de interrupciones o errores en el acceso a
-              la web, en su contenido, ni que éste se encuentre actualizado, aunque desarrollará
-              sus mejores esfuerzos para, en su caso, evitarlos, subsanarlos o actualizarlos.
-            </p>
-          </div>
-        </section>
-
-        <!-- Spec sheet metadata -->
-        <div class="bg-ink-900 text-white p-6 md:p-8 rounded-2xl">
-          <h2 class="eyebrow text-brand-300 mb-6">
-            Especificaciones legales del documento
-          </h2>
-          <div class="grid grid-cols-2 gap-y-5 gap-x-6">
-            <div>
-              <span class="block eyebrow-dim text-ink-400">Versión</span>
-              <span class="block text-sm font-mono text-white mt-1">v2.4</span>
-            </div>
-            <div>
-              <span class="block eyebrow-dim text-ink-400">Jurisdicción</span>
-              <span class="block text-sm font-mono text-white mt-1">España / UE</span>
-            </div>
-            <div>
-              <span class="block eyebrow-dim text-ink-400">Última actualización</span>
-              <span class="block text-sm font-mono text-white mt-1">14 / 09 / 2026</span>
-            </div>
-            <div>
-              <span class="block eyebrow-dim text-ink-400">Entidad</span>
-              <span class="block text-sm font-mono text-white mt-1">CASTILGLASS, S.L.L.</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <section appLegalSection id="acceso" number="02" heading="Condiciones de acceso">
+    <p>
+      El acceso al sitio web de <strong>{{ company.legalName }}</strong> (en adelante, CASTILGLASS) es
+      gratuito. El usuario se compromete a hacer un uso diligente del sitio web y de los servicios
+      accesibles desde el mismo, con total sujeción a la Ley, a las buenas costumbres y al presente
+      Aviso Legal.
+    </p>
   </section>
-</main>
+
+  <section appLegalSection id="propiedad" number="03" heading="Propiedad intelectual e industrial">
+    <p>
+      Todo el contenido es propiedad intelectual de <strong>CASTILGLASS</strong>. Esto incluye, a título
+      enunciativo pero no limitativo, el diseño gráfico, código fuente, logotipos, textos, gráficos,
+      ilustraciones, fotografías, y demás elementos que aparecen en el sitio web.
+    </p>
+    <p>
+      <strong>
+        Cualquier utilización contraria a las normas en materia de propiedad intelectual será perseguida
+        con arreglo a la legislación vigente.
+      </strong>
+    </p>
+  </section>
+
+  <section appLegalSection id="responsabilidad" number="04" heading="Limitación de responsabilidad">
+    <p>
+      CASTILGLASS no garantiza la inexistencia de interrupciones o errores en el acceso a la web, en su
+      contenido, ni que éste se encuentre actualizado, aunque desarrollará sus mejores esfuerzos para,
+      en su caso, evitarlos, subsanarlos o actualizarlos.
+    </p>
+  </section>
+
+  <section appLegalSection id="documento" number="05" heading="Datos del documento">
+    <dl class="border-t border-ink-200">
+      <div appDataRow term="Versión">v2.4</div>
+      <div appDataRow term="Jurisdicción">España / UE</div>
+      <div appDataRow term="Última actualización">14 / 09 / 2026</div>
+      <div appDataRow term="Entidad">{{ company.legalName }}</div>
+    </dl>
+  </section>
+</app-legal-page>

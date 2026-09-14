@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import { DOCUMENT, ViewportScroller } from '@angular/common';
 import { Meta } from '@angular/platform-browser';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { filter } from 'rxjs';
@@ -12,7 +12,6 @@ const SITE_URL = 'https://castilglass.es';
   selector: 'app-root',
   imports: [RouterOutlet, Header, Footer],
   templateUrl: './app.html',
-  styleUrl: './app.css',
 })
 export class App {
   private readonly router = inject(Router);
@@ -20,6 +19,9 @@ export class App {
   private readonly document = inject(DOCUMENT);
 
   constructor() {
+    // Router anchor scrolling uses window.scrollTo, which ignores CSS scroll-padding.
+    inject(ViewportScroller).setOffset([0, 64]);
+
     // Runs during prerender too, so every static HTML ships its own SEO tags.
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
